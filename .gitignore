@@ -1,0 +1,4 @@
+manuscripts/**/*.aux
+manuscripts/**/*.fls
+manuscripts/**/*.log
+manuscripts/**/*.pdf
