@@ -1,4 +1,6 @@
 manuscripts/**/*.aux
+manuscripts/**/*.fdb_latexmk
 manuscripts/**/*.fls
 manuscripts/**/*.log
 manuscripts/**/*.pdf
+manuscripts/**/*.synctex.gz
