@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+\documentclass[9pt,conference]{IEEEtran}
 
 \usepackage[colorlinks,allcolors=blue]{hyperref}
 
@@ -39,6 +39,7 @@
     \end{abstract}
 
     \section{Introduction}\label{section:introduction}
+<<<<<<< Updated upstream
 
     Cyber-physical system (CPS), is a conceptual architecture/approach which aims to conjoin the physical and virtual space. 
     The aim of the CPS is to integrate communication and computing capabilities to physical assets to monitor, coordinate and control the physical space (where the physical assets exist) from the virtual space (where the virtual models exist), while achieve seamless real-time connection between the spaces.
@@ -54,8 +55,56 @@
     Virtual entity exists in the virtual space with 
 
     With the improvement 
+=======
+    Cyber-physical system (CPS), is a conceptial architecture/approach which aims to conjoin the physical and virtual space. 
+    The aim of the CPS is to integrate communication and computing capabilities to physical assets to monitor, coordinate and control the physical space (where the physical assets exist)
+    from the virtual space (where the virtual models exist), while achieve seamless real-time connection between the spaces.
+    Digital twin approach is on the other hand, is a pragmatic solution, which is the execution of the CPS.\cite{TAO20193}
+    \section{What is a digital twin?}
+    First occurance of "Digital Twin" term  was introduced by Dr.Michael Grieves in 2003 at the University of Michigan while giving 
+    Product Lifecycle Management(PLM) course.\cite{article} His introduction to term was rather raw, but still introduced a pragmatic solution to uncoupled solutions of global manufacturers
+    ,which were working only with physical or virtual products.\newline
+    His approach had three dimensions, along with a physical entity, a virtual entity and a connection between these entities which constructed the main frame for the todays evaluating  
+    digital twins. \cite{article} \newline
+    Physical entity exists in the physical space with real functionalities and performance. They are responsible to accomplish certain tasks within the physical space, to give certain outputs. 
+    Different levels of abstraction can be usable for a physical entity such as an electric motor in the 1/10 of a RC Car, bearings in a certain machine, solar panels above some construction, human or a entire world can be counted as an example of a physical entity.
+    Virtual entity exists in the virtual space with 
+
+    Fiziksel alan dendiginde, icerisinde birden fazla entity bulunduran(ornegin insanlar, aletler, binalar, hardware etc) alandir. Yani bu alan icerisinde, sekil, buyukluk, renk, yapi, kutle, hiz yani fiziksel tum ozellikler bulunur. Her bir entity belirli bir alan kaplar ve fizik kanunlarina uymak zorundadir. Bulunmus oldugu ortam kesin degildir(uncertain). Fiziksel entityler, belirli kisitlamalar altinda(ornegin zaman, para, kalite vs), pratik fonksiyonlara sahiptir. Entitylerden gelen datalar, analog datalardir ve smooth olarak degisirler.
+    Virtual space, bilgisayar teknolojileri, simulasyon ve modelleme, haberlesme teknolojileri, internet, cloud computing, IOT vb gibi teknolojiler sayesinde olusturulmus alandir. Fiziksel alandan gelen analog datalari, discrete digital sinyallere ceviren ve kolayca saklanip, islenip gosterilmesini mumkun kilan bir alandir. Virtual space icindeki entityler, fiziksel alandaki entitylerin sadece geometrik sekillerini degil, ayni zamanda fiziksel ozellikleri ve davranislarinida(behaviour ve rule modeling) icermektedir. Birden fazla fiziksel alandan gelen datayi kullanarak, ornegin sensor datalari, insanlar, onceden bilinen bilgiler(domain knowledge), virtual alan bize, fiziksel alanin simulation, prediction, optimization ve VVT imkanini saglar.
+    DigitalTwin, hem virtual space icerisindeki digital entityi, ki bu entity fiziksel alanda bulunan entitynin kopyasidir, hemde fiziksel alandaki entityi bulundurmaktadir. Digital twin yaklasiminin amaci, bu ikisi arasindaki siniri yok etme, yani fiziksel entity ile digital entityi birlestirmektir.  
+>>>>>>> Stashed changes
     
+    Genel olarak DT su ozellikleri yuzunden tercih edilir.
+    \begin{itemize}
+        \item Productun nasil davrandigi, product olusturulmadan once  3D olarak geometrik ve fiziksel olarak gozlemlenebilir. Bu gozlemlenebilirlik, bir urunu daha hizli markete sokmamiza olanak saglar. 
+        \item  DT de fiziksel ve digital entityler surekli baglanti halindedir, boylelikle optimal operation PLM boyunca saglanir.
+        \item VE uzerinden yapilan testlerle, harcanacak is gucu azaltilabilir. 
+        \item VEnin prediction ozelligi kullanilarak, predictive maintenance gibi uygulamalar kullanilabilir.
+        \item  VE nin visualize edilebilmesinden dolayi, shareholderlar sistem uzerinde daha iyi gorus saglarlar. 
+        \item Information technologilerini, machine learning, simulation, optimization, iot, cloud computing, big data vs gibi  calisabilecegi bir framework sunar. Yani hepsi bir arada bulunabilir.
+    \end{itemize}
+
+    DT yapmanin challangeleri olarak sunlari siralayabiliriz,
+    \begin{itemize}
+        \item DT yi uygulayacak insanlarin teknik yetenekleri ve bilgilerinin yeterli olmamasi, kisitli olmasi
+        \item High fidelity modeling, high fidelity simulation, real-time data collection, in depth data collection, flexible data architecture, high fidelity microservices gibi yuksek teknolojilerin kullanilmasi
+        \item DT yi supportlayacak librarylerin veya sistemlerin yeteri kadar olmamasi
+        \item Standartlasma eksikligi
+        \item Proper VVT framework 
+        \item Cost ve cost management 
+        \item Cyber Security, Intellectual Property Rights
+        \item Young technology
+    \end{itemize}
+
+
     %/TODO SHOULD WE EXPLAIN OUR DIGITAL TWIN HERE?
+<<<<<<< Updated upstream
+=======
+    %/TODO PT SIZE?
+    \subsection{Methodology}
+    TODO
+>>>>>>> Stashed changes
 
     \subsection{Research objectives}
 
