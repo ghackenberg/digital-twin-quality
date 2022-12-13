@@ -1,8 +1,14 @@
 \documentclass[9pt,conference]{IEEEtran}
-
+\usepackage{listings}
+\usepackage{graphicx}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
+\graphicspath{{./images/}}
+
+
+
 
 \begin{document}
+
 
     \title{Quality assurance of digital twins -- An experience report in the automotive industry}
     \author{
@@ -110,82 +116,113 @@
     
     Find an approach to assess the quality of Digital twins
 
-    \subsection{Research questions}
-    \label{section:Research Questions}
+    \subsection{Research questions}~\label{section: Research Questions}
 
     What is the quality of digital twins? 
     What is good quality?
     What is bad quality? 
     What is the impact of good quality? 
-    What is impact of bad quality? W
+    What is the impact of bad quality? W
     What are typical quality issues? 
     How to assess quality?
 
     \subsection{Scientific contributions}
 
-    Literature review (see Section~\ref{section:literature}), case study (see Section~\ref{section:Research Questions})...
+    Literature review (see Section~\ref{section: literature}), case study (see Section~\ref{section: Research Questions})...
     
-    \section{Literature review}
-    \label{section:literature}
-    Literature analysis was executed, to analyze current DT literature within the concept of digital twin quality. The analysis, especially focused on 
+    \section{Literature review}~\label{section: literature}
+    Literature analysis was executed, to analyze current DT literature within the concept of digital twin quality. The analysis especially focused on 
     how the digital twin quality is mentioned and assessed within the academic dissertations.
 
     Methodology (see Section~\ref{section:liteature_methodology}), result (see Section~\ref{section:liteature_result}), and summary (See Section~\ref{section:liteature_summary})...
-    \subsection{Methodology}
-    \label{section:liteature_methodology}
-
-    Google Scholar(GS), Scopus(SCP) and Research Rabbit(RR) tools are used to fulfill our requirements for the literature review. 
-    Since there is a great number of digital twin publications in academics, narrowing the research is necessary, so the following filtering has been done for all searches.
+    \subsection{Methodology}~\label{section:liteature_methodology}
+    Google Scholar (GS), Scopus (SCP) and Research Rabbit (RR) tools are used to fulfill our requirements for the literature review. 
+    Since there is a great number of digital twin publications in academics, 
+    narrowing the research is necessary, so the following algorithm which can be seen in Figure \ref{fig:literaturesearchalgorithm} with several levels of filtering will be applied.
+    
+    First filtering will be done with the following criteria:
     \begin{itemize}
-        \item Dissertations should be written in English and published in a journal.
+        \item Dissertations should be written in English and published in a journal/conference.
         \item Paper is not older than 2018
-    \end{itemize}
-    
-    Search terms appeared in the title/abstract with "digital twin quality";
-    \begin{itemize}
-        \item GS = allintitle: "digital twin quality" Return articles dated between 2018 - NOW  
-        \item Scopus = TITLE-ABS-KEY ( "digital twin quality" )  AND  PUBYEAR  \textgreater  2018  AND  PUBYEAR  \textless  2023  AND  ( LIMIT-TO ( LANGUAGE ,  "English" ) ) 
+        \item Search term should be exactly searched.
     \end{itemize}
 
-    GS gave five different results, while SCP gave 2 results.
-    
-    Further inspection has been done, and 
    
+    Filtering query calls for the GS and SCP are the following:
+    \begin{itemize}
+        \item Google Scholar = "search term"
+        \item Scopus = ALL ( "digital twin quality" ) AND PUBYEAR > 2018 AND PUBYEAR < 2023 AND ( LIMIT-TO ( LANGUAGE , "English" )) 
+    \end{itemize} 
+
+    Also want to note that, in the GS, there isn't a function that filters the dates, instead the user should click the Since 2018 option to filter the dates.
 
 
-    \subsection{Result}
-    \label{section:liteature_result}
+    Second filtering will be done to eliminate the duplications, which can occur when GS and SCP give the same result.
+    \begin{itemize}
+        \item Remove Duplications
+        \item Remove the dissertations which are not English manually
+    \end{itemize}  
+    
+    Even though we already filtered the language, still some dissertations results will appear because of the auto translation which they put on the website.
+    So second time should be filtered manually.
 
-    What is the existing literature?
+    After the second filtration, the third filtering which is a manual investigation should occur with the following filtering criteria:
+    \begin{itemize}
+        \item Proper literature review should be present in the selected paper
+        \item Abstract and conclusion should be relevant to the search term
+    \end{itemize}
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width =0.45\textwidth]{LRMethod.png}
+        \caption{Literature Search Algorithm}
+        \label{fig:literaturesearchalgorithm}
+    \end{figure} 
+    \begin{figure}
+        \centering
+        \includegraphics[width =0.45\textwidth]{LRMethodLegacy.png}
+        \caption{Literature Search Algorithm Legend}
+        \label{fig:literaturesearchalgorithmlegend}
+    \end{figure}
 
-    \subsection{Summary}
-    \label{section:liteature_summary}
+    
+
+    %TODO: ADD THE METHOD HERE
+
+    
+    \subsection{Result}~\label{section:liteature_result}
+    The following results were achieved by selecting several  search terms, which is 
+    \subsubsection*{Digital Twin Quality}\label{subsection:Digital Twin Quality}
+    
+    First filtering is done for the search term "digital twin quality", meanwhile GS gave 41 different results, and SCP gave only 3 results.
+    After the second filtering process, 3 duplications and 31 different results were found. 10 dissertations were not in English.
+    After the third filtering process, 9 dissertations passed and the rest is rejected.
+
+    \subsubsection*{Digital Twin Testing}\label{subsection:Digital Twin Quality}
+    %What is the existing literature?
+
+    \subsection{Summary}~\label{section:liteature_summary}
 
     What do we learn from existing literature?
     (Existing literature does at most partially solve our problem!)
 
-    \section{Case study (FELICE)}
-    \label{section:case}
+    \section{Case study (FELICE)}~\label{section:case}
 
     TODO (Explain the limitations of the FELICE digital twin! It is not a complete digital twin according to literature! It includes this, it is missing this.)
 
-    \subsection{Methodology}
-    \label{section:case_methodology}
+    \subsection{Methodology}~\label{section:case_methodology}
 
     TODO
 
-    \subsection{Result}
-    \label{section:case_result}
+    \subsection{Result}~\label{section:case_result}
 
     TODO
 
-    \subsection{Summary}
-    \label{section:case_summary}
+    \subsection{Summary}~\label{section:case_summary}
 
     TODO
 
-    \section{Conclusion}
-    \label{section:conclusion}
+    \section{Conclusion}~\label{section:conclusion}
     TODO
 
     \section*{Acknowledgements}
