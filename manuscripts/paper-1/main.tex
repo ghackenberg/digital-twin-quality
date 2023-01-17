@@ -1,6 +1,7 @@
 \documentclass[conference]{IEEEtran}
 
 \usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage{amsfonts}
 
 \begin{document}
 
@@ -63,7 +64,7 @@
 
     \subsection{Research questions}
 
-    What is quality of digital twins? What is good quality? What is bad quality? What is impact of good quality? What is impact of bad quality? What are typical quality issues? How to assess quality? ...
+    What is a digital twin? What is quality of digital twins? What is good quality? What is bad quality? What is impact of good quality? What is impact of bad quality? What are typical quality issues? How to assess quality? ...
 
     \subsection{Scientific contributions}
 
@@ -94,6 +95,74 @@
 
     What do we learn from existing literature?
     (Existing literature does at most partially solve our problem!)
+
+    \section{Digital twin framework}
+    \label{section:framework_1}
+
+    TODO
+
+    \subsection{Real system}
+
+    TODO
+
+    \subsubsection{Real state (RS)}
+
+    TODO
+
+    \subsubsection{Real state history (RSH)}
+
+    TODO
+
+    \[
+        RSH: \mathbb{R} \rightarrow RS
+    \]
+
+    \subsubsection{Real state transition function (RSTF)}
+
+    TODO
+
+    \[
+        RSTF: RS \rightarrow RS
+    \]
+
+    \subsubsection{Real state prediction (RSP)}
+
+    TODO
+    
+    \subsection{Digital twin}
+
+    TODO
+
+    \subsubsection{Digital state (DS)}
+
+    TODO
+
+    \subsubsection{Digital state history (DSH)}
+
+    In our digital world we cannot represent the continuous time domain of the real system completely.
+    Instead, we have to discretize the time domain and sample the state history function.
+
+    \[
+        RSH: \mathbb{N} \rightarrow RS
+    \]
+
+    \subsubsection{Digital state transition function (DSTF)}
+
+    Since we do not have perfect knowledge about real state and real state transition function, our simulation models typically are non-deterministic or probabilistic.
+    Here we take a probabilistic viewpoint.
+
+    \[
+        DSRF: DS \rightarrow \mathbb{P}(DS)
+    \]
+
+    \subsubsection{Digital state prediction (DSP)}
+
+    TODO
+
+    \section{Digital twin quality framework}
+    \label{section:framework_2}
+
+    TODO
 
     \section{Case study (FELICE)}
     \label{section:case}
