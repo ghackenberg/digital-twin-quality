@@ -46,25 +46,54 @@
     \section{Introduction}\label{section:introduction}
     A popular but highly misunderstood notion with fuzzy boundaries is the `digital twin.' 
     The misunderstanding began with the Apollo 13 mission, which many authors claim, had a first digital twin The twin of Apollo 13 was merely a tangible replication of the spacecraft that has been utilized in the physical simulations. Even though the `digital' aspect was expected to be present, 
-    it wasn't. The historic D-day map (also known as the Big Board) in Southwick House England, which was used simultaneously before and during operation, can be argued to be similar. 
+    it wasn't~\cite{GrievesApollo13}. The historic D-day map (also known as the Big Board) in Southwick House England, which was used simultaneously before and during operation, can be argued to be similar. 
     The board was a twin of the operation, and it included models of battalions and ships that reflected the actual locations of the corresponding formations. 
-    Furthermore, synchronization was implemented with radio communication to give directives from the real system to control the operation flow and also to update the twin's state.
+    Furthermore, synchronization was implemented with radio communication to give directives from the real system to control the operation flow and also to update the twin's state~\cite{AMRC}.
 
-    To begin analyzing `digital' twins and their components, authors needed to come up with a concrete description that involved a great level of abstraction. 
-    The definition of a digital twin given by the digital twin consortium, according to the authors, is the best one currently available: `A digital twin is a virtual representation of real-world entities and processes, synchronized at a specified frequency and fidelity.'.  
+    To begin analyzing `the digital twin' and its quality, authors needed to come up with a concrete description that involved a great level of abstraction. 
+    The definition of a digital twin given by the digital twin consortium, according to the authors, is the best one currently available: `A digital twin is a virtual representation of real-world entities and processes, synchronized at 
+    a specified frequency and fidelity.'~\cite{digitaltwinconsortium2022}.
+
     What makes that definition the best? Because it provides the highest abstraction level among the definitions of digital twins that we discovered during our literature analysis. The following is a poor example of abstraction taken from the initial definition of a digital twin from NASA's roadmap from 2010: `A digital twin is an integrated multi-physics, multi-scale, probabilistic simulation of a 
-    vehicle or system that uses the best available physical models, sensor updates, fleet history, etc., to mirror the life of its flying twin.'
-    The digital twins that we encounter nowadays don't typically fall under NASA's definition. We want to stress that NASA's definition of a  digital twin is accurate since, as we will see, digital twins are systems that are `context' centered. 
+    vehicle or system that uses the best available physical models, sensor updates, fleet history, etc., to mirror the life of its flying twin~\cite{NASA}.'
+    The digital twins that we encounter nowadays don't typically fall under NASA's definition. We want to stress that NASA's definition of a  digital twin is accurate since digital twins are systems that are `context' centered. 
     This definition, therefore, is appropriate in the context of NASA's use case and is thus accurate, but the abstraction level is not sufficiently high to allow for a thorough understanding of digital twins.
 
-    In addition, we would want to emphasize the significance of Grieves' 2006 description of digital twins in the PLM book, which traces the origins of the concept. Although it featured the same components as a digital twin at the time, it was known as an Information Mirroring Model (IM). They decided to use NASA's Digital Twin rather than IM after co-authoring the article with  Vickers.
-    We presented a definition of digital twins(consortium one) that we agreed on, but we haven't reached an agreement yet. We must therefore analyze the digital twins to comprehend what a digital twin is. We may probably all agree that the line delineating the chosen definition of the digital twin is blurry enough that we cannot easily perceive it. Starting with Grieves' perspective, we'll move forward from there. Concurrently, the definition of the consortium will show us the route.
+    In addition, we would want to emphasize the significance of Grieves' 2006 description of digital twins in the PLM book,
+    which traces the origins of the concept. Although it featured the same components as a digital twin at the time, it was known as an Information Mirroring Model (IM)~\cite{GrievesPLMBook}. 
+    They decided to use NASA's Digital Twin rather than IM after co-authoring the article with Vickers.
 
+    \begin{figure}
+        \centering
+        \includegraphics[width =0.45\textwidth]{GrievesInformationMirroringModel.png}
+        \caption{Grieves Information Mirroring Model}
+        \label{fig:GrievesInformationMirroringModel}
+        \cite{GrievesPLMBook}
+    \end{figure}
+
+    \subsection*{Real System}
+
+    The term `real system' in the context of digital twins refers to a system that is a tangible thing that has the characteristics of a system. Depending on the system's context, we can use black-box, gray-box, or white-box methodologies to study the system. 
+    The usage of various artifacts by Grieves in a system he referred to as `real space' can be seen in Figure~\ref{fig:GrievesInformationMirroringModel}.
+
+    \subsection*{Virtual System}
+    Virtual refers to an existence that exists in a computer system as opposed to a physical system. Therefore, virtual systems are abstract systems, which are nothing but an abstraction of the real system.
+    The term `abstract systems' refers to systems that have had their set of variables and functions `abstracted' so that they may be computed by a solver, which in this case solver could be either the human brain or a computer.
+    Additionally, just because a system is an abstract system doesn't mean it lacks a physical body; rather, it is abstracted. 
+    Virtual systems can't exist on their own since, like abstract systems, they require a medium to exist. Computer systems, a higher system of virtual systems, are an ideal medium for virtual systems.
+    
+    \subsection*{Connection Between the Real and Virtual System}
+    If we step back and observe the consortium's definition in~\ref{section:introduction}, which we told is the best definition we could find, 
+    it talks about synchronization, fidelity and some specified frequency. As can be guessed these terms are attributes of the real-virtual connection.
+    Synchronization is used here instead of twinning, mirroring and connecting. 
+    Real-time is a time value, which is most of the time a constant value and defines the update frequency of the state of the virtual system of interest relative to the system of interest.
+    Fidelity is the degree of precision and accuracy of our digital twin, relative to the system of interest.
+    These words are highly dependent on the context of the digital twin.
     \subsection{Research objective}
     Find an approach to assess the quality of Digital twins~\cite{Jones2020}
 
     \subsection{Research question}\label{section: Research Questions}
-    What is quality of digital twins?
+    What is the quality of digital twins?
 
     \subsection{Research methodology}
     TODO
