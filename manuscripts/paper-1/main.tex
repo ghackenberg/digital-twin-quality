@@ -114,7 +114,7 @@
     Thus, when these definitions are combined, we obtain the following: `Quality is a degree to which a set of inherent distinguishing features of a system fulfills a need or expectation that is stated, generally implied or obligatory'. 
     It should be highlighted that there are various quality definitions by so-called `Quality Gurus', but the authors decided to expand the standard definition of ISO 9000.
 
-    \subsection{Product quality and Management}
+    \subsection*{Product quality and Management}
     A product is a tangible or intangible system that satisfies the needs or wants of a customer. It could be a physical system like a car, or an abstract system, like a digital twin. 
     Regarding product quality, there are two different aspects~\cite{GrievesPLMBook}.
     First, quality is an attribute of a product, which meets product specifications. Specifications are mostly defined by the supra-systems subsystems, such as by the stakeholders within the supra-system,  If the stakeholders' expectations, or needs, are met, we can consider high quality.
@@ -128,7 +128,7 @@
     such as Six Sigma to reduce defects and improve efficiency. These concepts are not new, for example, ISO 9001 standard has been established in 1987, 
     and is still being regularly updated~\cite{ISO9001DebunkingtheMyth}.
 
-    \subsection{Software quality}
+    \subsection*{Software quality}
     Software is a  virtual system, which has a set of instructions, data or programs used to perform a specific task. 
     All virtual systems, which we described above, need a medium to live on, hence these systems can be found in a computer or other electronic device.  
     Software quality according to IEEE 730-2014, is: 
@@ -137,7 +137,7 @@
     As can be seen, it's a generic explanation of a quality, which doesn't differ much from the explanation we gave above. 
 
     Software quality management techniques come from already used manufacturing techniques in the industries.
-    For example, the quality assurance which we mentioned above, also has been used as a software quality management activity with some differences. 
+    For example, the quality assurance that we mentioned above, also has been used as a software quality management activity with some differences. 
     In manufacturing, products will never exactly meet a specification, due to errors in the machining so there should be some tolerance for the manufacturing. 
     But in the software systems, or more precisely in the virtual systems, it's most of the time, not the case. 
     Also its nearly impossible to conclude that, the software product fully meets its specifications\cite{SoftwareEngineering}.
@@ -146,7 +146,17 @@
     Performance efficiency, compatibility, usability, reliability, security, maintainability and portability.\cite{ISO/IEC:25010}
     Of course, not all aspects can be inspected and the person, who is responsible for the quality of the product, should choose the critical aspects of the software product and further the process according to that decision.
 
-    \subsection{Digital twin quality}
+    \subsection*{Simulation Quality}
+    Simulation models are not merely virtual systems; they are also abstracted systems, which are nothing more than imitations or, to be more precise, abstractions of real systems. 
+    We are simulating every day when we are trying to predict the future outcome or abstractly thinking about the past state of some occurred event. 
+    An important element to remember is that we mentally model the event before executing the simulation. However, most of the simulation processes we see today, 
+    are computer-based, with software programs. These programs include ANSYS\cite{Ansys}, ABAQUS\cite{Abaqus}, and AnyLogic\cite{AnyLogic}, as examples. Consequently, the idea of simulation software programs emerges.
+
+    Validation and verification can be used to evaluate the quality characteristics of the simulation model \cite{StewartSimulation} \cite{VerificationValidationSergent} \cite{OsmanBalci}. 
+    Validation is the process of evaluating the simulation quality of the model in comparison to the real system from the perspective of the model's intended applications. 
+    On the other hand, verification is a procedure to evaluate a simulation model's implementation and its associated data concerning the conceptual description and specifications of the model developer. 
+
+    \subsection*{Digital twin quality}
     To analyze current DT literature within the concept of digital twin quality literature analysis was executed. 
     The analysis especially focused on how the digital twin quality is mentioned and assessed within the academic dissertations.
 
@@ -191,23 +201,20 @@
     \subsection*{Important Findings}
 
     Important findings are the following;
-
     \begin{itemize}
         \item Shcherba et al. center their attention on the model quality, which is an observation for a digital twin subsystem. Despite being a crucial component of the digital twin, models alone cannot be used to assess the quality of the digital twin.
         \item A consistency evaluation approach for digital twin models was developed by He Zhang et al. and can be used to assess the quality of the models. Additionally, the authors discuss crucial ideas like consistency between real and virtual systems and ultra-fidelity models. The improvement of the service component is the primary emphasis of this article. Tao's five-dimensional digital twin concept includes this component.
-        \item He Zhang et al. introduce the updating method for digital twin models in yet another insightful article. Once more, the accuracy and coherence of the model concepts were addressed.
+        \item He Zhang et al. introduces the updating method for digital twin models in yet another insightful article. Once more, the accuracy and coherence of the model concepts were addressed.
         \item Selch et al. work is the only one that discusses the quality of the digital twin. The paper presents a machine-learning approach based on Bayesian networks to track the quality of the digital twin. The unique aspect of this study is that the author, rather than just analyzing the digital twin as a single system, determines the contributions of subsystems to forecast the overall quality of the digital twin. The digital couplings, which are linkages between the subsystems, are also mentioned by Selch et al. as a source of extra uncertainty. 
         Since only one digital twin has been used in practice, multiple subsystem digital twins have not been validated.
     \end{itemize}
-
-
 
     \section{Initial approach in the FELICE project}
     Inspired by ISO 25010...
 
     \subsection{First criterion: Correctness}
-    
     \subsubsection{Definition}
+    Correctness, 
     Car vs airplane (with nice pictures!)
 
     \subsubsection{Motivation}
