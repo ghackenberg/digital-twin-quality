@@ -213,56 +213,62 @@
     Inspired by ISO 25010...
 
     \subsection{First criterion: Correctness}
-    \subsubsection{Definition}
-    Correctness, 
+    Correctness is a  derived word from the adjective correct, which means that something is error-free regarding a fact or truth~\cite{OxfordDictionary}. 
+    In the context of the digital twins, our fact or truth is a real system hence, 
+    correctness is a grade of quality, that indicates an error between the real system and a digital twin system.
+    Meanwhile, the quality of being correct is described by the term accuracy. Another important word is precision, 
+    which refers to the ability to be precise and accurate\cite{OxfordDictionary}. 
+    From a technical standpoint, we use precision in mathematics by the number of provided digits. 
+    For instance, binary64 has 53 significant digits while binary32 has 24, displaying the precision of the structure \cite{IEE754}.  
     Car vs airplane (with nice pictures!)
-
-    \subsubsection{Motivation}
-    TODO
 
     \subsubsection{Findings from FELICE}
     TODO
 
     \subsection{Second criterion: Completeness}
-    
-    \subsubsection{Definition}
-    Car vs engine (with nice pictures!)
-
-    \subsubsection{Motivation}
-    TODO
+    Complete can be used as an adjective, attribute, or verb with an object. Completeness is a word that is derived from complete \cite{OxfordDictionary}.
+    We'll use the adjectival form which describes the word "complete" as having all the necessary or appropriate parts.
+    One should first analyze and synthesize the real system to identify the subsystems and related systems in the supra-system before evaluating the completeness of the digital twin. 
+    Completeness can be assessed after analysis and synthesis by contrasting the subsystems of the real world with those in the digital twin.
 
     \subsubsection{Findings from FELICE}
     TODO
 
     \subsection{Third criterion: Fidelity}
-    
-    \subsubsection{Definition}
-    Linear vs differential (with nice pictures!)
-
-    \subsubsection{Motivation}
-    TODO
+    The concept of fidelity has garnered significant attention in recent years and continues to be an important area of research in digital twins.
+    In the context of digital twins, Fidelity refers to the degree of exactness with which the real system is copied and represented.
+    Low-fidelity indicates a simplified representation, while high-fidelity refers to an accurate and detailed representation of the real system.
+    This quality attribute plays a crucial role in evaluating the effectiveness of digital twins in accurately capturing the behavior and properties of real-world systems. 
+    \subsubsection*{Fidelity vs Correctness}
+    Correctness is a functional quality attribute, which assesses the behavior of the digital twin systems, by how accurately the results with the given precision match the behavior of the real system or more
+    specifically outputs with the same given inputs. 
+    This quality attribute focuses on the behavior of the system.
+    On the other hand, fidelity is another quality attribute to consider. 
+    It deals with the level of exactness and detail in the digital twin system's representation. 
+    Fidelity concerns itself, with how the digital-twin system is exactly relative to the real system with a certain level of detail, which is more to do with the depiction or representation of the digital twin systems, rather than their behavior of them.
 
     \subsubsection{Findings from FELICE}
     TODO
 
     \subsection{Fourth criterion: Efficiency}
-    
-    \subsubsection{Definition}
-    1ms vs 1min (with nice pictures!)
-
-    \subsubsection{Motivation}
-    TODO
+    Efficiency refers to the quality of being efficient, and efficiency can be explained as achieving maximum productivity with minimum wasted effort or expense. 
+    The concept of efficiency is tightly coupled with productivity, which refers to the quality of being productive. The word productive can be explained as producing or being able to produce large amounts of goods \cite{OxfordDictionary}.
+    For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum waste during the process is desired. Goods of the digital twin are nothing but information, 
+    which Grieves first indicated with this Information Mirror Model \cite{GrievesPLMBook}. So to assess the efficiency, one should inspect the sinks and sources of the digital twin system, to identify the waste, expense and productivity. 
 
     \subsubsection{Findings from FELICE}
     TODO
 
     \subsection{Fifth criterion: Evolvability}
-    
-    \subsubsection{Definition}
-    Efforts to adapt the digital twin to new circumstances (e.g.\ add a new machine, replace the machine, etc.)
+    TODO CITE
+    A system's capability to enhance its suitability to its environment through alterations to both its internal and functional structure is referred to as evolvability. Another term used to describe the response to changes in the environment is adaptability. 
+    However, this concept differs from evolvability in that it only affects a system's internal or functional structure temporarily. In contrast, evolvable systems undergo definite changes in their structures.  
+    For instance, a digital twin, which is a virtual system, can be designed to be more flexible and scalable, allowing for easy updates and the addition of new features. 
+    These updates and new features will result in definite changes to the structure of the system. On the other hand, a responsive web design is an adaptable system, capable of adjusting its size and layout depending on the user's hardware. 
+    As we have seen in CITE, the update method shows that digital twins are evolvable systems,
+    hence this attribute should be considered when the digital twin's quality is inspected. To assess the evolvability attribute, scalability analysis, reusability analysis, modifiability analysis, testability analysis, and maintainability analysis can be performed. 
 
-    \subsubsection{Motivation}
-    TODO
+
 
     \subsubsection{Findings from FELICE}
     TODO
