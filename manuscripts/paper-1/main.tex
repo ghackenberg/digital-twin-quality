@@ -82,7 +82,7 @@
     Virtual systems can't exist on their own since, like abstract systems, they require a medium to exist. Computer systems, a higher system of virtual systems, are an ideal medium for virtual systems.
     
     \subsection*{Connection Between the Real and Virtual System}
-    If we step back and observe the consortium's definition in~\ref{section:introduction}, which we told is the best definition we could find, 
+    If we step back and observe the consortium's definition in Section~\ref{section:introduction}, which we told is the best definition we could find, 
     it talks about synchronization, fidelity and some specified frequency. As can be guessed these terms are attributes of the real-virtual connection.
     Synchronization is used here instead of twinning, mirroring and connecting. 
     Real-time is a time value, which is most of the time a constant value and defines the update frequency of the state of the virtual system of interest relative to the system of interest.
@@ -161,45 +161,42 @@
 
     \subsubsection*{Literature Search Methodology}
     Google Scholar (GS), Scopus (SCP) and Research Rabbit (RR) tools are used to fulfill our requirements for the literature review. Since there is a great number of digital twin publications in academics,
-    narrowing the research is necessary, so the following algorithm with several levels of filtering will be applied.
+    narrowing the research is necessary, so the following algorithm with two levels of filtering will be applied.
 
-    First filtering will be done with the following criteria
-
+    Initial filtering will be done with the following criteria
     \begin{itemize}
         \item  Dissertations should be written in English and published in a journal/conference.
-        \item  Dissertations should not be older than 2016
         \item  Search term should be exactly searched
     \end{itemize}
 
     Filtering query calls for the GS and SCP are the following
     \begin{itemize}
         \item Google Scholar = `search term'
-        \item Scopus = ALL (`digital twin quality') AND PUBYEAR > 2016 AND PUBYEAR < 2023 AND (LIMIT-TO (LANGUAGE, `English'))
+        \item Scopus = ALL (`digital twin quality') AND (LIMIT-TO (LANGUAGE, `English'))
     \end{itemize}
-    Also want to note that, in the GS, there isn't a function that filters the dates, instead the user should click the Since 2016 option to filter the dates.
-
-    Second filtering will be done to eliminate the duplications and even though authors already filtered the search for the English language, 
-    still some results without the English language will appear. Again, language filtering should be done to clean the results.
+    After the initial filtration, the second filtering which is a manual investigation should occur with the following filtering criteria:
     \begin{itemize}
-        \item Remove Duplications
-        \item Remove the dissertations which are not English manually
-    \end{itemize}
-
-    After the second filtration, the third filtering which is a manual investigation should occur with the following filtering criteria:
-    \begin{itemize}
+        \item  Remove Duplications
+        \item  Remove the dissertations which are not English manually
         \item  Proper literature review should be present in the selected dissertation
         \item  Abstract and conclusion should be relevant to the search term
     \end{itemize}
 
-    If an interesting dissertation(s) would be found during the reading, it will be checked again with the first filter.
+    If an interesting dissertation(s) would be found during the reading, it will be checked again with the initial filter.
 
     \subsection*{Literature Result}
-    First filtering was done for the search term `digital twin quality', meanwhile GS gave 41 different results, and SCP gave only 3 results. After the second filtering process, 3 duplications and 31 different results were found and 10 dissertations were not in English. 
-    After the third filtering process, 9 dissertations passed and the rest is rejected.
+    The search term `digital twin quality' initially yielded 41 results on Google Scholar and three on Scopus. 
+    After the second filtering stage, six duplicate dissertations were removed, along with ten dissertations that were not in English. As a result, only nine dissertations passed all the criteria and were inspected, while the remainder were rejected.
+    
+    The search term `digital twin verification' initially yielded, resulting in nineteen hits on Google Scholar and zero on Scopus. After the second filtering stage, one duplicate dissertation was removed, along with two dissertations that were not in English.
+    As a result, all dissertations were rejected. 
 
-    \subsection*{Important Findings}
+    The search term `digital twin validation' was filtered initially, resulting in fifty-nine hits on Google Scholar and zero on Scopus. After the second filtering stage, four duplicate dissertations were removed, along with 4 dissertations that were not in English.
+    As a result, eight dissertations passed all the criteria and were inspected while the remainder were rejected.
 
-    Important findings are the following;
+    \subsection*{Findings}
+
+    The findings are the following;
     \begin{itemize}
         \item Shcherba et al. center their attention on the model quality, which is an observation for a digital twin subsystem. Despite being a crucial component of the digital twin, models alone cannot be used to assess the quality of the digital twin~\cite{Shcherba}.
         \item A consistency evaluation approach for digital twin models was developed by He Zhang et al. and can be used to assess the quality of the models. Additionally, 
@@ -207,6 +204,10 @@
         \item He Zhang et al. introduces the updating method for digital twin models in yet another insightful article. Once more, the accuracy and coherence of the model concepts were addressed~\cite{ZHANGUPDATEMETHOD}.
         \item Selch et al. work is the only one that discusses the quality of the digital twin. The paper presents a machine-learning approach based on Bayesian networks to track the quality of the digital twin. The unique aspect of this study is that the author, rather than just analyzing the digital twin as a single system, determines the contributions of subsystems to forecast the overall quality of the digital twin. The digital couplings, which are linkages between the subsystems, are also mentioned by Selch et al. as a source of extra uncertainty. 
         Since only one digital twin has been used in practice, multiple subsystem digital twins have not been validated~\cite{QualityMonitoringofCoupledDigitalTwins}.
+        \item The stability of the digital twin models was assessed using the Kolmogorov-Smirnov statistical test, which measures the degree of similarity between the probability distribution of the model's predictions and the distribution of the actual data~\cite{RadarDigitalTwin}.
+        \item Edward Y. Hua et al. identify five open problems with digital twin model validation, including modeling realism, data uncertainty, system dynamics, use-case alignment, and reporting invalid modes. To address these challenges, the authors propose a digital-twin model validation framework. Additionally, the paper highlights three areas for future research, 
+        including uncertainty and sensitivity analysis, model validation of system-of-systems, and combining expert knowledge and collected data~\cite{ValidationofDigitalTwins}.
+        \item Shotaro Hamato et al. demonstrated real-time anomaly detection was successfully demonstrated using the Unscented Kalman Filter with the digital twin model, but determining the appropriate threshold for anomaly detection remains an issue~\cite{JapeneseKalmanFilterCorrectness}.
     \end{itemize}
 
     \section{Initial approach in the FELICE project}
@@ -219,17 +220,16 @@
     Meanwhile, the quality of being correct is described by the term accuracy. Another important word is precision, 
     which refers to the ability to be precise and accurate\cite{OxfordDictionary}. 
     From a technical standpoint, we use precision in mathematics by the number of provided digits. 
-    For instance, binary64 has 53 significant digits while binary32 has 24, displaying the precision of the structure \cite{IEE754}.  
-    Car vs airplane (with nice pictures!)
-
+    For instance, binary64 has 53 significant digits while binary32 has 24, displaying the precision of the structure~\cite{IEE754}.  
+    
     \subsubsection{Findings from FELICE}
     TODO
 
     \subsection{Second criterion: Completeness}
-    Complete can be used as an adjective, attribute, or verb with an object. Completeness is a word that is derived from complete~\cite{OxfordDictionary}.
-    We'll use the adjectival form which describes the word `complete' as having all the necessary or appropriate parts.
-    One should first analyze and synthesize the real system to identify the subsystems and related systems in the supra-system before evaluating the completeness of the digital twin. 
-    Completeness can be assessed after analysis and synthesis by contrasting the subsystems of the real world with those in the digital twin.
+    According to the Oxford Dictionary, `complete'  can function as an adjective, attribute, or verb with an object\cite{OxfordDictionary}. When used as an adjective, it describes something 
+    as having all the necessary or appropriate parts. To evaluate the completeness of a digital twin, 
+    one must first analyze and synthesize the real system to identify subsystems and their relations with related systems in the supra-system. 
+    After this initial analysis, completeness can be assessed by comparing the subsystems and relations of the real world with those of the digital twin.
 
     \subsubsection{Findings from FELICE}
     TODO
@@ -254,7 +254,7 @@
     Efficiency refers to the quality of being efficient, and efficiency can be explained as achieving maximum productivity with minimum wasted effort or expense. 
     The concept of efficiency is tightly coupled with productivity, which refers to the quality of being productive. The word productive can be explained as producing or being able to produce large amounts of goods~\cite{OxfordDictionary}.
     For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum waste during the process is desired. Goods of the digital twin are nothing but information, 
-    which Grieves first indicated with this Information Mirror Model~\cite{GrievesPLMBook}. So to assess the efficiency, one should inspect the sinks and sources of the digital twin system, to identify the waste, expense and productivity. 
+    which Grieves first indicated with his Information Mirror Model~\cite{GrievesPLMBook}. So to assess the efficiency, one should inspect the sinks and sources of the digital twin system, to identify the waste, expense and productivity. 
 
     \subsubsection{Findings from FELICE}
     TODO
