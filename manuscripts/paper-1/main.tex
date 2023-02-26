@@ -93,6 +93,7 @@
 
     \subsection{Research question}\label{section: Research Questions}
     What is the quality of digital twins?
+    What is the state art of digital twin quality?
 
     \subsection{Research methodology}
     TODO
@@ -104,7 +105,6 @@
     This definition shows the relativity of quality.
 
     According to ISO 9000:2015, quality is the degree to which a set of inherent characteristics of an object fulfills requirements~\cite{ISO9000}. Several words need to be expanded, to understand this definition. 
-    
     
     First, the standard also explains characteristics as distinguishing features such as physical, sensory, behavioral, temporal, ergonomic and functional. 
     Instead of an object, a system can be used for more generalization.
@@ -211,28 +211,27 @@
     \end{itemize}
 
     \section{Initial approach in the FELICE project}
-    Inspired by ISO 25010...
+    FELICE addresses a critical problem in robotics which is the effective integration of human and robot abilities in a collaborative setting. This challenge requires the development of sophisticated algorithms and techniques that facilitate seamless communication, 
+    cooperation, and coordination between humans and robotic agents. By addressing this issue, FELICE tries to represent a 
+    significant advancement in the field of robotics and has the potential to enhance the effectiveness and efficiency of a wide range of human-robot collaborative tasks with the consideration of safety~\cite{FELICE}.
+
+    In the present study, we inspected several artifacts to evaluate the quality of the digital twin for the FELICE project, which is currently in the design phase. These artifacts included process videos showing the current assembly procedure, a scope definition, a requirements specification, a general and operational conceptual model, 
+    and a discrete event simulation module. We assessed the quality of these artifacts based on four crucial quality attributes: correctness, completeness, fidelity, efficiency, and evolvability.
 
     \subsection{First criterion: Correctness}
     Correctness is a  derived word from the adjective correct, which means that something is error-free regarding a fact or truth~\cite{OxfordDictionary}. 
-    In the context of the digital twins, our fact or truth is a real system hence, 
-    correctness is a grade of quality, that indicates an error between the real system and a digital twin system.
+    In the context of the digital twins, our fact or truth is a real system hence, correctness is a grade of quality, that indicates an error between the real system and a digital twin system.
     Meanwhile, the quality of being correct is described by the term accuracy. Another important word is precision, 
     which refers to the ability to be precise and accurate\cite{OxfordDictionary}. 
     From a technical standpoint, we use precision in mathematics by the number of provided digits. 
     For instance, binary64 has 53 significant digits while binary32 has 24, displaying the precision of the structure~\cite{IEE754}.  
     
-    \subsubsection{Findings from FELICE}
-    TODO
-
     \subsection{Second criterion: Completeness}
     According to the Oxford Dictionary, `complete'  can function as an adjective, attribute, or verb with an object\cite{OxfordDictionary}. When used as an adjective, it describes something 
     as having all the necessary or appropriate parts. To evaluate the completeness of a digital twin, 
     one must first analyze and synthesize the real system to identify subsystems and their relations with related systems in the supra-system. 
     After this initial analysis, completeness can be assessed by comparing the subsystems and relations of the real world with those of the digital twin.
 
-    \subsubsection{Findings from FELICE}
-    TODO
 
     \subsection{Third criterion: Fidelity}
     The concept of fidelity has garnered significant attention in recent years and continues to be an important area of research in digital twins.
@@ -247,17 +246,11 @@
     It deals with the level of exactness and detail in the digital twin system's representation. 
     Fidelity concerns itself, with how the digital-twin system is exactly relative to the real system with a certain level of detail, which is more to do with the depiction or representation of the digital twin systems, rather than their behavior of them.
 
-    \subsubsection{Findings from FELICE}
-    TODO
-
     \subsection{Fourth criterion: Efficiency}
     Efficiency refers to the quality of being efficient, and efficiency can be explained as achieving maximum productivity with minimum wasted effort or expense. 
     The concept of efficiency is tightly coupled with productivity, which refers to the quality of being productive. The word productive can be explained as producing or being able to produce large amounts of goods~\cite{OxfordDictionary}.
     For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum waste during the process is desired. Goods of the digital twin are nothing but information, 
     which Grieves first indicated with his Information Mirror Model~\cite{GrievesPLMBook}. So to assess the efficiency, one should inspect the sinks and sources of the digital twin system, to identify the waste, expense and productivity. 
-
-    \subsubsection{Findings from FELICE}
-    TODO
 
     \subsection{Fifth criterion: Evolvability}
     A system's capability to enhance its suitability to its environment through alterations to both its internal and functional structure is referred to as evolvability. Another term used to describe the response to changes in the environment is adaptability. 
@@ -268,39 +261,40 @@
     hence this attribute should be considered when the digital twin's quality is inspected. To assess the evolvability attribute, scalability analysis, reusability analysis, modifiability analysis, testability analysis, and maintainability analysis can be performed. 
 
 
+    \begin{figure}[htbp]
+        \includegraphics[width=\columnwidth]{quality_inspection_results.png}
+        \caption{Overall Quality Inspection Results}
+        \label{fig:QualityInspectonResults}
 
-    \subsubsection{Findings from FELICE}
-    TODO
+    \end{figure}\begin{figure}[htbp]
+        \includegraphics[width=\columnwidth]{quality_inspection_results_with_artifacts.png}
+        \caption{ Quality Inspection Results Categorized with Artifacts}
+        \label{fig:QualityInspectonResultsWithArtifacts}
+    \end{figure}
+
+    As can be seen in Figures ~\ref{fig:QualityInspectonResults} and ~\ref{fig:QualityInspectonResultsWithArtifacts}, based on our inspection of the given artifacts,
+    we have identified a total of seven correctness issues, eleven completeness issues, and two fidelity issues. 
+    It is important to note that we were unable to inspect for efficiency as the project is still in the design phase, 
+    and we do not have enough data to make estimations for this attribute. Additionally, all of our inspections were conducted manually, 
+    which is susceptible to human error and inspector bias.
+
+
+    \subsection{Future approach in the FELICE project}
+    \label{section:framework_1}
+    To mitigate potential human bias and enhance the data-driven approach for quality assurance, ongoing research aims to address these issues. 
+    Furthermore, the assessment of digital twin quality can be significantly improved by obtaining data from real systems, thereby enabling better visibility and a more robust evaluation. As such, the use of empirical data in combination with machine learning techniques can offer a more objective and reliable means of evaluating the correctness, completeness, fidelity, efficiency, and evolvability of digital twins. Additionally, given the manual nature of the current inspections, it is important to acknowledge the potential for inspector bias, which may impact the accuracy of the assessments. 
+    By leveraging technology to automate certain aspects of the evaluation process, it is possible to reduce the potential for such biases and improve the overall quality of digital twin assessments.
 
  
-
-    \section{Future approach in the FELICE project}
-    \label{section:framework_1}
-    TODO
-
-    \begin{figure}[htbp]
-        \includegraphics[width=\columnwidth]{Digital Twin Deviation.png}
-        \caption{TODO}
-        \label{todo-2}
-    \end{figure}
-
-    \begin{figure}[htbp]
-        \includegraphics[width=\columnwidth]{Digital Twin.png}
-        \caption{TODO}
-        \label{todo-1}
-    \end{figure}
-
-    \begin{figure}[htbp]
-        \includegraphics[width=\columnwidth]{Continuous Quality Control.png}
-        \caption{TODO}
-        \label{todo-3}
-    \end{figure}
-
    
 
     \section{Conclusion}~\label{section:conclusion}
-    TODO
-
+    The success of the digital twin system depends on its quality, which requires careful evaluation based on several crucial quality attributes. The correctness of the system is measured by how accurately it behaves compared to the real system.
+    Completeness assesses whether the digital twin's subsystems and relations match those of the real system. 
+    Fidelity refers to the degree of exactness with which the real system is copied and represented.
+    Efficiency measures the productivity of the system and the minimum waste during the process. 
+    Evolvability is the system's ability to enhance its suitability to its environment through alterations to both its internal and functional structure. 
+    Evaluating these quality attributes of the FELICE digital twin system will help ensure its success in effectively integrating human and robot abilities in a collaborative setting, leading to enhanced efficiency and safety in various human-robot collaborative tasks.
     \section*{Acknowledgements}
     TODO
 
