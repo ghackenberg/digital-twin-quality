@@ -45,7 +45,7 @@
 
     \section{Introduction}\label{section:introduction}
     A popular but highly misunderstood notion with fuzzy boundaries is the `digital twin.' 
-    The misunderstanding began with the Apollo 13 mission, which many authors claim, had a first digital twin The twin of Apollo 13 was merely a tangible replication of the spacecraft that has been utilized in the physical simulations. Even though the `digital' aspect was expected to be present, 
+    The misunderstanding began with the Apollo 13 mission, which many authors claim, had a first digital twin. The twin of Apollo 13 was merely a tangible replication of the spacecraft that has been utilized in physical simulations. Even though the `digital' aspect was expected to be present, 
     it wasn't~\cite{GrievesApollo13}. The historic D-day map (also known as the Big Board) in Southwick House England, which was used simultaneously before and during operation, can be argued to be similar. 
     The board was a twin of the operation, and it included models of battalions and ships that reflected the actual locations of the corresponding formations. 
     Furthermore, synchronization was implemented with radio communication to give directives from the real system to control the operation flow and also to update the twin's state~\cite{AMRC}.
@@ -54,12 +54,12 @@
     The definition of a digital twin given by the digital twin consortium, according to the authors, is the best one currently available: `A digital twin is a virtual representation of real-world entities and processes, synchronized at 
     a specified frequency and fidelity.'~\cite{digitaltwinconsortium2022}.
 
-    What makes that definition the best? Because it provides the highest abstraction level among the definitions of digital twins that we discovered during our literature analysis. The following is a poor example of abstraction taken from the initial definition of a digital twin from NASA's roadmap from 2010: `A digital twin is an integrated multi-physics, multi-scale, probabilistic simulation of a 
+    Why do we assume this definition to be the best? Because it provides the highest abstraction level among the definitions of digital twins that we discovered during our literature analysis. The following is a poor example of abstraction taken from the initial definition of a digital twin from NASA's roadmap from 2010: `A digital twin is an integrated multi-physics, multi-scale, probabilistic simulation of a 
     vehicle or system that uses the best available physical models, sensor updates, fleet history, etc., to mirror the life of its flying twin~\cite{NASA}.'
     The digital twins that we encounter nowadays don't typically fall under NASA's definition. We want to stress that NASA's definition of a  digital twin is accurate since digital twins are systems that are `context' centered. 
-    This definition, therefore, is appropriate in the context of NASA's use case and is thus accurate, but the abstraction level is not sufficiently high to allow for a thorough understanding of digital twins.
+    Therefore, this definition is appropriate in the context of NASA's use case and is thus accurate, but the abstraction level is not sufficiently high to allow for a thorough understanding of digital twins.
 
-    In addition, we would want to emphasize the significance of Grieves' 2006 description of digital twins in the PLM book,
+    In addition, we emphasize the significance of Grieves' 2006 description of digital twins in the PLM book,
     which traces the origins of the concept. Although it featured the same components as a digital twin at the time, it was known as an Information Mirroring Model (IM)~\cite{GrievesPLMBook}. 
     They decided to use NASA's Digital Twin rather than IM after co-authoring the article with Vickers.
 
@@ -73,17 +73,17 @@
     \subsection*{Real System}
 
     The term `real system' in the context of digital twins refers to a system that is a tangible thing that has the characteristics of a system. Depending on the system's context, we can use black-box, gray-box, or white-box methodologies to study the system. 
-    The usage of various artifacts by Grieves in a system he referred to as `real space' can be seen in Figure~\ref{fig:GrievesInformationMirroringModel}.
+    The use of various artifacts by Grieves in a system he referred to as `real space' can be seen in Figure~\ref{fig:GrievesInformationMirroringModel}.
 
     \subsection*{Virtual System}
-    Virtual refers to an existence that exists in a computer system as opposed to a physical system. Therefore, virtual systems are abstract systems, which are nothing but an abstraction of the real system.
-    The term `abstract systems' refers to systems that have had their set of variables and functions `abstracted' so that they may be computed by a solver, which in this case solver could be either the human brain or a computer.
+    Virtual refers to an existence that exists in a computer system, as opposed to a physical system. Therefore, virtual systems are abstract systems, which are nothing but an abstraction of the real system.
+    The term `abstract systems' refers to systems that have had their set of variables and functions `abstracted' so that they may be computed by a solver, which in this case, a solver could be either the human brain or a computer.
     Additionally, just because a system is an abstract system doesn't mean it lacks a physical body; rather, it is abstracted. 
     Virtual systems can't exist on their own since, like abstract systems, they require a medium to exist. Computer systems, a higher system of virtual systems, are an ideal medium for virtual systems.
     
     \subsection*{Connection Between the Real and Virtual System}
-    If we step back and observe the consortium's definition in Section~\ref{section:introduction}, which we told is the best definition we could find, 
-    it talks about synchronization, fidelity and some specified frequency. As can be guessed these terms are attributes of the real-virtual connection.
+    If we step back and observe the consortium's definition in Section~\ref{section:introduction}, which we assumed, was the best definition we could find, 
+    it mentions synchronization, fidelity and some specified frequency. As can be guessed these terms are attributes of the real-virtual connection.
     Synchronization is used here instead of twinning, mirroring and connecting. 
     Real-time is a time value, which is most of the time a constant value and defines the update frequency of the state of the virtual system of interest relative to the system of interest.
     Fidelity is the degree of precision and accuracy of our digital twin, relative to the system of interest.
@@ -147,7 +147,7 @@
 
     \subsection*{Simulation Quality}
     Simulation models are not merely virtual systems; they are also abstracted systems, which are nothing more than imitations or, to be more precise, abstractions of real systems. 
-    We are simulating every day when we are trying to predict the future outcome or abstractly thinking about the past state of some occurred event. 
+    We are simulating something every day when we are trying to predict the future outcome or abstractly thinking about the past state of some occurred event. 
     An important element to remember is that we mentally model the event before executing the simulation. However, most of the simulation processes we see today, 
     are computer-based, with software programs. These programs include ANSYS\cite{Ansys}, ABAQUS\cite{Abaqus}, and AnyLogic\cite{AnyLogic}, as examples. Consequently, the idea of simulation software programs emerges.
 
@@ -156,19 +156,18 @@
     On the other hand, verification is a procedure to evaluate a simulation model's implementation and its associated data concerning the conceptual description and specifications of the model developer. 
 
     \subsection*{Digital twin quality}
-    To analyze current DT literature within the concept of digital twin quality literature analysis was executed. 
+    To analyze the state of the digital twin quality, a literature analysis was executed. 
     The analysis especially focused on how the digital twin quality is mentioned and assessed within the academic dissertations.
 
     \subsubsection*{Literature Search Methodology}
     Google Scholar (GS), Scopus (SCP) and Research Rabbit (RR) tools are used to fulfill our requirements for the literature review. Since there is a great number of digital twin publications in academics,
     narrowing the research is necessary, so the following algorithm with two levels of filtering will be applied.
 
-    Initial filtering will be done with the following criteria
+    Initial filtering has been done with the following criteria
     \begin{itemize}
         \item  Dissertations should be written in English and published in a journal/conference.
         \item  Search term should be exactly searched
     \end{itemize}
-
     Filtering query calls for the GS and SCP are the following
     \begin{itemize}
         \item Google Scholar = `search term'
@@ -177,7 +176,7 @@
     After the initial filtration, the second filtering which is a manual investigation should occur with the following filtering criteria:
     \begin{itemize}
         \item  Remove Duplications
-        \item  Remove the dissertations which are not English manually
+        \item  Remove the dissertations which are not English
         \item  Proper literature review should be present in the selected dissertation
         \item  Abstract and conclusion should be relevant to the search term
     \end{itemize}
@@ -286,8 +285,6 @@
     By leveraging technology to automate certain aspects of the evaluation process, it is possible to reduce the potential for such biases and improve the overall quality of digital twin assessments.
 
  
-   
-
     \section{Conclusion}~\label{section:conclusion}
     The success of the digital twin system depends on its quality, which requires careful evaluation based on several crucial quality attributes. The correctness of the system is measured by how accurately it behaves compared to the real system.
     Completeness assesses whether the digital twin's subsystems and relations match those of the real system. 
