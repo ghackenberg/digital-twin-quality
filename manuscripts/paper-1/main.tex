@@ -35,50 +35,48 @@
     \end{abstract}
 
     \section{Introduction}\label{section:introduction}
-    A popular but highly misunderstood notion with fuzzy boundaries is the `digital twin.' 
-    The misunderstanding began with the Apollo 13 mission, which many authors claim, had a first digital twin. The twin of Apollo 13 was merely a tangible replication of the spacecraft that has been utilized in physical simulations. Even though the `digital' aspect was expected to be present, 
-    it wasn't~\cite{GrievesApollo13}. The historic D-day map (also known as the Big Board) in Southwick House England, which was used simultaneously before and during operation, can be argued to be similar. 
-    The board was a twin of the operation, and it included models of battalions and ships that reflected the actual locations of the corresponding formations. 
-    Furthermore, synchronization was implemented with radio communication to give directives from the real system to control the operation flow and also to update the twin's state~\cite{AMRC}.
-
-    To begin analyzing `the digital twin' and its quality, authors needed to come up with a concrete description that involved a great level of abstraction. 
-    The definition of a digital twin given by the digital twin consortium, according to the authors, is the best one currently available: `A digital twin is a virtual representation of real-world entities and processes, synchronized at 
-    a specified frequency and fidelity.'~\cite{digitaltwinconsortium2022}.
-
-    Why do we assume this definition to be the best? Because it provides the highest abstraction level among the definitions of digital twins that we discovered during our literature analysis. The following is a poor example of abstraction taken from the initial definition of a digital twin from NASA's roadmap from 2010: `A digital twin is an integrated multi-physics, multi-scale, probabilistic simulation of a 
-    vehicle or system that uses the best available physical models, sensor updates, fleet history, etc., to mirror the life of its flying twin~\cite{NASA}.'
-    The digital twins that we encounter nowadays don't typically fall under NASA's definition. We want to stress that NASA's definition of a  digital twin is accurate since digital twins are systems that are `context' centered. 
-    Therefore, this definition is appropriate in the context of NASA's use case and is thus accurate, but the abstraction level is not sufficiently high to allow for a thorough understanding of digital twins.
-
-    In addition, we emphasize the significance of Grieves' 2006 description of digital twins in the PLM book,
-    which traces the origins of the concept. Although it featured the same components as a digital twin at the time, it was known as an Information Mirroring Model (IM)~\cite{GrievesPLMBook}. 
-    They decided to use NASA's Digital Twin rather than IM after co-authoring the article with Vickers.
-
-    \begin{figure}
-        \centering
-        \includegraphics[width =0.45\textwidth]{GrievesInformationMirroringModel.png}
-        \caption{Grieves Information Mirroring Model}\label{fig:GrievesInformationMirroringModel}
-       \cite{GrievesPLMBook}
-    \end{figure}
-
-    \subsection*{Real System}
-
-    The term `real system' in the context of digital twins refers to a system that is a tangible thing that has the characteristics of a system. Depending on the system's context, we can use black-box, gray-box, or white-box methodologies to study the system. 
-    The use of various artifacts by Grieves in a system he referred to as `real space' can be seen in Figure~\ref{fig:GrievesInformationMirroringModel}.
-
-    \subsection*{Virtual System}
-    Virtual refers to an existence that exists in a computer system, as opposed to a physical system. Therefore, virtual systems are abstract systems, which are nothing but an abstraction of the real system.
-    The term `abstract systems' refers to systems that have had their set of variables and functions `abstracted' so that they may be computed by a solver, which in this case, a solver could be either the human brain or a computer.
-    Additionally, just because a system is an abstract system doesn't mean it lacks a physical body; rather, it is abstracted. 
-    Virtual systems can't exist on their own since, like abstract systems, they require a medium to exist. Computer systems, a higher system of virtual systems, are an ideal medium for virtual systems.
     
-    \subsection*{Connection Between the Real and Virtual System}
-    If we step back and observe the consortium's definition in Section~\ref{section:introduction}, which we assumed, was the best definition we could find, 
-    it mentions synchronization, fidelity and some specified frequency. As can be guessed these terms are attributes of the real-virtual connection.
-    Synchronization is used here instead of twinning, mirroring and connecting. 
-    Real-time is a time value, which is most of the time a constant value and defines the update frequency of the state of the virtual system of interest relative to the system of interest.
-    Fidelity is the degree of precision and accuracy of our digital twin, relative to the system of interest.
-    These words are highly dependent on the context of the digital twin.
+    The notion of the digital twin, which has gained popularity in 
+    recent years, is often subject to vague and ambiguous envisions\cite{Review1}.
+    The mispresenting this notion began with the physical twin of the Apollo 13 spacecraft. 
+    The twin of Apollo 13 was merely a tangible replication of the spacecraft that has been utilised in the physical simulations. 
+    Even though the digital aspect was expected to be present, there wasn't\cite{GrievesApollo13}.
+    Another physical twin is the historic D-day map (also known as the Big Board) in Southwick House England, 
+    which was used simultaneously before and during operation, can be argued to be similar. 
+    The board was a twin of the operation, and it included model of battalions and ships that reflected the actual 
+    locations of the corresponding formations. Furthermore, synchronisation was 
+    implemented to give directives from the real system to control the operation 
+    flow and to update the physical twin state\cite{AMRC}.
+    In contrast, a digital twin is a virtual counterpart of a real system, which should 
+    be synchronized with a selected frequency and fidelity\cite{Review1}\cite{Review2}\cite{digitaltwinconsortium2022}.
+    
+    The envision of digital twin emerged from Grieves'es conceptual model, which was called mirrored spaces model in 2002~\cite{Originsofdigitaltwinconcept},
+    and later referenced in 2005 journal article~\cite{2005JournayArticle}. 
+    Furthermore, he introduced the information mirroring model, which was his ideal product lifecycle management tool with only one goal. 
+    The goal was to gather as much as  information about the real system to minimize the waste of system's sources such as energy, 
+    time and material. Initially this model had four main parts with real system, 
+    virtual system, connection between the real and virtual system and virtual simulations\cite{GrievesPLMBook}. 
+    Later, Grieves removed the latter, in order to simplify the model\cite{Originsofdigitaltwinconcept}.Furthermore, after co-authoring with the Vicker's in 2010, 
+    Grieves decided to use the NASA invented Digital Twin word, instead of information mirroring model\cite{Originsofdigitaltwinconcept}.
+
+
+    %%//TODO MAYBE BETTER FORMATING HERE
+    Digital twins are complex evolvable systems, that are not only adapting to the changes in the environment, 
+    also are able to change their internal structure \cite{ZHANGUPDATEMETHOD}\cite{MobusSystemTheory}. 
+    To making sure that these complex evolvable systems can provide a certain quality is a mere challange whom wants to construct a digital twin.   
+    
+    FELICE is a complex system which  addresses a critical problem in robotics which is the effective integration of human and robot abilities in a collaborative setting. 
+    This challenge requires the development of sophisticated algorithms and techniques that facilitate seamless communication, cooperation, and coordination between humans and robotic agents. 
+    By addressing this issue, FELICE tries to represent a significant advancement in the field of robotics and has the potential to enhance the effectiveness and efficiency of a wide range of 
+    human-robot collaborative tasks with the consideration of safety~\cite{FELICE}.
+
+    Main purpose of this study is to identify the quality attributes and inspect several artifacts 
+    with these to evaluate the quality of the digital twin for the FELICE project, 
+    which is currently in the design phase~\cite{FELICE}. These artifacts included process videos showing the current 
+    assembly procedure, a scope definition, a requirements specification, a general and operational conceptual model, 
+    and a discrete event simulation module. We assessed the quality of these artifacts 
+    based on five crucial quality attributes: correctness, completeness, fidelity, efficiency, and evolvability.
+
     \subsection{Research objective}
     Find an approach to assess the quality of Digital twins~\cite{Jones2020}
 
@@ -90,21 +88,14 @@
     TODO
 
     \section{State of the art on quality}
-    In the Oxford English Dictionary, the word `quality' is described as a noun as well as an adjective. The Adjective form indicates, a high standard or excellence. 
-    For example, the phrase `quality products' implies that quality adds a high standard state to the product. 
-    There are several meanings for the noun, but the one that interests us in this situation is `the standard of something as measured against other things of a similar kind. \cite{OxfordDictionary}'
-    This definition shows the relativity of quality.
+    Oxford English Dictionary describes the word quality  either as a noun or as an adjective. 
+    The adjective form indicates, a high standard or excellence. For example, the phrase quality products implies 
+    that quality adds a high standard state to the product. There are several definitions which describes a quality 
+    as a noun,however the impactful definition is the quality as a standard of an entity which is measured against the 
+    different or the similar entities\cite{OxfordDictionary}.This definition clearly shows the relativity of quality.In addition, quality be defined 
+    as the degree to which a set of inherent properties of an entity fulfills the given requirements~\cite{ISO9000}.    
 
-    According to ISO 9000:2015, quality is the degree to which a set of inherent characteristics of an object fulfills requirements~\cite{ISO9000}. Several words need to be expanded, to understand this definition. 
-    
-    First, the standard also explains characteristics as distinguishing features such as physical, sensory, behavioral, temporal, ergonomic and functional. 
-    Instead of an object, a system can be used for more generalization.
-    As for the requirements, the standard also explains as a requirement is a need or expectation that is stated, generally implied or obligatory.~\cite{ISO9000}
-
-    Thus, when these definitions are combined, we obtain the following: `Quality is a degree to which a set of inherent distinguishing features of a system fulfills a need or expectation that is stated, generally implied or obligatory'. 
-    It should be highlighted that there are various quality definitions by so-called `Quality Gurus', but the authors decided to expand the standard definition of ISO 9000.
-
-    \subsection*{Product quality and Management}
+    \subsection{Product quality and Management}
     A product is a tangible or intangible system that satisfies the needs or wants of a customer. It could be a physical system like a car, or an abstract system, like a digital twin. 
     Regarding product quality, there are two different aspects~\cite{GrievesPLMBook}.
     First, quality is an attribute of a product, which meets product specifications. Specifications are mostly defined by the supra-systems subsystems, such as by the stakeholders within the supra-system,  If the stakeholders' expectations, or needs, are met, we can consider high quality.
@@ -113,40 +104,41 @@
     Quality management is a management type, which has an interest in Quality, and quality assurance is one of the parts of quality management, 
     which focuses on providing fidelity that quality requirements will be fulfilled. This means that quality assurance is a subsystem of quality management.
 
-    Quality management systems(QMS) are being used to plan and execute the organization's quality policies and goals. 
-    Examples of such systems can be a standard like ISO 9001 which can provide a framework for an organization, or a data-driven methodology 
-    such as Six Sigma to reduce defects and improve efficiency. These concepts are not new, for example, ISO 9001 standard has been established in 1987, 
-    and is still being regularly updated~\cite{ISO9001DebunkingtheMyth}.
+    Quality management systems(QMS) are functioning to plan and execute the organizations quality policies and goals. 
+    Examples of such systems can be a standard like ISO 9001 which can provide a framework for an organization, or a data-driven methodology such  as Six-Sigma to reduce defects and improve efficiency. 
+    This concepts  are not new, for example ISO 9001 standard has been established in 1987, and still being regularly updated ~\cite{ISO9001DebunkingtheMyth}. 
 
-    \subsection*{Software quality}
-    Software is a  virtual system, which has a set of instructions, data or programs used to perform a specific task. 
-    All virtual systems, which we described above, need a medium to live on, hence these systems can be found in a computer or other electronic device.  
-    Software quality according to IEEE 730-2014, is: 
-    `The degree to which a software product meets established requirements; however, 
-    quality depends upon the degree to which those established requirements accurately represent stakeholder needs, wants, and expectations'~\cite{IEE730-2014}. 
-    As can be seen, it's a generic explanation of a quality, which doesn't differ much from the explanation we gave above. 
+    \subsection{Software quality}
+    Software is a combination of programs and data which can be used by the virtual 
+    systems as well as  a physical system like a computer system. In contrast a hardware 
+    is a physical subsystem of a computer system\cite{OxfordDictionary}. 
 
-    Software quality management techniques come from already used manufacturing techniques in the industries.
-    For example, the quality assurance that we mentioned above, also has been used as a software quality management activity with some differences. 
-    In manufacturing, products will never exactly meet a specification, due to errors in the machining so there should be some tolerance for the manufacturing. 
-    But in the software systems, or more precisely in the virtual systems, it's most of the time, not the case. 
-    Also its nearly impossible to conclude that, the software product fully meets its specifications\cite{SoftwareEngineering}.
+    Software Quality is determined by how well software fulfill the requirements that were set. However, those requirements  
+    not always reflect what the stakeholders actually need, hence the quality depends how accurately this requirements were set \cite{IEE730-2014}. 
+    As a result, functional suitability, performance efficiency, compatibility, usability, reliability, security, maintainability 
+    and portability are the standartized  eight attributes that measure software quality \cite{ISO/IEC:25010}.
+    
+    Software quality management techniques comes from already used manufacturing techniques in the  industries. For example the  product quality assurance has been used as a software quality management activity with some modifications. For example, in the manufacturing, products will never exactly meet a specification, due to errors in the machining which results in some tolerance area. But in the software systems, or more precise in the virtual systems, it's most of the time not the case. Also its nearly imposible to conclude that, 
+    the software product is fully meet its speficiations. 
+    Hence, most of the quality assesments are subjective process and as a result, the quality attributes should be inspected subjectively \cite{SoftwareEngineering}.  
 
-    According to ISO/IEC:25010:2011, there are eight software quality attributes. Functional Suitability, 
-    Performance efficiency, compatibility, usability, reliability, security, maintainability and portability.\cite{ISO/IEC:25010}
-    Of course, not all aspects can be inspected and the person, who is responsible for the quality of the product, should choose the critical aspects of the software product and further the process according to that decision.
-
-    \subsection*{Simulation Quality}
-    Simulation models are not merely virtual systems; they are also abstracted systems, which are nothing more than imitations or, to be more precise, abstractions of real systems. 
-    We are simulating something every day when we are trying to predict the future outcome or abstractly thinking about the past state of some occurred event. 
-    An important element to remember is that we mentally model the event before executing the simulation. However, most of the simulation processes we see today, 
-    are computer-based, with software programs. These programs include ANSYS\cite{Ansys}, ABAQUS\cite{Abaqus}, and AnyLogic\cite{AnyLogic}, as examples. Consequently, the idea of simulation software programs emerges.
+    \subsection{Simulation Quality}
+    Simulation models are not merely virtual systems; 
+    they are also abstracted systems, which are nothing more than imitations or, 
+    to be more precise, abstractions of real systems. 
+    We are simulating something every day when we are trying 
+    to predict the future outcome or abstractly thinking about the past state of some occurred event. 
+    An important element to remember is that we mentally model the 
+    event before executing the simulation. However, most of the simulation processes we see today, 
+    are computer-based, with software programs. These programs 
+    include ANSYS\cite{Ansys}, ABAQUS\cite{Abaqus}, and 
+    AnyLogic\cite{AnyLogic}, as examples. Consequently, the idea of simulation software programs emerges.
 
     Validation and verification can be used to evaluate the quality characteristics of the simulation model \cite{StewartSimulation} \cite{VerificationValidationSergent} \cite{OsmanBalci}. 
     Validation is the process of evaluating the simulation quality of the model in comparison to the real system from the perspective of the model's intended applications. 
     On the other hand, verification is a procedure to evaluate a simulation model's implementation and its associated data concerning the conceptual description and specifications of the model developer. 
 
-    \subsection*{Digital twin quality}
+    \subsection{Digital twin quality}
     To analyze the state of the digital twin quality, a literature analysis was executed. 
     The analysis especially focused on how the digital twin quality is mentioned and assessed within the academic dissertations.
 
@@ -174,7 +166,7 @@
 
     If an interesting dissertation(s) would be found during the reading, it will be checked again with the initial filter.
 
-    \subsection*{Literature Result}
+    \subsubsection*{Literature Result}
     The search term `digital twin quality' initially yielded 41 results on Google Scholar and three on Scopus. 
     After the second filtering stage, six duplicate dissertations were removed, along with ten dissertations that were not in English. As a result, only nine dissertations passed all the criteria and were inspected, while the remainder were rejected.
     
@@ -184,7 +176,7 @@
     The search term `digital twin validation' was filtered initially, resulting in fifty-nine hits on Google Scholar and zero on Scopus. After the second filtering stage, four duplicate dissertations were removed, along with 4 dissertations that were not in English.
     As a result, eight dissertations passed all the criteria and were inspected while the remainder were rejected.
 
-    \subsection*{Findings}
+    \subsubsection*{Findings}
 
     The findings are the following;
     \begin{itemize}
@@ -200,13 +192,9 @@
         \item Shotaro Hamato et al. demonstrated real-time anomaly detection was successfully demonstrated using the Unscented Kalman Filter with the digital twin model, but determining the appropriate threshold for anomaly detection remains an issue~\cite{JapeneseKalmanFilterCorrectness}.
     \end{itemize}
 
-    \section{Initial approach in the FELICE project}
-    FELICE addresses a critical problem in robotics which is the effective integration of human and robot abilities in a collaborative setting. This challenge requires the development of sophisticated algorithms and techniques that facilitate seamless communication, 
-    cooperation, and coordination between humans and robotic agents. By addressing this issue, FELICE tries to represent a 
-    significant advancement in the field of robotics and has the potential to enhance the effectiveness and efficiency of a wide range of human-robot collaborative tasks with the consideration of safety~\cite{FELICE}.
 
-    In the present study, we inspected several artifacts to evaluate the quality of the digital twin for the FELICE project, which is currently in the design phase. These artifacts included process videos showing the current assembly procedure, a scope definition, a requirements specification, a general and operational conceptual model, 
-    and a discrete event simulation module. We assessed the quality of these artifacts based on four crucial quality attributes: correctness, completeness, fidelity, efficiency, and evolvability.
+    \section{Digital Twin Quality Attributes and Inspection Results}
+    
 
     \subsection{First criterion: Correctness}
     Correctness is a  derived word from the adjective correct, which means that something is error-free regarding a fact or truth~\cite{OxfordDictionary}. 
@@ -217,7 +205,7 @@
     For instance, binary64 has 53 significant digits while binary32 has 24, displaying the precision of the structure~\cite{IEE754}.  
     
     \subsection{Second criterion: Completeness}
-    According to the Oxford Dictionary, `complete'  can function as an adjective, attribute, or verb with an object\cite{OxfordDictionary}. When used as an adjective, it describes something 
+    According to the Oxford Dictionary, complete can be an adjective, an attribute, or  a verb with an object\cite{OxfordDictionary}. When used as an adjective, it describes something 
     as having all the necessary or appropriate parts. To evaluate the completeness of a digital twin, 
     one must first analyze and synthesize the real system to identify subsystems and their relations with related systems in the supra-system. 
     After this initial analysis, completeness can be assessed by comparing the subsystems and relations of the real world with those of the digital twin.
