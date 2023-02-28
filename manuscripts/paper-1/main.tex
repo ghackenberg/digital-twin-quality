@@ -1,36 +1,27 @@
-\documentclass[9pt,conference]{IEEEtran}
-
+%%\documentclass[9pt,conference]{IEEEtran}
+\documentclass{llncs}
 \usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage[T1]{fontenc}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{verbatim}
+
 \graphicspath{{./images/}}
 
 \begin{document}
 
     \title{Quality assurance of digital twins -- An experience report in the automotive industry}
-    \author{
-        \IEEEauthorblockN{
-            Georg Hackenberg
-        }
-        \IEEEauthorblockA{
-            School of Engineering\\
-            University of Applied Sciences Upper Austria\\
-            4600 Wels, Upper Austria, Austria\\
-            \href{mailto:georg.hackenberg@fh-wels.at}{georg.hackenberg@fh-wels.at}
-        }
-        \and
-        \IEEEauthorblockN{
-            Alican Tüzün
-        }
-        \IEEEauthorblockA{
-            School of Engineering\\
-            University of Applied Sciences Upper Austria\\
-            4600 Wels, Upper Austria, Austria\\
-            \href{mailto:alican.tuezuen@fh-wels.at}{alican.tuezuen@fh-wels.at}
-        }
+
+    \author{Georg Hackenberg\inst{1}
+    \and
+    Alican Tüzün\inst{1}
     }
+    \institute{School of Engineering\\
+    University of Applied Sciences Upper Austria\\
+    4600 Wels, Upper Austria, Austria\\
+    \email{lncs@springer.com}}
+    
     \maketitle
 
     \begin{abstract}
@@ -67,7 +58,7 @@
         \centering
         \includegraphics[width =0.45\textwidth]{GrievesInformationMirroringModel.png}
         \caption{Grieves Information Mirroring Model}\label{fig:GrievesInformationMirroringModel}
-        \cite{GrievesPLMBook}
+       \cite{GrievesPLMBook}
     \end{figure}
 
     \subsection*{Real System}
@@ -296,6 +287,6 @@
     TODO
 
     \bibliography{main}
-    \bibliographystyle{plain}
+    \bibliographystyle{splncs04}
 
 \end{document}
