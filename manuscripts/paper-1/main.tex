@@ -206,11 +206,32 @@
     the lack of well-defined quality parameters for digital twins poses a significant challenge in ensuring their quality,
     which necessitates the development of appropriate quality metrics and standards for digital twins.
 
+    \section{Methods}
+    Based on the theoretical background, we have opted for a methodology that comprises two components: 
+    \begin{itemize}
+        \item Manual Reviews
+        \item Utilization of quality standards in conjunction with dictionary definitions of the quality attributes that will be employed
+    \end{itemize}
 
-    \section{Digital Twin Quality Attributes and Inspection Results}
+    \subsection{Manual Reviews}
+    We presented the results of the comprehensive manual reviews 
+    conducted to evaluate the quality of digital twin artifacts during 
+    the initial stages of the FELICE project. The current stage of review 
+    encompasses five key artifacts, including process videos displaying the 
+    current assembly procedure without an adaptive workstation and cobot, 
+    a scope definition outlining the objects on the shop floor requiring tracking or twinning, 
+    a requirements specification summarizing functional and non-functional requirements for the digital twin, 
+    a general and an operational conceptual model elucidating the high-level structure of the assembly procedure, 
+    and a discrete event simulation module that implements the structures prescribed by the conceptual models.
+
+    \subsection{Quality Standards and Dictionary}
+    We consolidated our findings from various standards, including ISO/IEC:25010, 
+    IEE730-2014, ISO9000, ISO9001, and the Oxford dictionary, in order to establish clear 
+    and precise definitions for the attributes used in assessing digital twin quality.\cite{ISO9000,ISO90012015,ISO/IEC:25010,IEE730-2014,OxfordDictionary}.
+
+    \section{Digital Twin Quality Attributes and Results}
     
-
-    \subsection{First criterion: Correctness}
+    \subsection*{First criterion: Correctness}
     Correctness is a  derived word from the adjective correct, which means that something is error-free regarding a fact or truth~\cite{OxfordDictionary}. 
     In the context of the digital twins, our fact or truth is a real system hence, correctness is a grade of quality, that indicates an error between the real system and a digital twin system.
     Meanwhile, the quality of being correct is described by the term accuracy. Another important word is precision, 
@@ -218,33 +239,37 @@
     From a technical standpoint, we use precision in mathematics by the number of provided digits. 
     For instance, binary64 has 53 significant digits while binary32 has 24, displaying the precision of the structure~\cite{IEE754}.  
     
-    \subsection{Second criterion: Completeness}
-    According to the Oxford Dictionary, complete can be an adjective, an attribute, or  a verb with an object\cite{OxfordDictionary}. When used as an adjective, it describes something 
+    \subsection*{Second criterion: Completeness}
+    According to the Oxford Dictionary, complete can be an adjective, an attribute, or  a verb with an object\cite{OxfordDictionary}. 
+    When used as an adjective, it describes something 
     as having all the necessary or appropriate parts. To evaluate the completeness of a digital twin, 
     one must first analyze and synthesize the real system to identify subsystems and their relations with related systems in the supra-system. 
     After this initial analysis, completeness can be assessed by comparing the subsystems and relations of the real world with those of the digital twin.
 
 
-    \subsection{Third criterion: Fidelity}
+    \subsection*{Third criterion: Fidelity}
     The concept of fidelity has garnered significant attention in recent years and continues to be an important area of research in digital twins.
     In the context of digital twins, Fidelity refers to the degree of exactness with which the real system is copied and represented.
     Low-fidelity indicates a simplified representation, while high-fidelity refers to an accurate and detailed representation of the real system.
-    This quality attribute plays a crucial role in evaluating the effectiveness of digital twins in accurately capturing the behavior and properties of real-world systems. 
+    This quality attribute plays a crucial role in evaluating the effectiveness of digital twins in accurately capturing the behavior and properties 
+    of real-world systems. 
+
     \subsubsection*{Fidelity vs Correctness}
-    Correctness is a functional quality attribute, which assesses the behavior of the digital twin systems, by how accurately the results with the given precision match the behavior of the real system or more
+    Correctness is a functional quality attribute, which assesses the behavior of the digital twin systems, 
+    by how accurately the results with the given precision match the behavior of the real system or more
     specifically outputs with the same given inputs. 
     This quality attribute focuses on the behavior of the system.
     On the other hand, fidelity is another quality attribute to consider. 
     It deals with the level of exactness and detail in the digital twin system's representation. 
     Fidelity concerns itself, with how the digital-twin system is exactly relative to the real system with a certain level of detail, which is more to do with the depiction or representation of the digital twin systems, rather than their behavior of them.
 
-    \subsection{Fourth criterion: Efficiency}
+    \subsection*{Fourth criterion: Efficiency}
     Efficiency refers to the quality of being efficient, and efficiency can be explained as achieving maximum productivity with minimum wasted effort or expense. 
     The concept of efficiency is tightly coupled with productivity, which refers to the quality of being productive. The word productive can be explained as producing or being able to produce large amounts of goods~\cite{OxfordDictionary}.
     For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum waste during the process is desired. Goods of the digital twin are nothing but information, 
     which Grieves first indicated with his Information Mirror Model~\cite{GrievesPLMBook}. So to assess the efficiency, one should inspect the sinks and sources of the digital twin system, to identify the waste, expense and productivity. 
 
-    \subsection{Fifth criterion: Evolvability}
+    \subsection*{Fifth criterion: Evolvability}
     A system's capability to enhance its suitability to its environment through alterations to both its internal and functional structure is referred to as evolvability. Another term used to describe the response to changes in the environment is adaptability. 
     However, this concept differs from evolvability in that it only affects a system's internal or functional structure temporarily. In contrast, evolvable systems undergo definite changes in their structures.  
     For instance, a digital twin, which is a virtual system, can be designed to be more flexible and scalable, allowing for easy updates and the addition of new features. 
@@ -254,12 +279,12 @@
 
 
     \begin{figure}[htbp]
-        \includegraphics[width=\columnwidth]{quality_inspection_results.png}
+        \includegraphics[scale=0.75]{quality_inspection_results.png}
         \caption{Overall Quality Inspection Results}
         \label{fig:QualityInspectonResults}
 
     \end{figure}\begin{figure}[htbp]
-        \includegraphics[width=\columnwidth]{quality_inspection_results_with_artifacts.png}
+        \includegraphics[scale = 0.45]{quality_inspection_results_with_artifacts.png}
         \caption{ Quality Inspection Results Categorized with Artifacts}
         \label{fig:QualityInspectonResultsWithArtifacts}
     \end{figure}
@@ -270,6 +295,7 @@
     and we do not have enough data to make estimations for this attribute. Additionally, all of our inspections were conducted manually, 
     which is susceptible to human error and inspector bias.
 
+    \section{Discussion} 
 
     \subsection{Future approach in the FELICE project}
     \label{section:framework_1}
