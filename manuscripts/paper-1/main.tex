@@ -137,6 +137,10 @@
     data concerning the conceptual description and specifications of the 
     model developer\cite{StewartSimulation,VerificationValidationSergent}.
 
+    Various validation and verification techniques can be employed, which can be broadly categorized into six areas: informal, static, dynamic, symbolic, constraint, and formal techniques \cite{balcicategories}\cite{balcitechniques}. Formal techniques involve mathematical formality, whereas informal techniques rely on human intervention and reasoning. Although mathematical techniques are more precise, informal techniques 
+    are more commonly used \cite{balcicategories}. Also, the use of informal techniques does not imply a lack of structure, but rather a reliance on human expertise and interpretation \cite{balcitechniques}.
+
+
     \subsection{Digital twin quality}
     To analyze the state of the digital twin quality, a literature analysis was executed. 
     The analysis especially focused on how the digital twin quality is mentioned and assessed within the academic dissertations.
@@ -205,29 +209,50 @@
     the lack of well-defined quality parameters for digital twins poses a significant challenge in ensuring their quality,
     which necessitates the development of appropriate quality metrics and standards for digital twins.
 
-    \section{Methods}
-    Based on the theoretical background, we have opted for a methodology that comprises two components: 
-    \begin{itemize}
-        \item Manual Reviews
-        \item Utilization of quality standards in conjunction with dictionary definitions of the quality attributes that will be employed
-    \end{itemize}
-
-    \subsection{Manual Reviews}
-    We presented the results of the comprehensive manual reviews 
-    conducted to evaluate the quality of digital twin artifacts during 
-    the initial stages of the FELICE project. The current stage of review 
-    encompasses five key artifacts, including process videos displaying the 
-    current assembly procedure without an adaptive workstation and cobot, 
-    a scope definition outlining the objects on the shop floor requiring tracking or twinning, 
-    a requirements specification summarizing functional and non-functional requirements for the digital twin, 
-    a general and an operational conceptual model elucidating the high-level structure of the assembly procedure, 
+    \section{Methods and Artifacts}
+    The methodology consists of two components:Manual reviews of the artifacts, expand and clarify the digital twin quality attributes with the use of quality standards along with corresponding dictionary definitions.
+    
+    \subsection{Artifacts}
+    The current stage of review encompasses five key artifacts, including process videos displaying the current assembly procedure without an adaptive workstation and cobot, a scope definition outlining the objects on the shop floor requiring tracking or twinning, a requirements specification summarizing functional and non-functional requirements for the digital twin, a general and an operational conceptual model elucidating the high-level structure of the assembly procedure, 
     and a discrete event simulation module that implements the structures prescribed by the conceptual models.
 
-    \subsection{Quality Standards and Dictionary}
+
+    \subsubsection*{Process Videos}
+    Project partner provided three videos initially to explain the manual assembly procedures performed at each of the three workstations. From the videos,  
+    the sequence of assembly steps were extracted  at least for one product variant. The tools and the parts needed for each assembly operation was observed. Additionally, an approximate duration of each assembly step were estimated, and some ergonomic characteristics of each operation was derived. 
+    The derivable ergonomic characteristics mainly included the poses and motions performed by the operators.
+
+    \subsubsection*{Scope Definition}
+    To better understand the context and focus of the digital twin, 
+    project partner used a methodology based on hierarchical task analysis and the process videos. 
+    This resulted in a scope definition that identified entities to be twinned, entities to be tracked, and important areas in the scene. 
+    Entities to be twinned needed to be represented accurately in the simulation models, including their position, pose, speed, fatigue, and other state variables. 
+    Entities to be tracked, on the other hand, only required position information. The scope definition was based on a floor plan of the production facility, with the three workstations marked as gray rectangles. 
+    The human workers, cobot, and adaptive workstation were identified as entities to be twinned, and therefore required accurate representation, 
+    monitoring, and simulation. Other entities, such as an AGV, carts with doors, and screwdrivers used for assembly operations, were designated as entities to be tracked.
+    \subsubsection*{Requirements Specification}
+    Each requirement for the digital twin was defined with a unique ID, a natural language description, an origin, a category, a priority, and a rationale. The ID was used as a reference point for other project artifacts, while the specification described the requirement in a way that allowed for testing of the digital twin implementation. The origin of the requirement was noted to identify the project partner responsible for its creation. The category distinguished between functional and non-functional requirements, as well as constraints and standards. The priority of each requirement was classified into four levels 
+    (must-, should-, could-, and would-have) to help prioritize development efforts. 
+    Finally, the rationale provided a clear explanation for each requirement's inclusion in the specification.
+    \subsubsection*{Conceptual Model}
+    The conceptual model was comprised of two parts:  a general conceptual model and an operational conceptual model. Both models provided a description of the assembly line processes, but the operational conceptual model focused on the specific steps of the assembly process, while the general conceptual model focused on higher-level processes and workflows.
+    The conceptual model was represented using a general flow chart notation that distinguished between a root node, activity nodes, and decision nodes.
+    The operational conceptual model consisted of three spreadsheets, each displaying the sequence of assembly operations performed at one workstation. The assembly operations were divided into macro- and micro-operations, with each macro-operation referring to one part of the final product being assembled, and the micro-operations referring to the individual steps needed to complete the respective macro-operation.
+    \subsubsection*{Simulation Model}
+    The discrete event simulation model consisted of seven sections, including two animation sections, two input sections, one output section, one process logic section, and a database section. The animation sections provided a two-dimensional and a three-dimensional representation of the system, which aided in understanding the simulation and for debugging purposes. The input sections allowed for the management of inputs to the simulation model, and the output section displayed summary performance indicators about the simulation run. 
+    The process logic section contained the process building blocks, such as queues and assembly operations. The database section provided an interface to data sources and sinks.
+
+    \subsection{Digital Twin Quality Attribute Identification}
     We consolidated our findings from various standards, including ISO/IEC:25010, 
-    IEE730-2014, ISO9000, ISO9001, and the Oxford dictionary, in order to establish clear 
-    and precise definitions for the attributes used in assessing digital twin quality.\cite{ISO9000,ISO90012015,ISO/IEC:25010,IEE730-2014,OxfordDictionary}.
-    
+    IEE730-2014, ISO9000, ISO9001, as well as consulted the  Oxford dictionary to synthesize our findings\cite{ISO9000,ISO90012015,ISO/IEC:25010,IEE730-2014,OxfordDictionary}..
+
+    %%Based on this analysis, we established unambiguous and well-defined definitions for quality attributes of the digital twin. These definitions were subsequently utilized in our manual reviews.
+    \subsection{Manual Artifact Reviews and Evaluation}
+    During the initial stages of the project, when the target system was not yet available, there was a lack of observable data about system behavior that could be utilized for validation. 
+    Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. Therefore, manual reviews were deemed the most suitable tool to account for the characteristics 
+    of this situation. After doing manual reviews, the results were manually evaluated and categorized with the identified digital twin quality attributes. 
+
+   
     \section{Digital Twin Quality Attributes and Results}
     
     \subsection*{First criterion: Correctness}
@@ -244,7 +269,6 @@
     as having all the necessary or appropriate parts. To evaluate the completeness of a digital twin, 
     one must first analyze and synthesize the real system to identify subsystems and their relations with related systems in the supra-system. 
     After this initial analysis, completeness can be assessed by comparing the subsystems and relations of the real world with those of the digital twin.
-
 
     \subsection*{Third criterion: Fidelity}
     The concept of fidelity has garnered significant attention in recent years and continues to be an important area of research in digital twins.
@@ -287,6 +311,11 @@
         \caption{ Quality Inspection Results Categorized with Artifacts}
         \label{fig:QualityInspectonResultsWithArtifacts}
     \end{figure}
+
+    \subsection{Manual Review Result}
+
+    \subsection{Quality Inspection with Quality Attributes}
+
 
     As can be seen in Figures ~\ref{fig:QualityInspectonResults} and ~\ref{fig:QualityInspectonResultsWithArtifacts}, based on our inspection of the given artifacts,
     we have identified a total of seven correctness issues, eleven completeness issues, and two fidelity issues. 
