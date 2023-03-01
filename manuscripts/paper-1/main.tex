@@ -92,7 +92,6 @@
     as a noun,however the impactful definition is the quality as a standard of an entity which is measured against the 
     different or the similar entities\cite{OxfordDictionary}.This definition clearly shows the relativity of quality.In addition, quality be defined 
     as the degree to which a set of inherent properties of an entity fulfills the given requirements~\cite{ISO9000}.    
-
     \subsection{Product quality and Management}
     A product is a tangible or intangible system that satisfies the needs or wants of a customer. It could be a physical system like a car, or an abstract system, like a digital twin. 
     Regarding product quality, there are two different aspects~\cite{GrievesPLMBook}.
@@ -104,8 +103,7 @@
 
     Quality management systems(QMS) are functioning to plan and execute the organizations quality policies and goals. 
     Examples of such systems can be a standard like ISO 9001 which can provide a framework for an organization, or a data-driven methodology such  as Six-Sigma to reduce defects and improve efficiency. 
-    This concepts  are not new, for example ISO 9001 standard has been established in 1987, and still being regularly updated ~\cite{ISO9001DebunkingtheMyth}. 
-
+    This concepts  are not new, for example ISO 9001 standard has been established in 1987, and still being regularly updated ~\cite{ISO90012015}. 
     \subsection{Software quality}
     Software is a combination of programs and data which can be used by the virtual 
     systems as well as  a physical system like a computer system. In contrast a hardware 
@@ -139,8 +137,6 @@
 
     Various validation and verification techniques can be employed, which can be broadly categorized into six areas: informal, static, dynamic, symbolic, constraint, and formal techniques \cite{balcicategories}\cite{balcitechniques}. Formal techniques involve mathematical formality, whereas informal techniques rely on human intervention and reasoning. Although mathematical techniques are more precise, informal techniques 
     are more commonly used \cite{balcicategories}. Also, the use of informal techniques does not imply a lack of structure, but rather a reliance on human expertise and interpretation \cite{balcitechniques}.
-
-
     \subsection{Digital twin quality}
     To analyze the state of the digital twin quality, a literature analysis was executed. 
     The analysis especially focused on how the digital twin quality is mentioned and assessed within the academic dissertations.
@@ -160,9 +156,7 @@
         \item  Ensuring that selected dissertations have a proper literature review
         \item  Ensuring that abstract and conclusion are relevant to the search term
     \end{itemize}
-
     If an interesting dissertation(s) would be found during the reading, it will be checked again with the initial filter.
-
     \subsubsection*{Literature Search Result}
     The search for "digital twin quality" initially resulted in 41 hits on Google Scholar and 3 on Scopus. 
     After the second level of filtering, 6 duplicate dissertations were removed and 10 dissertations that were not in English were also eliminated. 
@@ -208,21 +202,51 @@
     call for further research in the field to improve the quality and reliability of digital twins. Moreover, 
     the lack of well-defined quality parameters for digital twins poses a significant challenge in ensuring their quality,
     which necessitates the development of appropriate quality metrics and standards for digital twins.
-
-    \section{Methods and Artifacts}
-    The methodology consists of two components:Manual reviews of the artifacts, expand and clarify the digital twin quality attributes with the use of quality standards along with corresponding dictionary definitions.
+    \subsection{Digital Twin Quality Attributes}
+    We consolidated our findings from various standards, including ISO/IEC:25010, IEE730-2014, ISO9000, ISO9001, as well as consulted the  Oxford dictionary to synthesize our findings\cite{ISO9000,ISO90012015,ISO/IEC:25010,IEE730-2014,OxfordDictionary}.
     
+    \textbf{Correctness} is a  derived word from the adjective correct, which means that something is error-free in regard to fact or truth. In the context of the digital twins, our fact or truth is a real system hence, correctness is a grade of quality, that indicates an error between the real system and a digital twin system.
+    Meanwhile, the quality of being correct is described by the term accuracy \cite{OxfordDictionary}. 
+    
+    \textbf{Completeness} is a derived word from the word complete, which can be described as an adjective, attribute, or verb\cite{OxfordDictionary}. 
+    The adjectival form of complete is a state of having all the neccesary or appropriate parts\cite{OxfordDictionary}.
+
+    \textbf{Fidelity}
+    Fidelity refers to the degree of exactness with which the real system is copied and represented.Low-fidelity indicates a simplified representation, 
+    while high-fidelity refers to an accurate and detailed representation of the real system \cite{Review2}. 
+    The concept of fidelity has garnered significant attention in recent years and continues to be an important area of research in digital twins\cite{Review2}\cite{Review1}.
+
+    \textbf{Efficiency}
+    Efficiency refers to the  quality of  being efficient, and efficient is achieving
+    maximum productivity with minimum wasted effort or expense. The concept of efficiency is tightly coupled to productivity, which  refers to a quality of being productive,
+    also  the word productive can be explained as producing or able to produce large amounts of goods\cite{OxfordDictionary}.  
+    For example time efficiency indicates that,  with the less amount of time as an input, more output with the minimum 
+    waste during the process is desired . Goods of the  digital twin is nothing but an information, which Grieves first 
+    indicated with this Information Mirror Model\cite{GrievesPLMBook}.
+
+    \textbf{Evolvability}
+    A system's capability to enhance its suitability to its environment through alterations to both its internal and functional 
+    structure is referred to as evolvability\cite{MobusSystemTheory}. Another term used to describe the response to changes in the environment is adaptability.
+    However, this concept differs from evolvability in that it only affects a system's internal or functional structure temporarily. 
+    For instance, a digital twin, which is a virtual system, can be designed to be more flexible and scalable, 
+    allowing for easy updates and the addition of new features. 
+    These updates and new features will result in definite changes to the structure of the system. 
+    On the other hand, a responsive web design is an adaptable system, capable of adjusting its size and layout 
+    depending on the user's hardware. As we have seen in \cite{ZHANGUPDATEMETHOD}, the update method shows that digital twins are evolvable systems, 
+    hence this attribute should be considered when the digital twin's quality is inspected. To assess the evolvability attribute, scalability analysis,
+    reusability analysis, modifiability analysis, testability analysis, and maintainability analysis can be performed. 
+    \section{Artifacts and Methods}
+    The used methodology consists of manual artifact reviews and evaluation of the results according to the digital twin quality attributes.    
     \subsection{Artifacts}
     The current stage of review encompasses five key artifacts, including process videos displaying the current assembly procedure without an adaptive workstation and cobot, a scope definition outlining the objects on the shop floor requiring tracking or twinning, a requirements specification summarizing functional and non-functional requirements for the digital twin, a general and an operational conceptual model elucidating the high-level structure of the assembly procedure, 
     and a discrete event simulation module that implements the structures prescribed by the conceptual models.
 
-
-    \subsubsection*{Process Videos}
+    \textbf{Process Videos:}
     Project partner provided three videos initially to explain the manual assembly procedures performed at each of the three workstations. From the videos,  
     the sequence of assembly steps were extracted  at least for one product variant. The tools and the parts needed for each assembly operation was observed. Additionally, an approximate duration of each assembly step were estimated, and some ergonomic characteristics of each operation was derived. 
     The derivable ergonomic characteristics mainly included the poses and motions performed by the operators.
 
-    \subsubsection*{Scope Definition}
+    \textbf{Scope Definition:}
     To better understand the context and focus of the digital twin, 
     project partner used a methodology based on hierarchical task analysis and the process videos. 
     This resulted in a scope definition that identified entities to be twinned, entities to be tracked, and important areas in the scene. 
@@ -230,106 +254,50 @@
     Entities to be tracked, on the other hand, only required position information. The scope definition was based on a floor plan of the production facility, with the three workstations marked as gray rectangles. 
     The human workers, cobot, and adaptive workstation were identified as entities to be twinned, and therefore required accurate representation, 
     monitoring, and simulation. Other entities, such as an AGV, carts with doors, and screwdrivers used for assembly operations, were designated as entities to be tracked.
-    \subsubsection*{Requirements Specification}
-    Each requirement for the digital twin was defined with a unique ID, a natural language description, an origin, a category, a priority, and a rationale. The ID was used as a reference point for other project artifacts, while the specification described the requirement in a way that allowed for testing of the digital twin implementation. The origin of the requirement was noted to identify the project partner responsible for its creation. The category distinguished between functional and non-functional requirements, as well as constraints and standards. The priority of each requirement was classified into four levels 
+
+    \textbf{Requirements Specification} for the digital twin was defined with a unique ID, a natural language description, an origin, a category, a priority, and a rationale. The ID was used as a reference point for other project artifacts, while the specification described the requirement in a way that allowed for testing of the digital twin implementation. The origin of the requirement was noted to identify the project partner responsible for its creation. The category distinguished between functional and non-functional requirements, as well as constraints and standards. The priority of each requirement was classified into four levels 
     (must-, should-, could-, and would-have) to help prioritize development efforts. 
     Finally, the rationale provided a clear explanation for each requirement's inclusion in the specification.
-    \subsubsection*{Conceptual Model}
-    The conceptual model was comprised of two parts:  a general conceptual model and an operational conceptual model. Both models provided a description of the assembly line processes, but the operational conceptual model focused on the specific steps of the assembly process, while the general conceptual model focused on higher-level processes and workflows.
-    The conceptual model was represented using a general flow chart notation that distinguished between a root node, activity nodes, and decision nodes.
-    The operational conceptual model consisted of three spreadsheets, each displaying the sequence of assembly operations performed at one workstation. The assembly operations were divided into macro- and micro-operations, with each macro-operation referring to one part of the final product being assembled, and the micro-operations referring to the individual steps needed to complete the respective macro-operation.
-    \subsubsection*{Simulation Model}
-    The discrete event simulation model consisted of seven sections, including two animation sections, two input sections, one output section, one process logic section, and a database section. The animation sections provided a two-dimensional and a three-dimensional representation of the system, which aided in understanding the simulation and for debugging purposes. The input sections allowed for the management of inputs to the simulation model, and the output section displayed summary performance indicators about the simulation run. 
+
+    \textbf{Conceptual Model} was comprised of two parts:  a general conceptual model and an operational conceptual model. Both models provided a description of the assembly line processes, but the operational conceptual model focused on the specific steps of the assembly process, while the general conceptual model focused on higher-level processes and workflows.
+    The general conceptual model was represented using a general flow chart notation that distinguished between a root node, activity nodes, and decision nodes.
+    The operational conceptual model consisted of three spreadsheets, each displaying the sequence of assembly operations performed at one workstation. 
+    The assembly operations were divided into macro- and micro-operations, with each macro-operation referring 
+    to one part of the final product being assembled, and the micro-operations referring to the individual steps needed to complete the respective macro-operation.
+
+    \textbf{Discrete Event Simulation Model} consisted of seven sections, including two animation sections, two input sections, one output section, one process logic section, and a database section. The animation sections provided a two-dimensional and a three-dimensional representation of the system, which aided in understanding the simulation and for debugging purposes. The input sections allowed for the management of inputs to the simulation model, and the output section displayed summary performance indicators about the simulation run. 
     The process logic section contained the process building blocks, such as queues and assembly operations. The database section provided an interface to data sources and sinks.
-
-    \subsection{Digital Twin Quality Attribute Identification}
-    We consolidated our findings from various standards, including ISO/IEC:25010, 
-    IEE730-2014, ISO9000, ISO9001, as well as consulted the  Oxford dictionary to synthesize our findings\cite{ISO9000,ISO90012015,ISO/IEC:25010,IEE730-2014,OxfordDictionary}..
-
-    %%Based on this analysis, we established unambiguous and well-defined definitions for quality attributes of the digital twin. These definitions were subsequently utilized in our manual reviews.
-    \subsection{Manual Artifact Reviews and Evaluation}
+    
+    \subsection{Manual Artifact Reviews and Evoluation}
     During the initial stages of the project, when the target system was not yet available, there was a lack of observable data about system behavior that could be utilized for validation. 
-    Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. Therefore, manual reviews were deemed the most suitable tool to account for the characteristics 
-    of this situation. After doing manual reviews, the results were manually evaluated and categorized with the identified digital twin quality attributes. 
-
-   
-    \section{Digital Twin Quality Attributes and Results}
+    Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. Therefore, manual reviews were deemed the most suitable tool to account for the characteristics of this situation. Manul review inclueded, audits, inspections, reviews, structural analysis 
+    and walkthroughs with the project partners which was inspiered from the Balci's manual review works \cite{balcitechniques}. Lastly, identified issuess after the reviews were mapped to the quality attributes. 
     
-    \subsection*{First criterion: Correctness}
-    Correctness is a  derived word from the adjective correct, which means that something is error-free regarding a fact or truth~\cite{OxfordDictionary}. 
-    In the context of the digital twins, our fact or truth is a real system hence, correctness is a grade of quality, that indicates an error between the real system and a digital twin system.
-    Meanwhile, the quality of being correct is described by the term accuracy. Another important word is precision, 
-    which refers to the ability to be precise and accurate\cite{OxfordDictionary}. 
-    From a technical standpoint, we use precision in mathematics by the number of provided digits. 
-    For instance, binary64 has 53 significant digits while binary32 has 24, displaying the precision of the structure~\cite{IEE754}.  
+    \section{Results}
     
-    \subsection*{Second criterion: Completeness}
-    According to the Oxford Dictionary, complete can be an adjective, an attribute, or  a verb with an object\cite{OxfordDictionary}. 
-    When used as an adjective, it describes something 
-    as having all the necessary or appropriate parts. To evaluate the completeness of a digital twin, 
-    one must first analyze and synthesize the real system to identify subsystems and their relations with related systems in the supra-system. 
-    After this initial analysis, completeness can be assessed by comparing the subsystems and relations of the real world with those of the digital twin.
-
-    \subsection*{Third criterion: Fidelity}
-    The concept of fidelity has garnered significant attention in recent years and continues to be an important area of research in digital twins.
-    In the context of digital twins, Fidelity refers to the degree of exactness with which the real system is copied and represented.
-    Low-fidelity indicates a simplified representation, while high-fidelity refers to an accurate and detailed representation of the real system.
-    This quality attribute plays a crucial role in evaluating the effectiveness of digital twins in accurately capturing the behavior and properties 
-    of real-world systems. 
-
-    \subsubsection*{Fidelity vs Correctness}
-    Correctness is a functional quality attribute, which assesses the behavior of the digital twin systems, 
-    by how accurately the results with the given precision match the behavior of the real system or more
-    specifically outputs with the same given inputs. 
-    This quality attribute focuses on the behavior of the system.
-    On the other hand, fidelity is another quality attribute to consider. 
-    It deals with the level of exactness and detail in the digital twin system's representation. 
-    Fidelity concerns itself, with how the digital-twin system is exactly relative to the real system with a certain level of detail, which is more to do with the depiction or representation of the digital twin systems, rather than their behavior of them.
-
-    \subsection*{Fourth criterion: Efficiency}
-    Efficiency refers to the quality of being efficient, and efficiency can be explained as achieving maximum productivity with minimum wasted effort or expense. 
-    The concept of efficiency is tightly coupled with productivity, which refers to the quality of being productive. The word productive can be explained as producing or being able to produce large amounts of goods~\cite{OxfordDictionary}.
-    For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum waste during the process is desired. Goods of the digital twin are nothing but information, 
-    which Grieves first indicated with his Information Mirror Model~\cite{GrievesPLMBook}. So to assess the efficiency, one should inspect the sinks and sources of the digital twin system, to identify the waste, expense and productivity. 
-
-    \subsection*{Fifth criterion: Evolvability}
-    A system's capability to enhance its suitability to its environment through alterations to both its internal and functional structure is referred to as evolvability. Another term used to describe the response to changes in the environment is adaptability. 
-    However, this concept differs from evolvability in that it only affects a system's internal or functional structure temporarily. In contrast, evolvable systems undergo definite changes in their structures.  
-    For instance, a digital twin, which is a virtual system, can be designed to be more flexible and scalable, allowing for easy updates and the addition of new features. 
-    These updates and new features will result in definite changes to the structure of the system. On the other hand, a responsive web design is an adaptable system, capable of adjusting its size and layout depending on the user's hardware. 
-    As we have seen in~\cite{ZHANGUPDATEMETHOD}, the update method shows that digital twins are evolvable systems,
-    hence this attribute should be considered when the digital twin's quality is inspected. To assess the evolvability attribute, scalability analysis, reusability analysis, modifiability analysis, testability analysis, and maintainability analysis can be performed. 
-
 
     \begin{figure}[htbp]
         \includegraphics[scale=0.75]{quality_inspection_results.png}
         \caption{Overall Quality Inspection Results}
         \label{fig:QualityInspectonResults}
-
     \end{figure}\begin{figure}[htbp]
         \includegraphics[scale = 0.45]{quality_inspection_results_with_artifacts.png}
         \caption{ Quality Inspection Results Categorized with Artifacts}
         \label{fig:QualityInspectonResultsWithArtifacts}
     \end{figure}
-
     \subsection{Manual Review Result}
-
     \subsection{Quality Inspection with Quality Attributes}
-
-
     As can be seen in Figures ~\ref{fig:QualityInspectonResults} and ~\ref{fig:QualityInspectonResultsWithArtifacts}, based on our inspection of the given artifacts,
     we have identified a total of seven correctness issues, eleven completeness issues, and two fidelity issues. 
     It is important to note that we were unable to inspect for efficiency as the project is still in the design phase, 
     and we do not have enough data to make estimations for this attribute. Additionally, all of our inspections were conducted manually, 
     which is susceptible to human error and inspector bias.
-
     \section{Discussion}
-
     \label{section:framework_1}
     To mitigate potential human bias and enhance the data-driven approach for quality assurance, ongoing research aims to address these issues. 
     Furthermore, the assessment of digital twin quality can be significantly improved by obtaining data from real systems, thereby enabling better visibility and a more robust evaluation. As such, the use of empirical data in combination with machine learning techniques can offer a more objective and reliable means of evaluating the correctness, completeness, fidelity, efficiency, and evolvability of digital twins. Additionally, given the manual nature of the current inspections, it is important to acknowledge the potential for inspector bias, which may impact the accuracy of the assessments. 
     By leveraging technology to automate certain aspects of the evaluation process, it is possible to reduce the potential for such biases and improve the overall quality of digital twin assessments.
-
+    
     The success of the digital twin system depends on its quality, which requires careful evaluation based on several crucial quality attributes. The correctness of the system is measured by how accurately it behaves compared to the real system.
     Completeness assesses whether the digital twin's subsystems and relations match those of the real system. 
     Fidelity refers to the degree of exactness with which the real system is copied and represented.
