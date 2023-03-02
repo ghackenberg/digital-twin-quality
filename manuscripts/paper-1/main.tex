@@ -6,6 +6,10 @@
 \usepackage{amsfonts}
 \usepackage{verbatim}
 \usepackage{cite}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+
 
 \graphicspath{{./images/}}
 
@@ -215,22 +219,19 @@
     \textbf{Completeness} is a derived word from the word complete, which can be described as an adjective, attribute, or verb\cite{OxfordDictionary}. 
     The adjectival form of complete is a state of having all the necessary or appropriate parts\cite{OxfordDictionary}.
 
-    \textbf{Fidelity}
-    Fidelity refers to the degree of exactness with which the real system is copied and represented. Low fidelity indicates a simplified representation, 
+    \textbf{Fidelity} refers to the degree of exactness with which the real system is copied and represented. Low fidelity indicates a simplified representation, 
     while high-fidelity refers to an accurate and detailed representation of the real system \cite{Review2}. 
     The concept of fidelity has garnered significant attention in recent years and continues to be an important area of research in digital twins\cite{Review2}\cite{Review1}.
 
-    \textbf{Efficiency}
-    Efficiency refers to the quality of being efficient, and efficiency is achieving
+    \textbf{Efficiency} refers to the quality of being efficient, and efficiency is achieving
     maximum productivity with minimum wasted effort or expense. The concept of efficiency is tightly coupled to productivity, which refers to the quality of being productive,
     also the word productive can be explained as producing or being able to produce large amounts of goods\cite{OxfordDictionary}.  
     For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum 
     waste during the process is desired. Goods of the digital twin are nothing but information, which Grieves first 
     indicated with this Information Mirror Model\cite{GrievesPLMBook}.
 
-    \textbf{Evolvability}
-    A system's capability to enhance its suitability to its environment through alterations to both its internal and functional 
-    structure is referred to as evolvability\cite{MobusSystemTheory}. Another term used to describe the response to changes in the environment is adaptability.
+    \textbf{Evolvability} is a system's capability to enhance its suitability to its environment through alterations to both its internal and functional 
+    structure\cite{MobusSystemTheory}. Another term to describe the response to changes in the environment is adaptability.
     However, this concept differs from evolvability in that it only affects a system's internal or functional structure temporarily. 
     For instance, a digital twin, which is a virtual system, can be designed to be more flexible and scalable, 
     allowing for easy updates and the addition of new features. 
@@ -280,7 +281,66 @@
     and walkthroughs with the project partners which was inspired by Balci's manual review works \cite{balcitechniques}. Lastly, identified issues after the reviews were mapped to the quality attributes. 
     
     \section{Results}
-    
+    During the initial stages of the project, when the target system was not yet available, there was a 
+    lack of observable data about system behavior that could be utilized for validation. Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. 
+    Therefore, manual reviews for each artifact were conducted and twenty-one issues were identified and mapped to the specific digital twin quality attributes. 
+    The analysis revealed that a total of thirty-eight digital twin quality attributes were lacking in these artifacts. \ref{fig:QualityInspectonResultsWithArtifacts} 
+
+\textbf{Process Videos Review Results}
+
+F1  - Even though the videos are well suited for providing a first impression of the production facility and the current assembly process for one product variant, the other product variants include different assembly operations, 
+which were not shown in the videos. Furthermore, the cobot and the adaptive workstation were not part of the assembly process yet, hence the videos do not provide a complete representation of the target system.  
+
+\textbf{Scope Definition Review Results}
+
+F2 - The scope definition focuses on the physical entities of the shop floor and is consistent with the videos presented in the previous section. 
+However, the scope definition is incomplete. Several entities are only selected for the tracking, hence additional state information such as the failure status of these entities was missing in the digital twin. 
+
+\textbf{Requirements Specification Review Results}
+
+F3-  Atypical categorization of the digital twin requirements as functional, non-functional, constraint and standard was introduced. 
+Also, standard categories were considered as a cause of requirements instead of a category of requirements. Furthermore, 
+the constraint category was considered a non-functional requirement which results in a significant misunderstanding between non-functional 
+requirements and constraints. Finally, some requirements were described as non-functional requirements instead of functional requirements. 
+
+F4 - Imprecise and unclear statements were found in requirement specifications. 
+
+F5 - Key design decisions were found in the requirement specifications, which results in a considerable decrease in maintainability. 
+
+\textbf{Conceptual  Model Review Results}
+
+F6 - Conceptual models are not designed to react to unwanted situations. 
+
+F7 - Conceptual model specification was not clear enough, which results in quite some room for interpretations by the stakeholders. 
+as the use of an unspecified flow chart model is prone to differing interpretations by different stakeholders and probable incorrect understanding of the relations between the sub-systems.
+
+F8 - The difference between the event triggers and decision nodes was not clear, which decreased the clarity and maintainability of the model considerably. 
+
+F9 - Representation of the model is not great, hence understanding the interactions between the different subprocesses are not clear.
+
+F10 - The model were lacking great organization tools such as swim lanes and object flows. 
+
+F11 - The assignment of the cobot to micro-operations was not regularly reviewed and updated as the project progresses. 
+
+F12 - Even though the durations of the macro-operations were well-known and studied thoroughly before, the durations of the micro-operations were estimated based on a simple calculation scheme.
+
+\textbf{Simulation Model Review Results}
+
+F13:The input controls in the Discrete  Event Simulation module were not complete or aligned with the actual inputs that will be provided by another system. 
+
+F14, F15:The ranges defined for some events were not validated. 
+
+F16:Database structures were not updated automatically, instead done manually.
+
+F17:The duration of micro-, loading- and unloading-operations of the cobot were based on assumptions rather than actual measurements.
+
+F18:Discerete Event Simulation module does not support parallel execution of micro-operations. 
+
+F19:Interruption mechanism of the assembly line was not considered within the DES module. 
+
+F20:Number of micro-operations were hard coded, consequently, the DES module must be reprogrammed every time, when a new micro-operation is needed. 
+
+F21:Edge-cases were not considered in the DES module.  
 
     \begin{figure}[htbp]
         \includegraphics[scale = 0.40]{quality_inspection_results_with_artifacts.png}
@@ -288,13 +348,6 @@
         \label{fig:QualityInspectonResultsWithArtifacts}
     \end{figure}
 
-    \subsection{Manual Review Result}
-    \subsection{Quality Inspection with Quality Attributes}
-    As can be seen in Figures and ~\ref{fig:QualityInspectonResultsWithArtifacts}, based on our inspection of the given artifacts,
-    we have identified a total of seven correctness issues, eleven completeness issues, and two fidelity issues. 
-    It is important to note that we were unable to inspect for efficiency as the project is still in the design phase, 
-    and we do not have enough data to make estimations for this attribute. Additionally, all of our inspections were conducted manually, 
-    which is susceptible to human error and inspector bias.
     \section{Discussion}
     \label{section:framework_1}
     To mitigate potential human bias and enhance the data-driven approach for quality assurance, ongoing research aims to address these issues. 
