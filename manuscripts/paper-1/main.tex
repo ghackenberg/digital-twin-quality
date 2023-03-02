@@ -326,9 +326,9 @@
 
     F12 - Even though the durations of the macro-operations were well-known and studied thoroughly before, the durations of the micro-operations were estimated based on a simple calculation scheme.
 
-    \textbf{Simulation Model Review Results}
+    \textbf{Discrete Event Simulation Model Review Results}
 
-    F13 - The input controls in the discrete event simulation module was not complete or aligned with the actual inputs that will be provided by another system. 
+    F13 - The input controls in the simulation module was not complete or aligned with the actual inputs that will be provided by another system. 
 
     F14, F15 - The ranges defined for some events were not validated. 
 
@@ -336,18 +336,30 @@
 
     F17 - The duration of micro-, loading- and unloading-operations of the cobot were based on assumptions rather than actual measurements.
 
-    F18 - Discrete event Simulation module does not support parallel execution of micro-operations. 
+    F18 - The simulation module does not support parallel execution of micro-operations. 
 
-    F19 - The interruption mechanism of the assembly line was not considered within the DES module. 
+    F19 - The interruption mechanism of the assembly line was not considered within the simulation module. 
 
-    F20 - The number of micro-operations was hard coded, consequently, the DES module must be reprogrammed every time, when a new micro-operation is needed. 
+    F20 - The number of micro-operations was hard coded, consequently, the simulation module must be reprogrammed every time, when a new micro-operation is needed. 
 
-    F21 - Edge cases were not considered in the DES module.  
+    F21 - Edge cases were not considered in the simulation module.  
 
 
     \subsection{Mapping Issues to Quality Attributes}
 
-    
+    To evaluate the quality of the FELICE digital twin, identified issues mapped to one or more relevant quality attributes(Table \ref{tab:Mapping}).
+    The assessment revealed that a significant portion of the identified issues
+     was quickly attributed to specific quality attributes.  Specifically, 24\% of the issues were related to correctness, 
+     which indicates an error between the real system and a digital twin system. 
+     35\% of the issues were related to completeness, proving that some necessary or appropriate parts were missing. 
+     8\% of the issues were related to fidelity, indicating a lack of detail. 
+     5\% of the issues were related to efficiency, indicating poor performance or excessive resource usage. 
+     Finally, 28\% of the issues were related to evolvability, indicating that the system was unresponsive to the environment 
+     and was not flexible or scalable.   
+
+
+
+
     \begin{table}[h!]
         \begin{center}
           \caption{Mapping Findings to Quality Attributes}
@@ -371,11 +383,11 @@
             Finding 14 &    Correctness, Completeness\\
             Finding 15 &    Correctness, Completeness\\
             Finding 16 &    Evolvability \\
-      Finding 17&CorrectnessCompleteness \\
-      Finding 18&CorrectnessEfficiency \\
-      Finding 19&CompletenessEvolvability \\
-      Finding 20&Evolvability \\
-      Finding 21&Evolvability 
+            Finding 17&CorrectnessCompleteness \\
+            Finding 18&CorrectnessEfficiency \\
+            Finding 19&CompletenessEvolvability \\
+            Finding 20&Evolvability \\
+            Finding 21&Evolvability 
     \end{tabular}
     \end{center}
     \end{table}
