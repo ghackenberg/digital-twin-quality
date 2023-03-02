@@ -64,7 +64,7 @@
     Grieves decided to use the NASA-invented Digital Twin word, instead of the information mirroring model\cite{Originsofdigitaltwinconcept}.
         
     Digital twins are highly intricate and adaptable systems that possess the capability to not only respond to environmental 
-    changes but also modify their internal structure \cite{ZHANGUPDATEMETHOD,MobusSystemTheory}. Therefore, ascertaining a 
+    changes but also modify their internal structure \cite{ZHANGUPDATEMETHOD, MobusSystemTheory}. Therefore, ascertaining a 
     requisite level of quality for the construction of a digital twin is an arduous undertaking.
 
     FELICE is a complex system that addresses a critical problem in robotics which is the effective integration of human and robot abilities in a collaborative setting. 
@@ -240,6 +240,7 @@
     depending on the user's hardware. As we have seen in \cite{ZHANGUPDATEMETHOD}, the update method shows that digital twins are evolvable systems, 
     hence this attribute should be considered when the digital twin's quality is inspected. To assess the evolvability attribute, scalability analysis,
     reusability analysis, modifiability analysis, testability analysis, and maintainability analysis can be performed. 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%METHODS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{Artifacts and Methods}
     The used methodology consists of manual artifact reviews and evaluation of the results according to the digital twin quality attributes.    
     \subsection{Artifacts}
@@ -279,68 +280,106 @@
     Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. Therefore, manual reviews were deemed the most suitable tool to account for the characteristics of this situation.
     The manual review included, audits, inspections, reviews, structural analysis 
     and walkthroughs with the project partners which was inspired by Balci's manual review works \cite{balcitechniques}. Lastly, identified issues after the reviews were mapped to the quality attributes. 
-    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RESULTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{Results}
     During the initial stages of the project, when the target system was not yet available, there was a 
     lack of observable data about system behavior that could be utilized for validation. Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. 
     Therefore, manual reviews for each artifact were conducted and twenty-one issues were identified and mapped to the specific digital twin quality attributes. 
     The analysis revealed that a total of thirty-eight digital twin quality attributes were lacking in these artifacts. \ref{fig:QualityInspectonResultsWithArtifacts} 
 
-\textbf{Process Videos Review Results}
+    \textbf{Process Videos Review Results}
 
-F1  - Even though the videos are well suited for providing a first impression of the production facility and the current assembly process for one product variant, the other product variants include different assembly operations, 
-which were not shown in the videos. Furthermore, the cobot and the adaptive workstation were not part of the assembly process yet, hence the videos do not provide a complete representation of the target system.  
+    F1  - Even though the videos are well suited for providing a first impression of the production facility and the current assembly process for one product variant, the other product variants include different assembly operations, 
+    which were not shown in the videos. Furthermore, the cobot and the adaptive workstation were not part of the assembly process yet, hence the videos do not provide a complete representation of the target system.  
 
-\textbf{Scope Definition Review Results}
+    \textbf{Scope Definition Review Results}
 
-F2 - The scope definition focuses on the physical entities of the shop floor and is consistent with the videos presented in the previous section. 
-However, the scope definition is incomplete. Several entities are only selected for the tracking, hence additional state information such as the failure status of these entities was missing in the digital twin. 
+    F2 - The scope definition focuses on the physical entities of the shop floor and is consistent with the videos presented in the previous section. 
+    However, the scope definition is incomplete. Several entities are only selected for the tracking, hence additional state information such as the failure status of these entities was missing in the digital twin. 
 
-\textbf{Requirements Specification Review Results}
 
-F3-  Atypical categorization of the digital twin requirements as functional, non-functional, constraint and standard was introduced. 
-Also, standard categories were considered as a cause of requirements instead of a category of requirements. Furthermore, 
-the constraint category was considered a non-functional requirement which results in a significant misunderstanding between non-functional 
-requirements and constraints. Finally, some requirements were described as non-functional requirements instead of functional requirements. 
+    \textbf{Requirements Specification Review Results}
 
-F4 - Imprecise and unclear statements were found in requirement specifications. 
+    F3 - Atypical categorization of the digital twin requirements as functional, non-functional, constraint and standard was introduced. 
+    Also, standard categories were considered as a cause of requirements instead of a category of requirements. Furthermore, 
+    the constraint category was considered a non-functional requirement which results in a significant misunderstanding between non-functional 
+    requirements and constraints. Finally, some requirements were described as non-functional requirements instead of functional requirements. 
 
-F5 - Key design decisions were found in the requirement specifications, which results in a considerable decrease in maintainability. 
+    F4 - Imprecise and unclear statements were found in requirement specifications. 
 
-\textbf{Conceptual  Model Review Results}
+    F5 - Key design decisions were found in the requirement specifications, which results in a considerable decrease in maintainability. 
 
-F6 - Conceptual models are not designed to react to unwanted situations. 
+    \textbf{Conceptual  Model Review Results}
 
-F7 - Conceptual model specification was not clear enough, which results in quite some room for interpretations by the stakeholders. 
-as the use of an unspecified flow chart model is prone to differing interpretations by different stakeholders and probable incorrect understanding of the relations between the sub-systems.
+    F6 - Conceptual models are not designed to react to unwanted situations. 
 
-F8 - The difference between the event triggers and decision nodes was not clear, which decreased the clarity and maintainability of the model considerably. 
+    F7 - Conceptual model specification was not clear enough, which results in quite some room for interpretations by the stakeholders. 
+    as the use of an unspecified flow chart model is prone to differing interpretations by different stakeholders and probable incorrect understanding of the relations between the sub-systems.
 
-F9 - Representation of the model is not great, hence understanding the interactions between the different subprocesses are not clear.
+    F8 - The difference between the event triggers and decision nodes was not clear, which decreased the clarity and maintainability of the model considerably. 
 
-F10 - The model were lacking great organization tools such as swim lanes and object flows. 
+    F9 - Representation of the model is not great, hence understanding the interactions between the different subprocesses are not clear.
 
-F11 - The assignment of the cobot to micro-operations was not regularly reviewed and updated as the project progresses. 
+    F10 - The model were lacking great organization tools such as swim lanes and object flows. 
 
-F12 - Even though the durations of the macro-operations were well-known and studied thoroughly before, the durations of the micro-operations were estimated based on a simple calculation scheme.
+    F11 - The assignment of the cobot to micro-operations was not regularly reviewed and updated as the project progresses. 
 
-\textbf{Simulation Model Review Results}
+    F12 - Even though the durations of the macro-operations were well-known and studied thoroughly before, the durations of the micro-operations were estimated based on a simple calculation scheme.
 
-F13:The input controls in the Discrete  Event Simulation module were not complete or aligned with the actual inputs that will be provided by another system. 
+    \textbf{Simulation Model Review Results}
 
-F14, F15:The ranges defined for some events were not validated. 
+    F13 - The input controls in the discrete event simulation module was not complete or aligned with the actual inputs that will be provided by another system. 
 
-F16:Database structures were not updated automatically, instead done manually.
+    F14, F15 - The ranges defined for some events were not validated. 
 
-F17:The duration of micro-, loading- and unloading-operations of the cobot were based on assumptions rather than actual measurements.
+    F16 - Database structures were not updated automatically, instead done manually.
 
-F18:Discerete Event Simulation module does not support parallel execution of micro-operations. 
+    F17 - The duration of micro-, loading- and unloading-operations of the cobot were based on assumptions rather than actual measurements.
 
-F19:Interruption mechanism of the assembly line was not considered within the DES module. 
+    F18 - Discrete event Simulation module does not support parallel execution of micro-operations. 
 
-F20:Number of micro-operations were hard coded, consequently, the DES module must be reprogrammed every time, when a new micro-operation is needed. 
+    F19 - The interruption mechanism of the assembly line was not considered within the DES module. 
 
-F21:Edge-cases were not considered in the DES module.  
+    F20 - The number of micro-operations was hard coded, consequently, the DES module must be reprogrammed every time, when a new micro-operation is needed. 
+
+    F21 - Edge cases were not considered in the DES module.  
+
+
+    \subsection{Mapping Issues to Quality Attributes}
+
+    
+    \begin{table}[h!]
+        \begin{center}
+          \caption{Mapping Findings to Quality Attributes}
+          \label{tab:Mapping}
+          \begin{tabular}{l@{\hspace{1cm}}l} 
+            \textbf{Findings} & \textbf{Quality Issues}\\
+            \hline
+            Finding 1 &     Completeness\\
+            Finding 2 &     Completeness\\
+            Finding 3 &     Correctness, Completeness\\
+            Finding 4 &     Correctness\\
+            Finding 5 &     Evolvability\\
+            Finding 6 &     Completeness\\
+            Finding 7 &     Correctness, Completeness, Fidelity, Efficiency, Evolvability\\
+            Finding 8 &     Completeness, Fidelity, Evolvability\\
+            Finding 9 &     Evolvability\\
+            Finding 10 &    Correctness, Completeness, Fidelity, Evolvability\\
+            Finding 11 &    Evolvability\\
+            Finding 12 &    Correctness, Completeness\\
+            Finding 13 &    Completeness, Evolvability\\
+            Finding 14 &    Correctness, Completeness\\
+            Finding 15 &    Correctness, Completeness\\
+            Finding 16 &    Evolvability \\
+      Finding 17&CorrectnessCompleteness \\
+      Finding 18&CorrectnessEfficiency \\
+      Finding 19&CompletenessEvolvability \\
+      Finding 20&Evolvability \\
+      Finding 21&Evolvability 
+    \end{tabular}
+    \end{center}
+    \end{table}
+
 
     \begin{figure}[htbp]
         \includegraphics[scale = 0.40]{quality_inspection_results_with_artifacts.png}
