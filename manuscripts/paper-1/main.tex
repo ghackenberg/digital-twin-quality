@@ -72,9 +72,7 @@
     By addressing this issue, FELICE tries to represent a significant advancement in the field of robotics and has the potential to enhance the effectiveness and efficiency of a wide range of 
     human-robot collaborative tasks with the consideration of safety~\cite{FELICE}.
 
-    The main purpose of this study is to identify the quality attributes and inspect several artifacts 
-    with these to evaluate the quality of the digital twin for the FELICE project, 
-    which is currently in the design phase~\cite{FELICE}. These artifacts included process videos showing the current 
+    The main purpose of this study is to inspect several artifacts and map the found issues to quality attributes to evaluate the quality of the digital twin for the FELICE project, which is currently in the design phase.~\cite{FELICE}. These artifacts included process videos showing the current 
     assembly procedure, a scope definition, a requirements specification, a general and operational conceptual model, 
     and a discrete event simulation module. We assessed the quality of these artifacts based on five crucial quality attributes: correctness, completeness, fidelity, efficiency, and evolvability.
 
@@ -209,7 +207,7 @@
     call for further research in the field to improve the quality and reliability of digital twins. Moreover, 
     the lack of well-defined quality parameters for digital twins poses a significant challenge in ensuring their quality,
     which necessitates the development of appropriate quality metrics and standards for digital twins.
-    \subsection{Digital Twin Quality Attributes}
+    \subsection{Digital Twin Quality Attributes}\label{section:Digital Twin Quality Attributes}
     We consolidated our findings from various standards, including ISO/IEC:25010, IEE730-2014, ISO9000, and ISO9001, as well as consulted the  Oxford dictionary to 
     synthesize our findings\cite{ISO9000,ISO90012015,ISO/IEC:25010,IEE730-2014, OxfordDictionary}.
     
@@ -243,7 +241,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%METHODS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{Artifacts and Methods}
     The used methodology consists of manual artifact reviews and evaluation of the results according to the digital twin quality attributes.    
-    \subsection{Artifacts}
+    \subsection{Artifacts}\label{section:Artifacts}
     The current stage of review encompasses five key artifacts, including process videos displaying the current assembly procedure without an adaptive workstation and cobot, a scope definition outlining the objects on the shop floor requiring tracking or twinning, a requirements specification summarizing functional and non-functional requirements for the digital twin, a general and an operational conceptual model elucidating the high-level structure of the assembly procedure, 
     and a discrete event simulation module that implements the structures prescribed by the conceptual models.
 
@@ -279,138 +277,122 @@
     During the initial stages of the project, when the target system was not yet available, there was a lack of observable data about system behavior that could be utilized for validation. 
     Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. Therefore, manual reviews were deemed the most suitable tool to account for the characteristics of this situation.
     The manual review included, audits, inspections, reviews, structural analysis 
-    and walkthroughs with the project partners which was inspired by Balci's manual review works \cite{balcitechniques}. Lastly, identified issues after the reviews were mapped to the quality attributes. 
+    and walkthroughs with the project partners which was inspired by Balci's manual review works \cite{balcitechniques}. Lastly, observations after the reviews were mapped to the quality attributes. 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RESULTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{Results}
-    During the initial stages of the project, when the target system was not yet available, there was a 
-    lack of observable data about system behavior that could be utilized for validation. Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. 
-    Therefore, manual reviews for each artifact were conducted and twenty-one issues were identified and mapped to the specific digital twin quality attributes. 
-    The analysis revealed that a total of thirty-eight digital twin quality attributes were lacking in these artifacts. \ref{fig:QualityInspectonResultsWithArtifacts} 
-
-    \textbf{Process Videos Review Results}
-
-    F1  - Even though the videos are well suited for providing a first impression of the production facility and the current assembly process for one product variant, the other product variants include different assembly operations, 
-    which were not shown in the videos. Furthermore, the cobot and the adaptive workstation were not part of the assembly process yet, hence the videos do not provide a complete representation of the target system.  
-
-    \textbf{Scope Definition Review Results}
-
-    F2 - The scope definition focuses on the physical entities of the shop floor and is consistent with the videos presented in the previous section. 
-    However, the scope definition is incomplete. Several entities are only selected for the tracking, hence additional state information such as the failure status of these entities was missing in the digital twin. 
-
-
-    \textbf{Requirements Specification Review Results}
-
-    F3 - Atypical categorization of the digital twin requirements as functional, non-functional, constraint and standard was introduced. 
-    Also, standard categories were considered as a cause of requirements instead of a category of requirements. Furthermore, 
-    the constraint category was considered a non-functional requirement which results in a significant misunderstanding between non-functional 
-    requirements and constraints. Finally, some requirements were described as non-functional requirements instead of functional requirements. 
-
-    F4 - Imprecise and unclear statements were found in requirement specifications. 
-
-    F5 - Key design decisions were found in the requirement specifications, which results in a considerable decrease in maintainability. 
-
-    \textbf{Conceptual  Model Review Results}
-
-    F6 - Conceptual models are not designed to react to unwanted situations. 
-
-    F7 - Conceptual model specification was not clear enough, which results in quite some room for interpretations by the stakeholders. 
-    as the use of an unspecified flow chart model is prone to differing interpretations by different stakeholders and probable incorrect understanding of the relations between the sub-systems.
-
-    F8 - The difference between the event triggers and decision nodes was not clear, which decreased the clarity and maintainability of the model considerably. 
-
-    F9 - Representation of the model is not great, hence understanding the interactions between the different subprocesses are not clear.
-
-    F10 - The model were lacking great organization tools such as swim lanes and object flows. 
-
-    F11 - The assignment of the cobot to micro-operations was not regularly reviewed and updated as the project progresses. 
-
-    F12 - Even though the durations of the macro-operations were well-known and studied thoroughly before, the durations of the micro-operations were estimated based on a simple calculation scheme.
-
-    \textbf{Discrete Event Simulation Model Review Results}
-
-    F13 - The input controls in the simulation module was not complete or aligned with the actual inputs that will be provided by another system. 
-
-    F14, F15 - The ranges defined for some events were not validated. 
-
-    F16 - Database structures were not updated automatically, instead done manually.
-
-    F17 - The duration of micro-, loading- and unloading-operations of the cobot were based on assumptions rather than actual measurements.
-
-    F18 - The simulation module does not support parallel execution of micro-operations. 
-
-    F19 - The interruption mechanism of the assembly line was not considered within the simulation module. 
-
-    F20 - The number of micro-operations was hard coded, consequently, the simulation module must be reprogrammed every time, when a new micro-operation is needed. 
-
-    F21 - Edge cases were not considered in the simulation module.  
-
-
-    \subsection{Mapping Issues to Quality Attributes}
-
-    To evaluate the quality of the FELICE digital twin, identified issues mapped to one or more relevant quality attributes(Table \ref{tab:Mapping}).
-    The assessment revealed that a significant portion of the identified issues
-     was quickly attributed to specific quality attributes.  Specifically, 24\% of the issues were related to correctness, 
-     which indicates an error between the real system and a digital twin system. 
-     35\% of the issues were related to completeness, proving that some necessary or appropriate parts were missing. 
-     8\% of the issues were related to fidelity, indicating a lack of detail. 
-     5\% of the issues were related to efficiency, indicating poor performance or excessive resource usage. 
-     Finally, 28\% of the issues were related to evolvability, indicating that the system was unresponsive to the environment 
-     and was not flexible or scalable.   
-
-
-
+    %%TODO WRITE HERE ONCE AGAIN
+    
 
     \begin{table}[h!]
         \begin{center}
-          \caption{Mapping Findings to Quality Attributes}
+          \caption{Mapping findings to Quality Attributes: Results of the manual artifact reviews were mapped to quality attributes, which were discussed in \ref{section:Digital Twin Quality Attributes}}
           \label{tab:Mapping}
           \begin{tabular}{l@{\hspace{1cm}}l} 
-            \textbf{Findings} & \textbf{Quality Issues}\\
+            \textbf{Findings} & \textbf{Missing Quality Attribute}\\
             \hline
-            Finding 1 &     Completeness\\
-            Finding 2 &     Completeness\\
-            Finding 3 &     Correctness, Completeness\\
-            Finding 4 &     Correctness\\
-            Finding 5 &     Evolvability\\
-            Finding 6 &     Completeness\\
-            Finding 7 &     Correctness, Completeness, Fidelity, Efficiency, Evolvability\\
-            Finding 8 &     Completeness, Fidelity, Evolvability\\
-            Finding 9 &     Evolvability\\
-            Finding 10 &    Correctness, Completeness, Fidelity, Evolvability\\
-            Finding 11 &    Evolvability\\
-            Finding 12 &    Correctness, Completeness\\
-            Finding 13 &    Completeness, Evolvability\\
-            Finding 14 &    Correctness, Completeness\\
-            Finding 15 &    Correctness, Completeness\\
-            Finding 16 &    Evolvability \\
-            Finding 17&CorrectnessCompleteness \\
-            Finding 18&CorrectnessEfficiency \\
-            Finding 19&CompletenessEvolvability \\
-            Finding 20&Evolvability \\
-            Finding 21&Evolvability 
+            Findings 1, 2 and 6 &     Completeness\\
+            Findings 3, 12, 14,15 and 17  &     Correctness, Completeness\\
+            Findings 4 &     Correctness\\
+            Findings 5,9,11,16,20 and 21 &     Evolvability\\
+            Findings 7 &     Correctness, Completeness, Fidelity, Efficiency, Evolvability\\
+            Findings 8 &     Completeness, Fidelity, Evolvability\\
+            Findings 10 &    Correctness, Completeness, Fidelity, Evolvability\\
+            Findings 13 and 19 &    Completeness, Evolvability\\
+            Findings 18&Correctness, Efficiency \\
     \end{tabular}
     \end{center}
     \end{table}
 
 
+
     \begin{figure}[htbp]
         \includegraphics[scale = 0.40]{quality_inspection_results_with_artifacts.png}
-        \caption{ Quality Inspection Results Categorized with Artifacts}
+        \caption{Quality Inspection Results Categorized with Artifacts: X-Axis represents artifacts in \ref{section:Artifacts}, Y-Axis represents the number of missing quality attributes found for each artifact, 
+        and lastly, each digital twin quality attribute is shown by the colors.}
         \label{fig:QualityInspectonResultsWithArtifacts}
     \end{figure}
 
+    \textbf{Process Videos Review Results}
+
+    Findings 1  - Even though the videos are well suited for providing a first impression of the production facility 
+    and the current assembly process for one product variant, the other product variants include different assembly operations, 
+    which were not shown in the videos. 
+    Furthermore, the cobot and the adaptive workstation were not part of the assembly process yet,
+     hence the videos do not provide a complete representation of the target system.  
+
+    \textbf{Scope Definition Review Results}
+
+    Findings 2 - The scope definition focuses on the physical entities of the shop floor and is consistent with the videos presented in the previous section. 
+    However, the scope definition is incomplete. Several entities are only selected for the tracking, hence additional state information such as the failure status of these entities was missing in the digital twin. 
+
+    \textbf{Requirements Specification Review Results}
+
+    Findings 3 - Atypical categorization of the digital twin requirements as functional, non-functional, constraint and standard was introduced. 
+    Also, standard categories were considered as a cause of requirements instead of a category of requirements. Furthermore, 
+    the constraint category was considered a non-functional requirement which results in a significant misunderstanding between non-functional 
+    requirements and constraints. Finally, some requirements were described as non-functional requirements instead of functional requirements. 
+
+    Findings 4 - Imprecise and unclear statements were found in requirement specifications. 
+
+    Findings 5 - Key design decisions were found in the requirement specifications, which results in a considerable decrease in maintainability. 
+
+    \textbf{Conceptual  Model Review Results}
+
+    Findings 6 - Conceptual models are not designed to react to unwanted situations. 
+
+    Findings 7 - Conceptual model specification was not clear enough, which results in quite some room for interpretations by the stakeholders. 
+    as the use of an unspecified flow chart model is prone to differing interpretations by different stakeholders and probable incorrect understanding of the relations between the sub-systems.
+
+    Findings 8 - The difference between the event triggers and decision nodes was not clear, which decreased the clarity and maintainability of the model considerably. 
+
+    Findings 9 - The representation of the model is not great, hence understanding the interactions between the different subprocesses are not clear.
+
+    Findings 10 - The model were lacking great organization tools such as swim lanes and object flows. 
+
+    Findings 11 - The assignment of the cobot to micro-operations was not regularly reviewed and updated as the project progresses. 
+
+    Findings 12 - Even though the durations of the macro-operations were well-known and studied thoroughly before, the durations of the micro-operations were estimated based on a simple calculation scheme.
+
+    \textbf{Discrete Event Simulation Model Review Results}
+
+    Findings 13 - The input controls in the simulation module was not complete or aligned with the actual inputs that will be provided by another system. 
+
+    Findings 14, and 15 - The ranges defined for some events were not validated. 
+
+    Findings 16 - Database structures were not updated automatically, instead done manually.
+
+    Findings 17 - The duration of micro-, loading- and unloading-operations of the cobot were based on assumptions rather than actual measurements.
+
+    Findings 18 - The simulation module does not support parallel execution of micro-operations. 
+
+    Findings 19 - The interruption mechanism of the assembly line was not considered within the simulation module. 
+
+    Findings 20 - The number of micro-operations was hard coded, consequently, the simulation module must be reprogrammed every time, when a new micro-operation is needed. 
+
+    Findings 21 - Edge cases were not considered in the simulation module.  
+
+
+    \subsection{Mapping the Issues to Quality Attributes}
+    The analysis revealed that a total of thirty-eight digital twin quality attributes were lacking in these artifacts. \ref{fig:QualityInspectonResultsWithArtifacts}
+    Therefore, to evaluate the quality of the FELICE digital twin, observations are mapped to one or more relevant quality attributes\ref{tab:Mapping}.
+    In addition, the assessment shows that every one of the identified issues was quickly attributed to a specific quality attribute.  
+    Specifically, 24\% of the issues were related to correctness, which indicates an error between the real system and a digital twin system.
+    35\% of the issues were related to completeness, proving that some necessary or appropriate parts are missing.
+    8\% of the issues were related to fidelity, indicating a lack of detail. 5\% of the issues were related to efficiency, indicating poor 
+    performance or excessive resource usage. Finally, 28\% of the issues were related to evolvability, indicating that the system has flexibility or scalability issues.  
+
     \section{Discussion}
-    \label{section:framework_1}
-    To mitigate potential human bias and enhance the data-driven approach for quality assurance, ongoing research aims to address these issues. 
-    Furthermore, the assessment of digital twin quality can be significantly improved by obtaining data from real systems, thereby enabling better visibility and a more robust evaluation. As such, the use of empirical data in combination with machine learning techniques can offer a more objective and reliable means of evaluating the correctness, completeness, fidelity, efficiency, and evolvability of digital twins. Additionally, given the manual nature of the current inspections, it is important to acknowledge the potential for inspector bias, which may impact the accuracy of the assessments. 
-    By leveraging technology to automate certain aspects of the evaluation process, it is possible to reduce the potential for such biases and improve the overall quality of digital twin assessments.
+
+    The results of this study demonstrate that a manual review and mapping of quality attributes to issues is an effective approach for evaluating the quality of digital twins in the design phase.  
+    Therefore, systematic analysis of the identified issues in terms of their relevance to various quality attributes is an effective way to gain insight into the strengths and weaknesses of the digital twin system under development. 
+    These insights can be used to guide further design decisions and improvements, ultimately leading to a higher-quality end product.
+
+    The quality assessment of the digital twin encountered some limitations due to the exility of information about the real system. Some artifacts provided less information, such as process videos, which only provide a limited perspective of the shopfloor based on the camera's field of view and the skills of the video maker. 
+    In contrast, the simulation and conceptual model offer a plethora of aspects to examine and assess, which results in a higher probability of discovering the issues \ref{fig:QualityInspectonResultsWithArtifacts}.
+
+
+
     
-    The success of the digital twin system depends on its quality, which requires careful evaluation based on several crucial quality attributes. The correctness of the system is measured by how accurately it behaves compared to the real system.
-    Completeness assesses whether the digital twin's subsystems and relations match those of the real system. 
-    Fidelity refers to the degree of exactness with which the real system is copied and represented.
-    Efficiency measures the productivity of the system and the minimum waste during the process. 
-    Evolvability is the system's ability to enhance its suitability to its environment through alterations to both its internal and functional structure. 
-    Evaluating these quality attributes of the FELICE digital twin system will help ensure its success in effectively integrating human and robot abilities in a collaborative setting, leading to enhanced efficiency and safety in various human-robot collaborative tasks.
     \section*{Acknowledgements}
     TODO
 
