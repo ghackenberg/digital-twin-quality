@@ -207,40 +207,11 @@
     call for further research in the field to improve the quality and reliability of digital twins. Moreover, 
     the lack of well-defined quality parameters for digital twins poses a significant challenge in ensuring their quality,
     which necessitates the development of appropriate quality metrics and standards for digital twins.
-    \subsection{Digital Twin Quality Attributes}\label{section:Digital Twin Quality Attributes}
-    We consolidated our findings from various standards, including ISO/IEC:25010, IEE730-2014, ISO9000, and ISO9001, as well as consulted the  Oxford dictionary to 
-    synthesize our findings\cite{ISO9000,ISO90012015,ISO/IEC:25010,IEE730-2014, OxfordDictionary}.
-    
-    \textbf{Correctness} is a  derived word from the adjective correct, which means that something is error-free regarding fact or truth. In the context of the digital twins, our fact or truth is a real system hence, correctness is a grade of quality, that indicates an error between the real system and a digital twin system.
-    Meanwhile, the quality of being correct is described by the term accuracy \cite{OxfordDictionary}. 
-    
-    \textbf{Completeness} is a derived word from the word complete, which can be described as an adjective, attribute, or verb\cite{OxfordDictionary}. 
-    The adjectival form of complete is a state of having all the necessary or appropriate parts\cite{OxfordDictionary}.
-
-    \textbf{Fidelity} refers to the degree of exactness with which the real system is copied and represented. Low fidelity indicates a simplified representation, 
-    while high-fidelity refers to an accurate and detailed representation of the real system \cite{Review2}. 
-    The concept of fidelity has garnered significant attention in recent years and continues to be an important area of research in digital twins\cite{Review2}\cite{Review1}.
-
-    \textbf{Efficiency} refers to the quality of being efficient, and efficiency is achieving
-    maximum productivity with minimum wasted effort or expense. The concept of efficiency is tightly coupled to productivity, which refers to the quality of being productive,
-    also the word productive can be explained as producing or being able to produce large amounts of goods\cite{OxfordDictionary}.  
-    For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum 
-    waste during the process is desired. Goods of the digital twin are nothing but information, which Grieves first 
-    indicated with this Information Mirror Model\cite{GrievesPLMBook}.
-
-    \textbf{Evolvability} is a system's capability to enhance its suitability to its environment through alterations to both its internal and functional 
-    structure\cite{MobusSystemTheory}. Another term to describe the response to changes in the environment is adaptability.
-    However, this concept differs from evolvability in that it only affects a system's internal or functional structure temporarily. 
-    For instance, a digital twin, which is a virtual system, can be designed to be more flexible and scalable, 
-    allowing for easy updates and the addition of new features. 
-    These updates and new features will result in definite changes to the structure of the system. 
-    On the other hand, a responsive web design is an adaptable system, capable of adjusting its size and layout 
-    depending on the user's hardware. As we have seen in \cite{ZHANGUPDATEMETHOD}, the update method shows that digital twins are evolvable systems, 
-    hence this attribute should be considered when the digital twin's quality is inspected. To assess the evolvability attribute, scalability analysis,
-    reusability analysis, modifiability analysis, testability analysis, and maintainability analysis can be performed. 
+  
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%METHODS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \section{Artifacts and Methods}
-    The used methodology consists of manual artifact reviews and evaluation of the results according to the digital twin quality attributes.    
+    \section{Method}
+    The methodology consists of a set of artifacts, manual artifact reviews, mapping quality attributes to the   
+    and evaluation of the results according to the digital twin quality attributes.    
     \subsection{Artifacts}\label{section:Artifacts}
     The current stage of review encompasses five key artifacts, including process videos displaying the current assembly procedure without an adaptive workstation and cobot, a scope definition outlining the objects on the shop floor requiring tracking or twinning, a requirements specification summarizing functional and non-functional requirements for the digital twin, a general and an operational conceptual model elucidating the high-level structure of the assembly procedure, 
     and a discrete event simulation module that implements the structures prescribed by the conceptual models.
@@ -273,15 +244,78 @@
     \textbf{Discrete Event Simulation Model} consisted of seven sections, including two animation sections, two input sections, one output section, one process logic section, and a database section. The animation sections provided a two-dimensional and a three-dimensional representation of the system, which aided in understanding the simulation and for debugging purposes. The input sections allowed for the management of inputs to the simulation model, and the output section displayed summary performance indicators about the simulation run. 
     The process logic section contained the process building blocks, such as queues and assembly operations. The database section provided an interface to data sources and sinks.
     
-    \subsection{Manual Artifact Reviews and Evoluation}
-    During the initial stages of the project, when the target system was not yet available, there was a lack of observable data about system behavior that could be utilized for validation. 
-    Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. Therefore, manual reviews were deemed the most suitable tool to account for the characteristics of this situation.
-    The manual review included, audits, inspections, reviews, structural analysis 
-    and walkthroughs with the project partners which was inspired by Balci's manual review works \cite{balcitechniques}. Lastly, observations after the reviews were mapped to the quality attributes. 
+    \subsection{Manual Artifact Reviews}
+    During the initial stages of the project, when the target system was not yet available,
+    there was a lack of observable data about system behavior that could be utilized for validation. 
+    Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. 
+    Therefore, manual reviews were deemed the most suitable tool to account for the characteristics of this situation.
+    The manual review included, audits, inspections, reviews, structural analysis and walkthroughs 
+    with the project partners which was inspired by Balci's manual review works \cite{balcitechniques}. 
+    
+    \subsection{Digital Twin Quality Attributes}\label{section:Digital Twin Quality Attributes}
+    To identify the digital twin quality attributes, the following standards, including ISO/IEC:25010, IEE730-2014, ISO9000, and ISO9001, 
+    as well as the Oxford dictionary was consulted to 
+    synthesize our findings\cite{ISO9000,ISO90012015,ISO/IEC:25010,IEE730-2014, OxfordDictionary}.
+    
+    \textbf{Correctness} is a  derived word from the adjective correct, which means that something is error-free regarding fact or truth. 
+    In the context of the digital twins, the fact or truth is the real system hence, correctness is a grade of quality, 
+    that indicates an error between the real system and a digital twin system.
+    Meanwhile, the quality of being correct is described by the term accuracy \cite{OxfordDictionary}. 
+    
+    \textbf{Completeness} is a derived word from the word complete, which can be described as an adjective, attribute, or verb\cite{OxfordDictionary}. 
+    The adjectival form of complete is a state of having all the necessary or appropriate parts\cite{OxfordDictionary}.
+
+    \textbf{Fidelity} refers to the degree of exactness with which the real system is copied and represented. 
+    Low fidelity indicates a simplified representation, while high fidelity refers to an accurate and detailed representation of the real system \cite{Review2}. 
+    The concept of fidelity has garnered significant attention in recent
+    years and continues to be an important area of research in digital twins\cite{Review2}\cite{Review1}.
+
+    \textbf{Efficiency} refers to the quality of being efficient\cite{OxfordDictionary}. Therefore, efficiency is achieving
+    maximum productivity with minimum wasted effort or expense. The concept of efficiency is tightly coupled to productivity, which refers to the quality of being productive,
+    also the word productive can be explained as producing or being able to produce large amounts of goods\cite{OxfordDictionary}.  
+    For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum 
+    waste during the process is desired. 
+
+    \textbf{Evolvability} is a system's capability to enhance its suitability to its environment through alterations to both its internal and functional 
+    structure\cite{MobusSystemTheory}. Another term to describe the response to changes in the environment is adaptability.
+    However, this concept differs from evolvability in that it only affects a system's internal or functional structure temporarily. 
+    For instance, a digital twin, which is a virtual system, can be designed to be more flexible and scalable, 
+    allowing for easy updates and the addition of new features\cite{ZHANGUPDATEMETHOD}.
+    
+    \subsection{Mapping Digital Twin Attributes to Results of the Manual Reviews}
+    To evaluate the quality of the artifact, the issues were mapped to digital twin attributes. 
+    To begin this process, the findings were collected from the manual review, followed by an inspection of the findings to determine which digital twin qualities were absent. 
+    Finally, the findings were mapped to the relevant missing quality attribute(s) and submitted for artifact quality evaluation. 
+    
+    subsection{Artifact Quality Evaluation}
+    To evaluate the quality of the digital twin artifacts, the mapped findings were scrutinized and evaluated. 
+    The process started by identifying which quality attribute(s) were mapped. 
+    Once identified, the missing attribute(s) was incremented by 1 to determine the quality percentage of the artifact. 
+    
+    \begin{figure}[htbp]
+        \includegraphics[scale = 0.35]{RequirementSpecifications.png}
+        \caption{Method for the evaluation of the digital twin artifact quality: Artifact. finding indicates that the finding belongs to the artifact, while -> indicates mapping}
+        \label{fig:Method}
+    \end{figure}
+    
+    \subsection{Digital Twin Quality Evaluation}
+    To assess the quality of the digital twin, the values obtained from evaluating each artifact's quality are collected and summed. 
+    The resulting sum was assigned to the corresponding digital twin quality attribute. 
+    As a result, the digital twin quality was expressed as a percentage using the following equation:    
+    \begin{equation}
+        (totalnumberofselectedattribute/totalnumberofattributes)*100
+    \end{equation}
+
+    \begin{figure}[htbp]
+        \includegraphics[scale = 0.35]{DigitalTwinQuality.png}
+            \caption{Method for the evaluation of the digital twin quality:}
+        \label{fig:MethodforDigitalTwinQuality}
+    \end{figure}
+   
+    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RESULTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{Results}
     %%TODO WRITE HERE ONCE AGAIN
-    
 
     \begin{table}[h!]
         \begin{center}
