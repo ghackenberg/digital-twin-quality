@@ -8,6 +8,9 @@
 \usepackage{cite}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{cleveref}
+\usepackage{tabularray}
+\usepackage{dirtree,array}
 
 
 
@@ -153,33 +156,34 @@
     The current stage of review encompasses five key artifacts, including process videos displaying the current assembly procedure without an adaptive workstation and cobot, a scope definition outlining the objects on the shop floor requiring tracking or twinning, a requirements specification summarizing functional and non-functional requirements for the digital twin, a general and an operational conceptual model elucidating the high-level structure of the assembly procedure, 
     and a discrete event simulation module that implements the structures prescribed by the conceptual models.
 
-    \textbf{Process Videos:}
-    The project partner provided three videos initially to explain the manual assembly procedures performed at each of the three workstations. From the videos,  
+    \textbf{Process Videos} have been utilized to explain the manual assembly procedures performed at each of the three workstations. From the three videos initially provided by the project partner,  
     the sequence of assembly steps was extracted at least for one product variant. The tools and the parts needed for each assembly operation were observed. Additionally, the approximate duration of each assembly step 
     was estimated, and some ergonomic characteristics of each operation were derived. 
     The derivable ergonomic characteristics mainly included the poses and motions performed by the operators.
 
-    \textbf{Scope Definition:}
-    To better understand the context and focus of the digital twin, 
-    the project partner used a methodology based on hierarchical task analysis and the process videos. 
+    \textbf{Scope Definition} was determined using a methodology based on hierarchical task analysis and process videos provided by the project partner, which aids in better understanding the context and focus of the digital twin.
     This resulted in a scope definition that identified entities to be twinned, entities to be tracked, and important areas in the scene. 
     Entities to be twinned needed to be represented accurately in the simulation models, including their position, pose, speed, fatigue, and other state variables. 
     Entities to be tracked, on the other hand, only required position information. The scope definition was based on a floor plan of the production facility, with the three workstations marked as gray rectangles. 
     The human workers, cobot, and adaptive workstation were identified as entities to be twinned, and therefore required accurate representation, 
     monitoring, and simulation. Other entities, such as an AGV, carts with doors, and screwdrivers used for assembly operations, were designated as entities to be tracked.
 
-    \textbf{Requirements Specification} for the digital twin was defined with a unique ID, a natural language description, an origin, a category, a priority, and a rationale. The ID was used as a reference point for other project artifacts, while the specification described the requirement in a way that allowed for testing of the digital twin implementation. The origin of the requirement was noted to identify the project partner responsible for its creation. The category distinguished between functional and non-functional requirements, as well as constraints and standards. The priority of each requirement was classified into four levels 
+    \textbf{Requirements Specification} for the digital twin was defined with a unique ID, a natural language description, an origin, a category, a priority, and a rationale. The ID was used as a reference point for other project artifacts, while the specification described the requirement in a way that allowed for testing of the digital twin implementation. The origin of the requirement was noted to identify the project partner responsible for its creation.
+     The category is distinguished between functional and non-functional requirements, as well as constraints and standards. The priority of each requirement was classified into four levels 
     (must-, should-, could-, and would-have) to help prioritize development efforts. 
-    Finally, the rationale provided a clear explanation for each requirement's inclusion in the specification.
+    Finally, the rationale provided a clear explanation for each requirement's implication in the specification.
 
-    \textbf{Conceptual Model} was comprised of two parts:  a general conceptual model and an operational conceptual model. Both models described the assembly line processes, but the operational conceptual model focused on the specific steps of the assembly process, while the general conceptual model focused on higher-level processes and workflows.
-    The general conceptual model was represented using a general flow chart notation that distinguished between a root node, activity nodes, and decision nodes.
+    \textbf{Conceptual Model} was comprised of two parts: a general conceptual model and an operational conceptual model. 
+    Both models described the assembly line processes however the operational conceptual model focused on the specific steps of the assembly process, while the general conceptual model focused on higher-level processes and workflows.
+    The general conceptual model was represented using a general flow chart notation which distinguishes a root node, activity nodes, and decision nodes.
     The operational conceptual model consisted of three spreadsheets, each displaying the sequence of assembly operations performed at one workstation. 
     The assembly operations were divided into macro- and micro-operations, with each macro-operation referring 
     to one part of the final product being assembled, and the micro-operations referring to the individual steps needed to complete the respective macro-operation.
 
-    \textbf{Discrete Event Simulation Model} consisted of seven sections, including two animation sections, two input sections, one output section, one process logic section, and a database section. The animation sections provided a two-dimensional and a three-dimensional representation of the system, which aided in understanding the simulation and for debugging purposes. The input sections allowed for the management of inputs to the simulation model, and the output section displayed summary performance indicators about the simulation run. 
-    The process logic section contained the process building blocks, such as queues and assembly operations. The database section provided an interface to data sources and sinks.
+    \textbf{Discrete Event Simulation Model} consisted of seven sections, including two animation sections, two input sections, one output section, one process logic section, and a database section. 
+    The animation sections provided a two-dimensional and a three-dimensional representation of the system, 
+    which aided in understanding the simulation and debugging purposes. The input sections allowed for the management of inputs to the simulation model, and the output section displayed summary performance indicators about the simulation run. 
+    The process logic section contained the process building blocks, such as queues and assembly operations. Lastly, the database section provided an interface to data sources and sinks.
     
     \subsection{Manual Artifact Reviews}
     During the initial stages of the project, when the target system was not yet available,
@@ -200,34 +204,33 @@
     Meanwhile, the quality of being correct is described by the term accuracy \cite{OxfordDictionary}. 
     
     \textbf{Completeness} is a derived word from the word complete, which can be described as an adjective, attribute, or verb\cite{OxfordDictionary}. 
-    The adjectival form of complete is a state of having all the necessary or appropriate parts\cite{OxfordDictionary}.
+    The adjectival form used in the study denotes \textit{complete} as a state of having all the necessary or appropriate parts of both systems\cite{OxfordDictionary}.
 
     \textbf{Fidelity} refers to the degree of exactness with which the real system is copied and represented. 
     Low fidelity indicates a simplified representation, while high fidelity refers to an accurate and detailed representation of the real system \cite{Review2}. 
     The concept of fidelity has garnered significant attention in recent
-    years and continues to be an important area of research in digital twins\cite{Review2}\cite{Review1}.
+    years and continues to be an important focus in Digital Twin research\cite{Review2}\cite{Review1}.
 
     \textbf{Efficiency} refers to the quality of being efficient\cite{OxfordDictionary}. Therefore, efficiency is achieving
-    maximum productivity with minimum wasted effort or expense. The concept of efficiency is tightly coupled to productivity, which refers to the quality of being productive,
-    also the word productive can be explained as producing or being able to produce large amounts of goods\cite{OxfordDictionary}.  
-    For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum 
-    waste during the process is desired. 
+    maximum productivity with minimum wasted effort or expense. It is worth mentioning that the concept of efficiency is tightly intertwined with the concept of productivity, 
+    although it differs from the latter's definition, which is defined as the ability to produce large amounts of goods\cite{OxfordDictionary}.  
+    For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum waste during the process is desired. 
 
     \textbf{Evolvability} is a system's capability to enhance its suitability to its environment through alterations to both its internal and functional 
     structure\cite{MobusSystemTheory}. Another term to describe the response to changes in the environment is adaptability.
     However, this concept differs from evolvability in that it only affects a system's internal or functional structure temporarily. 
-    For instance, a digital twin, which is a virtual system, can be designed to be more flexible and scalable, 
+    For instance, a digital twin, which is an evolvable virtual system, can be designed to be more flexible and scalable, 
     allowing for easy updates and the addition of new features\cite{ZHANGUPDATEMETHOD}.
     
-    \subsection{Mapping Digital Twin Attributes to Results of the Manual Reviews}
+    \subsection{Mapping Digital Twin Attributes to Manual Review Results}
     To evaluate the quality of the artifact, the issues were mapped to digital twin attributes. 
     To begin this process, the findings were collected from the manual review, followed by an inspection of the findings to determine which digital twin qualities were absent. 
     Finally, the findings were mapped to the relevant missing quality attribute(s) and submitted for artifact quality evaluation. 
     
-    subsection{Artifact Quality Evaluation}
+    \subsection{Artifact Quality Evaluation}
     To evaluate the quality of the digital twin artifacts, the mapped findings were scrutinized and evaluated. 
     The process started by identifying which quality attribute(s) were mapped. 
-    Once identified, the missing attribute(s) was incremented by 1 to determine the quality percentage of the artifact. 
+    Once identified, the missing attribute(s) was incremented by 1 to determine the total quality missing attributes of the artifact. 
     
     \begin{figure}[htbp]
         \includegraphics[scale = 0.35]{RequirementSpecifications.png}
@@ -238,12 +241,12 @@
     \subsection{Digital Twin Quality Evaluation}
     To assess the quality of the digital twin, the values obtained from evaluating each artifact's quality are collected and summed. 
     The resulting sum was assigned to the corresponding digital twin quality attribute. 
-    As a result, the digital twin quality was expressed as a percentage using the following equation:    
+    As a result, the digital twin quality was expressed with quality attribute values.    
   
 
     \begin{figure}[htbp]
         \includegraphics[scale = 0.25]{DigitalTwinQuality.png}
-            \caption{Method for the evaluation of the digital twin quality:}
+            \caption{Method for the evaluation of the digital twin quality}
         \label{fig:MethodforDigitalTwinQuality}
     \end{figure}
    
@@ -251,7 +254,56 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RESULTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{Results}
 
-    
+    First, to assess digital twin quality, manual reviews for each artifact were conducted (Figure~\ref{fig:QualityInspectonResultsWithArtifacts} ). 
+    As a result, a total of twenty-one quality issues were identified, listed and finally mapped to the digital twin quality attributes(Table~\ref{tab:Table1})(Table~\ref{tab:Table2})(Figure~\ref{fig:QualityInspectonResultsWithArtifacts}).
+    The mapping process revealed that a total of thirty-eight digital twin quality attributes were lacking in the artifacts(Figure~\ref{fig:QualityInspectonResultsWithArtifacts}).  
+    Specifically, 24\% of the quality issues of the digital twin were related to the correctness, 35\%  were related to completeness, 8\%  were related to fidelity, 5\%  were related to efficiency,
+    and finally, 28\% were related to evolvability.  
+
+
+    \begin{table}[h!]
+    \begin{center}
+    ~\label{tab:Table2}
+    ~\caption{Findings from each Artifact}
+    \begin{tabular}{lrr}
+        \toprule
+        \textbf{Artifact Tree}\\
+        \midrule
+        \DTsetlength{0.2em}{0.5em}{0.5em}{0.4pt}{1pt}
+        \begin{minipage}{5cm}\dirtree{%
+        .1 Artifacts.
+        .2 Process Videos.
+        .3 Finding 1.
+        .2 Scope Definition.
+        .3 Finding 2.
+        .2 Requirement Specification.
+        .3 Finding 3.
+        .3 Finding 4.
+        .3 Finding 5.
+        .3 Finding 6.
+        .2 Conceptual Model.
+        .3 Finding 7.
+        .3 Finding 8.
+        .3 Finding 9.
+        .3 Finding 10.
+        .3 Finding 11.
+        .3 Finding 12.
+        .2 Simulation Model.
+        .3 Finding 13.
+        .3 Finding 14.
+        .3 Finding 15.
+        .3 Finding 16.
+        .3 Finding 17.
+        .3 Finding 18.
+        .3 Finding 19.
+        .3 Finding 20.
+        .3 Finding 21.
+        }
+        \end{minipage}
+        \end{tabular}
+        \end{center}
+        \end{table}
+    %TODO BETTER TABLE
     \begin{table}[h!]
     \begin{center}
     \label{tab:Table1}
@@ -282,6 +334,8 @@
         \textbf{Finding 19} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
         \textbf{Finding 20} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
         \textbf{Finding 21} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
+        \hline
+        \textbf{Total} &~~~~~~~~~9~~~~~~~~~ & ~~~~~~~~~13~~~~~~~~~ & ~~~~~~~~~3~~~~~~~~~ & ~~~~~~~~~2~~~~~~~~~ & ~~~~~~~~~11~~~~~~~~~ \\
     \end{tabular}
     }
     \end{center}
@@ -294,74 +348,7 @@
         \label{fig:QualityInspectonResultsWithArtifacts}
     \end{figure}
 
-    \textbf{Process Videos Review Results}
-
-    Findings 1  - Even though the videos are well suited for providing a first impression of the production facility 
-    and the current assembly process for one product variant, the other product variants include different assembly operations, 
-    which were not shown in the videos. 
-    Furthermore, the cobot and the adaptive workstation were not part of the assembly process yet,
-     hence the videos do not provide a complete representation of the target system.  
-
-    \textbf{Scope Definition Review Results}
-
-    Findings 2 - The scope definition focuses on the physical entities of the shop floor and is consistent with the videos presented in the previous section. 
-    However, the scope definition is incomplete. Several entities are only selected for the tracking, hence additional state information such as the failure status of these entities was missing in the digital twin. 
-
-    \textbf{Requirements Specification Review Results}
-
-    Findings 3 - Atypical categorization of the digital twin requirements as functional, non-functional, constraint and standard was introduced. 
-    Also, standard categories were considered as a cause of requirements instead of a category of requirements. Furthermore, 
-    the constraint category was considered a non-functional requirement which results in a significant misunderstanding between non-functional 
-    requirements and constraints. Finally, some requirements were described as non-functional requirements instead of functional requirements. 
-
-    Findings 4 - Imprecise and unclear statements were found in requirement specifications. 
-
-    Findings 5 - Key design decisions were found in the requirement specifications, which results in a considerable decrease in maintainability. 
-
-    \textbf{Conceptual  Model Review Results}
-
-    Findings 6 - Conceptual models are not designed to react to unwanted situations. 
-
-    Findings 7 - Conceptual model specification was not clear enough, which results in quite some room for interpretations by the stakeholders. 
-    as the use of an unspecified flow chart model is prone to differing interpretations by different stakeholders and probable incorrect understanding of the relations between the sub-systems.
-
-    Findings 8 - The difference between the event triggers and decision nodes was not clear, which decreased the clarity and maintainability of the model considerably. 
-
-    Findings 9 - The representation of the model is not great, hence understanding the interactions between the different subprocesses are not clear.
-
-    Findings 10 - The model were lacking great organization tools such as swim lanes and object flows. 
-
-    Findings 11 - The assignment of the cobot to micro-operations was not regularly reviewed and updated as the project progresses. 
-
-    Findings 12 - Even though the durations of the macro-operations were well-known and studied thoroughly before, the durations of the micro-operations were estimated based on a simple calculation scheme.
-
-    \textbf{Discrete Event Simulation Model Review Results}
-
-    Findings 13 - The input controls in the simulation module was not complete or aligned with the actual inputs that will be provided by another system. 
-
-    Findings 14, and 15 - The ranges defined for some events were not validated. 
-
-    Findings 16 - Database structures were not updated automatically, instead done manually.
-
-    Findings 17 - The duration of micro-, loading- and unloading-operations of the cobot were based on assumptions rather than actual measurements.
-
-    Findings 18 - The simulation module does not support parallel execution of micro-operations. 
-
-    Findings 19 - The interruption mechanism of the assembly line was not considered within the simulation module. 
-
-    Findings 20 - The number of micro-operations was hard coded, consequently, the simulation module must be reprogrammed every time, when a new micro-operation is needed. 
-
-    Findings 21 - Edge cases were not considered in the simulation module.  
-
-
-    \subsection{Mapping the Issues to Quality Attributes}
-    The analysis revealed that a total of thirty-eight digital twin quality attributes were lacking in these artifacts. \ref{fig:QualityInspectonResultsWithArtifacts}
-    Therefore, to evaluate the quality of the FELICE digital twin, observations are mapped to one or more relevant quality attributes\ref{tab:Mapping}.
-    In addition, the assessment shows that every one of the identified issues was quickly attributed to a specific quality attribute.  
-    Specifically, 24\% of the issues were related to correctness, which indicates an error between the real system and a digital twin system.
-    35\% of the issues were related to completeness, proving that some necessary or appropriate parts are missing.
-    8\% of the issues were related to fidelity, indicating a lack of detail. 5\% of the issues were related to efficiency, indicating poor 
-    performance or excessive resource usage. Finally, 28\% of the issues were related to evolvability, indicating that the system has flexibility or scalability issues.  
+    
 
     \section{Discussion}
 
@@ -369,10 +356,19 @@
     Therefore, systematic analysis of the identified issues in terms of their relevance to various quality attributes is an effective way to gain insight into the strengths and weaknesses of the digital twin system under development. 
     These insights can be used to guide further design decisions and improvements, ultimately leading to a higher-quality end product.
 
-    The quality assessment of the digital twin encountered some limitations due to the exility of information about the real system. Some artifacts provided less information, such as process videos, which only provide a limited perspective of the shopfloor based on the camera's field of view and the skills of the video maker. 
+    The quality assessment of the digital twin encountered some limitations due to the exility of information about the real system. Some artifacts provided less information, 
+    such as process videos, which only provide a limited perspective of the shop floor based on the camera's field of view and the skills of the video maker. 
     In contrast, the simulation and conceptual model offer a plethora of aspects to examine and assess, which results in a higher probability of discovering the issues \ref{fig:QualityInspectonResultsWithArtifacts}.
 
+    The reason of why the  most of the issues are related to the evolvability, 
+    completeness and correctness, and less for fidelity and efficiency is due to the stage that the FELICE project is in. Not only the exility of the information is the limiting factor, also the visibility of the information 
+    is also an interesting factor. Therefore, evolvability, completeness and correctness are easier to map and detect , rather than fidelity and efficiency. 
 
+    Person dependent, also not everything is written, memory problem, completeness, 
+    issuee finding sometimes even though the issue is not there, still assesed as a issue, assuming that person is correct
+
+    The write a protocol, timing ,hard to cover everything, 
+    
 
     
     \section*{Acknowledgements}
