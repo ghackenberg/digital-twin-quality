@@ -257,52 +257,251 @@
     First, to assess digital twin quality, manual reviews for each artifact were conducted (Figure~\ref{fig:QualityInspectonResultsWithArtifacts} ). 
     As a result, a total of twenty-one quality issues were identified, listed and finally mapped to the digital twin quality attributes(Table~\ref{tab:Table1})(Table~\ref{tab:Table2})(Figure~\ref{fig:QualityInspectonResultsWithArtifacts}).
     The mapping process revealed that a total of thirty-eight digital twin quality attributes were lacking in the artifacts(Figure~\ref{fig:QualityInspectonResultsWithArtifacts}).  
-    Specifically, 24\% of the quality issues of the digital twin were related to the correctness, 35\%  were related to completeness, 8\%  were related to fidelity, 5\%  were related to efficiency,
+    Specifically, 24\% of the quality issues of the digital twin were related to correctness, 35\%  were related to completeness, 8\%  were related to fidelity, 5\%  were related to efficiency,
     and finally, 28\% were related to evolvability.  
 
 
+    \subsection{Example Findings}
+
+    To Three examples illustrate the potential 
+    12 - Conceptual Model
+    17 - Simulation Model
+    20 - Simulation Model
+    First: the discrete event simulation model originally enforced a strictly sequential execution of operations.
+    However, the human and the cobot can work in parallel, and therefore execute operations also in parallel.
+    This issue has been solved already in a later version of the discrete event simulation model.
+
+    F12 - **Even though the durations of the macro-operations were well-known and studied throughly before, the durations of the micro-operations were estimated based on a simple calculation scheme. **Completeness, Correctness.****
+
+    This issue is related to the correctness and completeness of the operational conceptual model. While the durations of the macro-operations are well-known and derived from a previous study, the durations of the micro-operations are estimated based on a simple calculation scheme. This introduces a risk of inaccuracy and incompleteness in the model, which could affect the overall performance of the digital twin. Validating the durations of the micro-operations is necessary to ensure the correctness and completeness of the model, but this validation might not be feasible until the entire
+    FELICE system is operational and proper data can be collected. Therefore, this issue should be addressed in the future to ensure the accuracy of the digital twin.
+
+
+    **F17 - The duration of micro-, loading- and unloading-operations of the cobot were based on assumptions rather than actual measurements.
+    **Correctness, Completeness****
+
+    Second: The original discrete event simulation model originally enforced a fixed number of operations per workstation.
+    This might be okay for now, but what if the workstations and the workflows change in the future?
+    In such cases, adapting the discrete event simulation model might take a substantial some effort.
+
+    **This finding relates to the completeness and fidelity aspects of the DES module. The durations of micro-operations as well as the loading 
+    and unloading operations of the cobot are important factors that affect the accuracy of the simulation. The fact that these values are based 
+    on assumptions rather than actual measurements means that there is a risk of inaccuracy in the simulation results. In terms of completeness, 
+    the module is not able to provide a fully accurate simulation because it is based on assumptions that have not been validated. 
+    In terms of fidelity, the module may not accurately reflect the behavior of the real system due to the potential inaccuracy of these assumptions.
+    However, it should be noted that this issue is due to limitations in the data collection process rather than any shortcomings in the design of the DES module itself.**
+
+    F20 - **Number of micro-operations were hardcoded, consequently, the DES module must be reprogrammed everytime, when a new micro-operation is needed.** 
+    **Evolvability**
+
+    **Based on the given finding, the issue with the process logic section is related to its maintainability and adaptability. 
+    The DES module has a hardcoded number of micro-operations that can be performed at a single workstation, which means that the module must be reprogrammed every time 
+    a different number of micro-operations is required. This issue could impact the maintainability and adaptability of the DES module. It is suggested that the number of 
+    micro-operations per workstation can be configured instead to address this issue. However, it is also mentioned that the current number of micro- 
+    and macro-operations allows the generation of 272 workflows, which provides a solid base for look-ahead and optimization purposes and what-if analysis to be executed by a human end-user.**
+    
+
+    
+
+    Third: The different workflow variants, that can be executed on the assembly line, are managed entirely manually.
+    However, the workflow variants mostly differ in the assignment of operations to human and cobot.
+    Therefore, one can imagine a technique to generate workflow variants automatically, which would greatly improve evolvability.
     \begin{table}[h!]
     \begin{center}
-    ~\label{tab:Table2}
-    ~\caption{Findings from each Artifact}
-    \begin{tabular}{lrr}
-        \toprule
-        \textbf{Artifact Tree}\\
-        \midrule
-        \DTsetlength{0.2em}{0.5em}{0.5em}{0.4pt}{1pt}
-        \begin{minipage}{5cm}\dirtree{%
-        .1 Artifacts.
-        .2 Process Videos.
-        .3 Finding 1.
-        .2 Scope Definition.
-        .3 Finding 2.
-        .2 Requirement Specification.
-        .3 Finding 3.
-        .3 Finding 4.
-        .3 Finding 5.
-        .3 Finding 6.
-        .2 Conceptual Model.
-        .3 Finding 7.
-        .3 Finding 8.
-        .3 Finding 9.
-        .3 Finding 10.
-        .3 Finding 11.
-        .3 Finding 12.
-        .2 Simulation Model.
-        .3 Finding 13.
-        .3 Finding 14.
-        .3 Finding 15.
-        .3 Finding 16.
-        .3 Finding 17.
-        .3 Finding 18.
-        .3 Finding 19.
-        .3 Finding 20.
-        .3 Finding 21.
-        }
-        \end{minipage}
+    \label{tab:Table2}
+    \caption{adfasdfadf}
+    \scalebox{0.8}{
+        \begin{tabular}{llllll}
+            \multicolumn{1}{c} {Findings} & \multicolumn{1}{c} {\textbf{\textit{Correctness}}} & \multicolumn{1}{c}{\textbf{\textit{Completeness}}} 
+            & \multicolumn{1}{c}{\textbf{\textit{Fidelity}}} & \multicolumn{1}{c}{\textbf{\textit{Efficiency}}} & \multicolumn{1}{c}{\textbf{\textit{Evolvability}}} \\
+            \begin{minipage}{4cm}\dirtree{%
+                .1 Artifacts.
+                .2 Process Videos.
+                .3 Finding 1.
+                .2 Scope Definition.
+                .3 Finding 2.
+                .2 Requirement Spec.
+                .3 Finding 3.
+                .3 Finding 4.
+                .3 Finding 5.
+                .3 Finding 6.
+                .2 Conceptual Model.
+                .3 Finding 7.
+                .3 Finding 8.
+                .3 Finding 9.
+                .3 Finding 10.
+                .3 Finding 11.
+                .3 Finding 12.
+                .2 Simulation Model.
+                .3 Finding 13.
+                .3 Finding 14.
+                .3 Finding 15.
+                .3 Finding 16.
+                .3 Finding 17.
+                .3 Finding 18.
+                .3 Finding 19.
+                .3 Finding 20.
+                .3 Finding 21.
+            }\end{minipage}
+            &
+            \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
+            \begin{minipage}{2cm}\dirtree{%
+                .1 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+            }\end{minipage}
+            &
+            \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
+            \begin{minipage}{2cm}\dirtree{%
+                .1 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+            }\end{minipage}
+            &
+            \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
+            \begin{minipage}{2cm}\dirtree{%
+                .1 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+            }\end{minipage}
+            &
+            \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
+            \begin{minipage}{2cm}\dirtree{%
+                .1 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+            }\end{minipage}
+            &
+            \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
+            \begin{minipage}{2cm}\dirtree{%
+                .1 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .2 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+                .3 ~~~~~x.
+            }\end{minipage}
         \end{tabular}
-        \end{center}
-        \end{table}
+    }
+\end{center}
+\end{table}
     %TODO BETTER TABLE
     \begin{table}[h!]
     \begin{center}
@@ -313,18 +512,23 @@
     \begin{tabular}{l@{\hspace{1cm}}l@{\hspace{1cm}}l@{\hspace{1cm}}l@{\hspace{1cm}}l@{\hspace{1cm}}l@{\hspace{1cm}}l}
         \textbf{Findings} & \textbf{Correctness} & \textbf{Completeness} & \textbf{Fidelity} & \textbf{Efficiency} & \textbf{Evolvability}\\
         \hline
+        \textbf{Process Videos}&~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
         \textbf{Finding 1} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
+        \textbf{Scope Definition}&~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
         \textbf{Finding 2} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
+        \textbf{Requirement Specification}&~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
         \textbf{Finding 3} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
         \textbf{Finding 4} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
         \textbf{Finding 5} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
         \textbf{Finding 6} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
+        \textbf{Conceptual Model}&~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
         \textbf{Finding 7} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
         \textbf{Finding 8} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
         \textbf{Finding 9} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
         \textbf{Finding 10} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
         \textbf{Finding 11} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
         \textbf{Finding 12} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
+        \textbf{Simulation Model} &~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
         \textbf{Finding 13} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
         \textbf{Finding 14}&~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
         \textbf{Finding 15} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
