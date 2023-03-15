@@ -2,6 +2,7 @@
 \usepackage[colorlinks,allcolors=blue]{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage{listings}
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{verbatim}
@@ -11,6 +12,7 @@
 \usepackage{cleveref}
 \usepackage{tabularray}
 \usepackage{dirtree,array}
+\usepackage{subcaption}
 
 
 
@@ -191,37 +193,63 @@
     Instead, informal and potentially incomplete, inconsistent, or incorrect system descriptions had to be relied upon. 
     Therefore, manual reviews were deemed the most suitable tool to account for the characteristics of this situation.
     The manual review included, audits, inspections, reviews, structural analysis and walkthroughs 
-    with the project partners which was inspired by Balci's manual review works \cite{balcitechniques}. 
+    with the project partners which was inspired by Balci's manual review works~\cite{balcitechniques}. 
     
     \subsection{Digital Twin Quality Attributes}\label{section:Digital Twin Quality Attributes}
     To identify the digital twin quality attributes, the following standards, including ISO/IEC:25010, IEE730-2014, ISO9000, and ISO9001, 
     as well as the Oxford dictionary was consulted to 
     synthesize our findings\cite{ISO9000,ISO90012015,ISO/IEC:25010,IEE730-2014, OxfordDictionary}.
     
-    \textbf{Correctness} is a  derived word from the adjective correct, which means that something is error-free regarding fact or truth. 
-    In the context of the digital twins, the fact or truth is the real system hence, correctness is a grade of quality, 
-    that indicates an error between the real system and a digital twin system.
-    Meanwhile, the quality of being correct is described by the term accuracy \cite{OxfordDictionary}. 
     
-    \textbf{Completeness} is a derived word from the word complete, which can be described as an adjective, attribute, or verb\cite{OxfordDictionary}. 
-    The adjectival form used in the study denotes \textit{complete} as a state of having all the necessary or appropriate parts of both systems\cite{OxfordDictionary}.
+    \textbf{Correctness} is a  derived word from the adjective \textit{correct}, which means that the entity is error-free regarding fact or truth. 
+    In the context of the digital twins, the fact or truth is the real system hence, \textit{correctness} is a grade of quality, 
+    that indicates an error between the real system and a digital twin system (Figure~\ref{fig:CorrectnessAndCompleteness}). This 
+    Meanwhile, the quality of being \textit{correct} is described by the term accuracy \cite{OxfordDictionary}. 
+    
+    \textbf{Completeness} is a derived word from the word  \textit{complete}, which can be described as an adjective, attribute, or verb\cite{OxfordDictionary}. 
+    The adjectival form used in the study denotes \textit{complete} as a state of having all the necessary or appropriate parts according to the real system 
+    (Figure~\ref{fig:CorrectnessAndCompleteness}). Additionally, subaspects of completeness, which are \textit{incompleteness} and \textit{overcompleteness} 
+    were inspected but identified as a completeness issue.  
+    
+    \begin{figure}
+        
+        \centering
+            \includegraphics[width = 1\textwidth]{Correctness and Completeness.png}
+            \caption{Correctness and Completeness}\label{fig:CorrectnessAndCompleteness}
+    \end{figure}
 
     \textbf{Fidelity} refers to the degree of exactness with which the real system is copied and represented. 
-    Low fidelity indicates a simplified representation, while high fidelity refers to an accurate and detailed representation of the real system \cite{Review2}. 
+    Low fidelity indicates a simplified representation, 
+    while high fidelity refers to an accurate and detailed representation of the real system~\cite{Review2} (Figure~\ref{fig:EfficiencyandFidelity}). 
     The concept of fidelity has garnered significant attention in recent
     years and continues to be an important focus in Digital Twin research\cite{Review2}\cite{Review1}.
 
-    \textbf{Efficiency} refers to the quality of being efficient\cite{OxfordDictionary}. Therefore, efficiency is achieving
-    maximum productivity with minimum wasted effort or expense. It is worth mentioning that the concept of efficiency is tightly intertwined with the concept of productivity, 
+    \textbf{Efficiency} refers to the quality of being efficient\cite{OxfordDictionary}. 
+    Therefore, efficiency is achieving maximum productivity with minimum wasted effort or expense (Figure~\ref{fig:EfficiencyandFidelity}). 
+    It is worth mentioning that the concept of efficiency is tightly intertwined with the concept of productivity, 
     although it differs from the latter's definition, which is defined as the ability to produce large amounts of goods\cite{OxfordDictionary}.  
-    For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum waste during the process is desired. 
-
+    For example, time efficiency indicates that,  with less amount of time as an input, more output with the minimum waste during the process is desired.
+    
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width = 1\textwidth]{Efficiency and Fidelity.png}
+        \caption{Efficiency and Fidelity}~\label{fig:EfficiencyandFidelity}
+    \end{figure}
+ 
     \textbf{Evolvability} is a system's capability to enhance its suitability to its environment through alterations to both its internal and functional 
     structure\cite{MobusSystemTheory}. Another term to describe the response to changes in the environment is adaptability.
     However, this concept differs from evolvability in that it only affects a system's internal or functional structure temporarily. 
     For instance, a digital twin, which is an evolvable virtual system, can be designed to be more flexible and scalable, 
-    allowing for easy updates and the addition of new features\cite{ZHANGUPDATEMETHOD}.
-    
+    allowing for easy updates and the addition of new features\cite{ZHANGUPDATEMETHOD}. 
+    Furthermore, the evolvability of the digital twin was assessed based on the quantity of effort, which is a neccessaryy resource to initiate transformation
+    within the system (Figure~\ref{fig:Evolvability}). 
+
+    \begin{figure}[htbp]
+        \includegraphics[width = 1\textwidth]{Evolvability.png}
+        \caption{Evolvability}
+        ~\label{fig:Evolvability}
+    \end{figure}
+
     \subsection{Mapping Digital Twin Attributes to Manual Review Results}
     To evaluate the quality of the artifact, the issues were mapped to digital twin attributes. 
     To begin this process, the findings were collected from the manual review, followed by an inspection of the findings to determine which digital twin qualities were absent. 
@@ -233,7 +261,7 @@
     Once identified, the missing attribute(s) was incremented by 1 to determine the total quality missing attributes of the artifact. 
     
     \begin{figure}[htbp]
-        \includegraphics[scale = 0.35]{RequirementSpecifications.png}
+        \includegraphics[scale = 0.30]{RequirementSpecifications.png}
         \caption{Method for the evaluation of the digital twin artifact quality: Artifact. finding indicates that the finding belongs to the artifact, while -> indicates mapping}
         \label{fig:Method}
     \end{figure}
@@ -243,7 +271,6 @@
     The resulting sum was assigned to the corresponding digital twin quality attribute. 
     As a result, the digital twin quality was expressed with quality attribute values.    
   
-
     \begin{figure}[htbp]
         \includegraphics[scale = 0.25]{DigitalTwinQuality.png}
             \caption{Method for the evaluation of the digital twin quality}
@@ -254,73 +281,66 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RESULTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{Results}
 
-    First, to assess digital twin quality, manual reviews for each artifact were conducted (Figure~\ref{fig:QualityInspectonResultsWithArtifacts} ). 
-    As a result, a total of twenty-one quality issues were identified, listed and finally mapped to the digital twin quality attributes(Table~\ref{tab:Table1})(Table~\ref{tab:Table2})(Figure~\ref{fig:QualityInspectonResultsWithArtifacts}).
-    The mapping process revealed that a total of thirty-eight digital twin quality attributes were lacking in the artifacts(Figure~\ref{fig:QualityInspectonResultsWithArtifacts}).  
-    Specifically, 24\% of the quality issues of the digital twin were related to correctness, 35\%  were related to completeness, 8\%  were related to fidelity, 5\%  were related to efficiency,
-    and finally, 28\% were related to evolvability.  
+    %TODO REWRITE HERE FOR NOVELTY
+    First, to assess digital twin quality,
+    manual reviews for each artifact were conducted (Figure~\ref{fig:QualityInspectonResultsWithArtifacts} ). 
+    As a result, a total of twenty-one quality issues were identified,
+    listed and finally mapped to the digital twin quality attributes(Table~\ref{tab:Table1})(Figure~\ref{fig:QualityInspectonResultsWithArtifacts}).
+    The mapping process 
+    revealed that a total of thirty-eight digital twin quality attributes were 
+    lacking in the artifacts(Figure~\ref{fig:QualityInspectonResultsWithArtifacts}).  
+    Specifically, 23\% of the quality issues of the digital twin were related to correctness, 
+    which indicates an error between the real- and digital twin system. 36\%  were related to completeness, 
+    proving that some necessary or appropriate parts were missing.
+    8\%  were related to fidelity, indicating a lack of detail. 
+    5\%  were related to efficiency, indicating poor performance or excessive resource usage.
+    and finally, 28\% were related to evolvability, indicating that the system was unresponsive to the environment and was not flexible or scalable.  
 
+    \subsection{Example Findings}  
+    Two examples(Finding 12, Finding 18) are given to the reader o illustrate 
+    the results of the manual review as well as the mapping to the digital twin quality attributes. 
 
-    \subsection{Example Findings}
+    \subsubsection{Conceptual Model-Finding 12}
 
-    To Three examples illustrate the potential 
-    12 - Conceptual Model
-    17 - Simulation Model
-    20 - Simulation Model
-    First: the discrete event simulation model originally enforced a strictly sequential execution of operations.
-    However, the human and the cobot can work in parallel, and therefore execute operations also in parallel.
-    This issue has been solved already in a later version of the discrete event simulation model.
+    The duration of the micro-operations in the conceptual model was calculated using a simple calculation 
+    scheme based on the duration of the corresponding macro-operations,
+     which were well-known from a prior well-conducted study. 
+    However, relying on estimated, 
+    simplified calculations for the micro-operation durations,
+    suggests that the digital twin conceptual model suffers from issues of correctness and completeness(Table~\ref{tab:Table1}) . 
 
-    F12 - **Even though the durations of the macro-operations were well-known and studied throughly before, the durations of the micro-operations were estimated based on a simple calculation scheme. **Completeness, Correctness.****
-
-    This issue is related to the correctness and completeness of the operational conceptual model. While the durations of the macro-operations are well-known and derived from a previous study, the durations of the micro-operations are estimated based on a simple calculation scheme. This introduces a risk of inaccuracy and incompleteness in the model, which could affect the overall performance of the digital twin. Validating the durations of the micro-operations is necessary to ensure the correctness and completeness of the model, but this validation might not be feasible until the entire
-    FELICE system is operational and proper data can be collected. Therefore, this issue should be addressed in the future to ensure the accuracy of the digital twin.
-
-
-    **F17 - The duration of micro-, loading- and unloading-operations of the cobot were based on assumptions rather than actual measurements.
-    **Correctness, Completeness****
-
-    Second: The original discrete event simulation model originally enforced a fixed number of operations per workstation.
-    This might be okay for now, but what if the workstations and the workflows change in the future?
-    In such cases, adapting the discrete event simulation model might take a substantial some effort.
-
-    **This finding relates to the completeness and fidelity aspects of the DES module. The durations of micro-operations as well as the loading 
-    and unloading operations of the cobot are important factors that affect the accuracy of the simulation. The fact that these values are based 
-    on assumptions rather than actual measurements means that there is a risk of inaccuracy in the simulation results. In terms of completeness, 
-    the module is not able to provide a fully accurate simulation because it is based on assumptions that have not been validated. 
-    In terms of fidelity, the module may not accurately reflect the behavior of the real system due to the potential inaccuracy of these assumptions.
-    However, it should be noted that this issue is due to limitations in the data collection process rather than any shortcomings in the design of the DES module itself.**
-
-    F20 - **Number of micro-operations were hardcoded, consequently, the DES module must be reprogrammed everytime, when a new micro-operation is needed.** 
-    **Evolvability**
-
-    **Based on the given finding, the issue with the process logic section is related to its maintainability and adaptability. 
-    The DES module has a hardcoded number of micro-operations that can be performed at a single workstation, which means that the module must be reprogrammed every time 
-    a different number of micro-operations is required. This issue could impact the maintainability and adaptability of the DES module. It is suggested that the number of 
-    micro-operations per workstation can be configured instead to address this issue. However, it is also mentioned that the current number of micro- 
-    and macro-operations allows the generation of 272 workflows, which provides a solid base for look-ahead and optimization purposes and what-if analysis to be executed by a human end-user.**
+    \subsubsection{Simulation Model-Finding 18 }
+        The discrete event simulation model enforced a strictly sequential execution of micro-operations,
+        which precludes the support of parallel execution. 
+        However, machine-human collaboration on a task, needs a parallel execution, especially when the cobot overtakes certain micro-operations. 
+        Thus, the exclusion of parallel executions indicates that the simulation model was incomplete,
+        at the same time using the wrong type of execution highlights its inaccuracies(Table~\ref{tab:Table1}) .
     
+    \begin{figure}[htbp]
+            \centering
+            \includegraphics[scale = 0.35]{quality_inspection_results_with_artifacts.png}
+            \caption{Quality Inspection Results Categorized with Artifacts: X-Axis represents artifacts in section~\ref{section:Artifacts}, 
+            Y-Axis represents the number of missing quality attributes found for each artifact, 
+            and lastly, each digital twin quality attribute is shown by the colors.}
+            \label{fig:QualityInspectonResultsWithArtifacts}
+    \end{figure}
 
-    
-
-    Third: The different workflow variants, that can be executed on the assembly line, are managed entirely manually.
-    However, the workflow variants mostly differ in the assignment of operations to human and cobot.
-    Therefore, one can imagine a technique to generate workflow variants automatically, which would greatly improve evolvability.
     \begin{table}[h!]
     \begin{center}
-    \label{tab:Table2}
-    \caption{adfasdfadf}
-    \scalebox{0.8}{
+    \caption{Mapping of digital twin attributes to the results of the manual reviews: In cases where an attribute is mapped shown by `X'.}
+    \label{tab:Table1}
+    \scalebox{0.80}{
         \begin{tabular}{llllll}
-            \multicolumn{1}{c} {Findings} & \multicolumn{1}{c} {\textbf{\textit{Correctness}}} & \multicolumn{1}{c}{\textbf{\textit{Completeness}}} 
-            & \multicolumn{1}{c}{\textbf{\textit{Fidelity}}} & \multicolumn{1}{c}{\textbf{\textit{Efficiency}}} & \multicolumn{1}{c}{\textbf{\textit{Evolvability}}} \\
+            \multicolumn{1}{c}{\textbf{Findings}} & \multicolumn{1}{c} {\textbf{Correctness}} & \multicolumn{1}{c}{\textbf{Completeness}} 
+            & \multicolumn{1}{c}{\textbf{Fidelity}} & \multicolumn{1}{c}{\textbf{Efficiency}} & \multicolumn{1}{c}{\textbf{Evolvability}} \\
+            \hline
             \begin{minipage}{4cm}\dirtree{%
                 .1 Artifacts.
                 .2 Process Videos.
                 .3 Finding 1.
                 .2 Scope Definition.
                 .3 Finding 2.
-                .2 Requirement Spec.
+                .2 Requirement Specs.
                 .3 Finding 3.
                 .3 Finding 4.
                 .3 Finding 5.
@@ -346,213 +366,163 @@
             &
             \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
             \begin{minipage}{2cm}\dirtree{%
-                .1 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
+                .1 \empty.
+                .2 \empty.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .2 \empty.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
             }\end{minipage}
             &
             \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
             \begin{minipage}{2cm}\dirtree{%
-                .1 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
+                .1 \empty.
+                .2 \empty.
+                .3 ~~~~~X.
+                .2 \empty.
+                .3 ~~~~~X.
+                .2 \empty.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .2 \empty.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .2 \empty.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
             }\end{minipage}
             &
             \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
             \begin{minipage}{2cm}\dirtree{%
-                .1 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
+                .1 \empty.
+                .2 \empty.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
             }\end{minipage}
             &
             \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
             \begin{minipage}{2cm}\dirtree{%
-                .1 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
+                .1 \empty.
+                .2 \empty.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
             }\end{minipage}
             &
             \DTsetlength{0pt}{0pt}{0pt}{0pt}{0pt}
             \begin{minipage}{2cm}\dirtree{%
-                .1 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .2 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
-                .3 ~~~~~x.
+                .1 \empty.
+                .2 \empty.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .2 \empty.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~0.
+                .3 ~~~~~0.
+                .3 ~~~~~X.
+                .3 ~~~~~X.
                 .3 ~~~~~x.
             }\end{minipage}
         \end{tabular}
     }
 \end{center}
 \end{table}
-    %TODO BETTER TABLE
-    \begin{table}[h!]
-    \begin{center}
-    \label{tab:Table1}
-    \caption{Mapping of digital twin attributes to the results of the manual reviews: In cases where an attribute is mapped, the "artifact.qualityattribute.value" is incremented by 1. }
-    \renewcommand{\arraystretch}{1.25}
-    \scalebox{0.70}{
-    \begin{tabular}{l@{\hspace{1cm}}l@{\hspace{1cm}}l@{\hspace{1cm}}l@{\hspace{1cm}}l@{\hspace{1cm}}l@{\hspace{1cm}}l}
-        \textbf{Findings} & \textbf{Correctness} & \textbf{Completeness} & \textbf{Fidelity} & \textbf{Efficiency} & \textbf{Evolvability}\\
-        \hline
-        \textbf{Process Videos}&~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
-        \textbf{Finding 1} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
-        \textbf{Scope Definition}&~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
-        \textbf{Finding 2} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
-        \textbf{Requirement Specification}&~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
-        \textbf{Finding 3} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
-        \textbf{Finding 4} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
-        \textbf{Finding 5} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 6} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Conceptual Model}&~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
-        \textbf{Finding 7} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 8} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 9} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 10} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 11} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 12} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
-        \textbf{Simulation Model} &~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ & ~~~~~~~~~~~~~~~~~~~ \\
-        \textbf{Finding 13} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 14}&~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
-        \textbf{Finding 15} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
-        \textbf{Finding 16} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 17} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
-        \textbf{Finding 18} &~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ \\
-        \textbf{Finding 19} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 20} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \textbf{Finding 21} &~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~0~~~~~~~~~ & ~~~~~~~~~1~~~~~~~~~ \\
-        \hline
-        \textbf{Total} &~~~~~~~~~9~~~~~~~~~ & ~~~~~~~~~13~~~~~~~~~ & ~~~~~~~~~3~~~~~~~~~ & ~~~~~~~~~2~~~~~~~~~ & ~~~~~~~~~11~~~~~~~~~ \\
-    \end{tabular}
-    }
-    \end{center}
-    \end{table}
-    
-    \begin{figure}[htbp]
-        \includegraphics[scale = 0.40]{quality_inspection_results_with_artifacts.png}
-        \caption{Quality Inspection Results Categorized with Artifacts: X-Axis represents artifacts in \ref{section:Artifacts}, Y-Axis represents the number of missing quality attributes found for each artifact, 
-        and lastly, each digital twin quality attribute is shown by the colors.}
-        \label{fig:QualityInspectonResultsWithArtifacts}
-    \end{figure}
 
-    
 
     \section{Discussion}
 
@@ -560,13 +530,10 @@
     Therefore, systematic analysis of the identified issues in terms of their relevance to various quality attributes is an effective way to gain insight into the strengths and weaknesses of the digital twin system under development. 
     These insights can be used to guide further design decisions and improvements, ultimately leading to a higher-quality end product.
 
-    The quality assessment of the digital twin encountered some limitations due to the exility of information about the real system. Some artifacts provided less information, 
+    The quality assessment of the digital twin encountered limitations due to the exility of information about the real system. Some artifacts provided less information, 
     such as process videos, which only provide a limited perspective of the shop floor based on the camera's field of view and the skills of the video maker. 
-    In contrast, the simulation and conceptual model offer a plethora of aspects to examine and assess, which results in a higher probability of discovering the issues \ref{fig:QualityInspectonResultsWithArtifacts}.
+    In contrast, the simulation and conceptual model offer a plethora of aspects to examine and assess, which results in a higher probability of discovering the issues~\ref{fig:QualityInspectonResultsWithArtifacts}.
 
-    The reason of why the  most of the issues are related to the evolvability, 
-    completeness and correctness, and less for fidelity and efficiency is due to the stage that the FELICE project is in. Not only the exility of the information is the limiting factor, also the visibility of the information 
-    is also an interesting factor. Therefore, evolvability, completeness and correctness are easier to map and detect , rather than fidelity and efficiency. 
 
     Person dependent, also not everything is written, memory problem, completeness, 
     issuee finding sometimes even though the issue is not there, still assesed as a issue, assuming that person is correct
