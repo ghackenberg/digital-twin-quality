@@ -1,3 +1,11 @@
 # Definitions
 
-TODO
+# Completeness
+
+# Correctness
+
+# Fidelity
+
+# Efficiency
+
+# Evolvability
