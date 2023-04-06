@@ -8,16 +8,17 @@
 
     \title{Construction of Proto Digital Twin with ROS2 and Omniverse}
     \author{\IEEEauthorblockN{Georg Hackenberg} 
-    \IEEEauthorblockA{School of Electrical and\\ Computer Engineering\\ Georgia Institute of Technology\\ Atlanta, Georgia 30332--0250\\ Email: mshell@ece.gatech.edu} 
+    \IEEEauthorblockA{School of Electrical and\\ Computer Engineering\\ Georgia Institute of Technology\\ Atlanta,
+    Georgia 30332--0250\\ Email: mshell@ece.gatech.edu} 
     \and 
     \IEEEauthorblockN{Alican Tüzün\\ and Montgomery Scott} 
-    \IEEEauthorblockA{Starfleet Academy\\ San Francisco, California 96678-2391\\ Telephone: (800) 555--1212\\ Fax: (888) 555--1212}}
+    \IEEEauthorblockA{Starfleet Academy\\ San Francisco, California 966782391\\ Telephone: (800) 555--1212\\ Fax: (888) 555--1212}}
    
     \maketitle
 
     \begin{abstract}
         Digital twins are becoming more and more important for the efficient and effective development and operation of cyber-physical systems.
-        However, digital twins are only useful if they reflect the real-world system accurately enough, i.e. their quality is high enough. 
+        However, digital twins are only useful if they reflect the real-world system accurately enough, i.e.their quality is high enough. 
         This claim entails the question, of what the term quality in the context of digital twins means and how it can be measured. 
         In this article, we present our experience with the quality assurance of a digital twin for an assembly line in the automotive industry.
         We explain our preliminary definition of digital twin quality, which we derive from classical quality models for general software systems. 
@@ -27,19 +28,25 @@
 
     \section{Introduction}\label{section:introduction}
     In recent years, as new and complex technologies have advanced to emerge, it becomes progressively 
-    difficult to understand and define their core concepts. One of the most significant current examples in the 
+    difficult to understand and define their core concepts. One of the significant current examples in the 
     area of digitalization is the concept of digital twins, which has resulted in numerous definitions, that vary 
     from one derivation to another. Because, even though the terms `digital' and `twin' are easy to grasp,  their 
     consolidation develops a new challenging concept, which can be resulted in misunderstanding and misapplication. For example, 
     some authors claim that the first utilization of the digital twins 
-    happened in Apollo 13 space mission in 1970.  
-    Even though there was a `twin'  to simulate the spacecraft in space, which fulfills the first part of the concept of 
+    happened in Apollo 13 space mission in 1970. Even though there was a `twin'  to simulate the spacecraft in space, which fulfills the first part of the concept of 
     `digital twin', the digital component was missing. Therefore this claim is not accurate.
     
 
+    The idea of the digital twin originated in 2002 by the Grieves, as an ideal form of product life cycle management. 
+    The proposal was to create a co-existed information twin of a real system to gather new information to minimize 
+    the system needs and waste, such as material, time, and energy. It should be noted that initially this concept was 
+    called the information mirroring model. The concept had all the components of today's digital twins: a real system, 
+    a virtual system,  a connection between them and ancillary the virtual simulation. However, after co-authoring with Vickers in 2010, 
+    the term `digital twin' was adopted and Grieves simplified the model by excluding the virtual simulation aspect.
+
 
     \section{Components}\label{section:components}
-    There are several components to inspect..
+    There are several components to inspect
 
     \subsection{ROS2}\label{section:ros2}
     \subsection{Omniverse}\label{section:Omniverse}
@@ -53,7 +60,7 @@
     Problems with data collection
     Show digital twin
     \section{Discussion}\label{section:discussion}
-    Last sentence of the introduction, should be the first sentence of the discussion.
+    The last sentence of the introduction should be the first sentence of the discussion.
     How did your actual results compare with what you expected?
     Unexpected results
     Bring everything together, possible applications, extensions for further improvements
