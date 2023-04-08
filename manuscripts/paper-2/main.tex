@@ -27,23 +27,44 @@
     \end{abstract}
 
     \section{Introduction}\label{section:introduction}
-    In recent years, as new and complex technologies have advanced to emerge, it becomes progressively 
-    difficult to understand and define their core concepts. One of the significant current examples in the 
+    As new and complex technologies have advanced to emerge, it becomes progressively 
+    difficult to understand and define their core concepts. One significant example in the 
     area of digitalization is the concept of digital twins, which has resulted in numerous definitions, that vary 
     from one derivation to another. Because, even though the terms `digital' and `twin' are easy to grasp,  their 
     consolidation develops a new challenging concept, which can be resulted in misunderstanding and misapplication. For example, 
     some authors claim that the first utilization of the digital twins 
-    happened in Apollo 13 space mission in 1970. Even though there was a `twin'  to simulate the spacecraft in space, which fulfills the first part of the concept of 
-    `digital twin', the digital component was missing. Therefore this claim is not accurate.
+    happened in Apollo 13 space mission in 1970. Even though there was a `twin' used to simulate the spacecraft in space, fulfilling the first part of the concept of 
+    `digital twin', the digital component was missing, making this claim inaccurate.
     
 
     The idea of the digital twin originated in 2002 by the Grieves, as an ideal form of product life cycle management. 
     The proposal was to create a co-existed information twin of a real system to gather new information to minimize 
     the system needs and waste, such as material, time, and energy. It should be noted that initially this concept was 
-    called the information mirroring model. The concept had all the components of today's digital twins: a real system, 
-    a virtual system,  a connection between them and ancillary the virtual simulation. However, after co-authoring with Vickers in 2010, 
+    called the information mirroring model and included all the components of today's digital twins: a real system, 
+    a virtual system, a connection between them and an ancillary, the virtual simulation. However, after co-authoring with Vickers in 2010, 
     the term `digital twin' was adopted and Grieves simplified the model by excluding the virtual simulation aspect.
+    
+    A considerable amount of literature has been published on Digital Twins, however, to date there has been little agreement on the precise definition and application. Numerous authors have considered different 
+    definitions, including digital twins as a multi-physics environment, an equivalent to a product, a digital copy, a cyber component of a Cyber-Physical System, a controlling and monitoring unit,
+    and many more. However, if inspected carefully, most of these definitions focus more on the quality factors or applications of digital twins rather than their notion.
+    Therefore, despite the subjective phenomena of the definition of digital twins, the definition by the Digital Twin Consortium was considered to be more suitable for the authors. 
+    Consortium's definition describes digital twins as virtual representations of real systems with a synchronization attribute,
+    presenting a more abstract and objective perspective.
 
+    Not only in the literature but digital twins also gained popularity 
+    nearly in all branches of industry, especially in the manufacturing scene.  
+    This resulted in the development of general platforms to construct digital twins. Furthermore, for the visualization of the digital twins, 
+    game engines such as Unity and  Unreal Engine have become popular tools, and some of them already offer dedicated digital 
+    twin platforms. 
+    For databases, there are ontology-based cloud solutions even with newly defined languages for 
+    managing the data associated with digital twins. While there are some accessible open-source projects, 
+    most of the digital twin platforms today are not free to use and may not be easy to access or grasp. 
+
+    Therefore, the main purpose of this paper is not only to demonstrate a proto-digital twin but also to give an introductory 
+    understanding of digital twins, including the difference between a digital twin, digital shadow and digital model. The real system consists of three LED lamps (red, green, blue),
+    one ultrasonic sensor, one Raspberry Pi, five 330 ohm resistors, and several jumper cables.
+    The goal is to digitalize nearly all the components of the real system and properly twin one of them. To achieve twinning, 
+    authors used Omniverse as a simulation and visualization tool, and ROS2(Robot Operating System) as a sensor and communication middleware. 
 
     \section{Components}\label{section:components}
     There are several components to inspect
