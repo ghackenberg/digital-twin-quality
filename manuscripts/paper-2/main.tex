@@ -44,6 +44,7 @@
     a virtual system, a connection between them and an ancillary, the virtual simulation. However, after co-authoring with Vickers in 2010, 
     the term `digital twin' was adopted and Grieves simplified the model by excluding the virtual simulation aspect.
     
+
     A considerable amount of literature has been published on Digital Twins, however, to date there has been little agreement on the precise definition and application. Numerous authors have considered different 
     definitions, including digital twins as a multi-physics environment, an equivalent to a product, a digital copy, a cyber component of a Cyber-Physical System, a controlling and monitoring unit,
     and many more. However, if inspected carefully, most of these definitions focus more on the quality factors or applications of digital twins rather than their notion.
@@ -51,8 +52,7 @@
     Consortium's definition describes digital twins as virtual representations of real systems with a synchronization attribute,
     presenting a more abstract and objective perspective.
 
-    Not only in the literature but digital twins also gained popularity 
-    nearly in all branches of industry, especially in the manufacturing scene.  
+    Not only in the literature but digital twins also gained popularity nearly in all branches of industry, especially in the manufacturing scene.  
     This resulted in the development of general platforms to construct digital twins. Furthermore, for the visualization of the digital twins, 
     game engines such as Unity and  Unreal Engine have become popular tools, and some of them already offer dedicated digital 
     twin platforms. 
@@ -65,18 +65,17 @@
     one ultrasonic sensor, one Raspberry Pi, five 330 ohm resistors, and several jumper cables.
     The goal is to digitalize nearly all the components of the real system and properly twin one of them. To achieve twinning, 
     authors used Omniverse as a simulation and visualization tool, and ROS2(Robot Operating System) as a sensor and communication middleware. 
-
-    \section{Components}\label{section:components}
+    \section{Method}\label{section:components}
     There are several components to inspect
+    To demonstrate the concept of a proto-digital twin, several steps were taken. 
+    First, the real system was created and digitalized. Next, a digital model representing the digitalized form of 
+    a real system was developed. Then a digital shadow was created to accomplish an automatic unidirectional data transfer from the real system to the virtual system. 
+    And finally, a digital twin, which has a bidirectional data flow between the real and the virtual system was created. 
 
-    \subsection{ROS2}\label{section:ros2}
-    \subsection{Omniverse}\label{section:Omniverse}
-    \subsection{Raspberry Pi \& Ubuntu 20.04}\label{section:RaspberryPi}
-    \subsection{Fusion 360 and Blender}\label{section:Fusion360}
-    \section{Method}\label{section:method}
-    What we are studying, and what we are going to do with the object.
-    \section{Implementation}\label{section:implementation}
-    How we are going to analyze the object.
+    \subsection{Creating a real system}\label{section:real_system}
+    \subsection{Digitalizing the real system}\label{section:digitalizing}
+    \subsection{Creating the digital shadow}\label{section:digital_shadow}
+    \subsection{Creating the digital twin}\label{section:digital_twin}
     \section{Results}\label{section:results}
     Problems with data collection
     Show digital twin
