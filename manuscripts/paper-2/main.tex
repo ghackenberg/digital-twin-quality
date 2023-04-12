@@ -44,18 +44,18 @@
     a virtual system, a connection between them and an ancillary, the virtual simulation. However, after co-authoring with Vickers in 2010, 
     the term `digital twin' was adopted and Grieves simplified the model by excluding the virtual simulation aspect.
     
-
     A considerable amount of literature has been published on Digital Twins, however, to date there has been little agreement on the precise definition and application. Numerous authors have considered different 
     definitions, including digital twins as a multi-physics environment, an equivalent to a product, a digital copy, a cyber component of a Cyber-Physical System, a controlling and monitoring unit,
     and many more. However, if inspected carefully, most of these definitions focus more on the quality factors or applications of digital twins rather than their notion.
     Therefore, despite the subjective phenomena of the definition of digital twins, the definition by the Digital Twin Consortium was considered to be more suitable for the authors. 
     Consortium's definition describes digital twins as virtual representations of real systems with a synchronization attribute,
-    presenting a more abstract and objective perspective.
+    presenting a more abstract and objective perspective.\cite{asf}
 
     Not only in the literature but digital twins also gained popularity nearly in all branches of industry, especially in the manufacturing scene.  
     This resulted in the development of general platforms to construct digital twins. Furthermore, for the visualization of the digital twins, 
     game engines such as Unity and  Unreal Engine have become popular tools, and some of them already offer dedicated digital 
     twin platforms. 
+    
     For databases, there are ontology-based cloud solutions even with newly defined languages for 
     managing the data associated with digital twins. While there are some accessible open-source projects, 
     most of the digital twin platforms today are not free to use and may not be easy to access or grasp. 
@@ -66,16 +66,94 @@
     The goal is to digitalize nearly all the components of the real system and properly twin one of them. To achieve twinning, 
     authors used Omniverse as a simulation and visualization tool, and ROS2(Robot Operating System) as a sensor and communication middleware. 
     \section{Method}\label{section:components}
-    There are several components to inspect
-    To demonstrate the concept of a proto-digital twin, several steps were taken. 
-    First, the real system was created and digitalized. Next, a digital model representing the digitalized form of 
-    a real system was developed. Then a digital shadow was created to accomplish an automatic unidirectional data transfer from the real system to the virtual system. 
-    And finally, a digital twin, which has a bidirectional data flow between the real and the virtual system was created. 
+    To demonstrate the notion of a proto digital twin, several procedures were executed.
+    Initially, a digital model representing the digitalized form of the real system was developed.
+    Subsequently, relative to the  digitalized model, real system was established.
+    Then a digital shadow was generated to accomplish an automatic unidirectional data transfer 
+    from the real to the virtual system. And finally a digital twin, with  
+    bidirectional data flow between the real and the virtual system were created.  
 
-    \subsection{Creating a real system}\label{section:real_system}
-    \subsection{Digitalizing the real system}\label{section:digitalizing}
-    \subsection{Creating the digital shadow}\label{section:digital_shadow}
-    \subsection{Creating the digital twin}\label{section:digital_twin}
+    \subsection*{Digital Model}\label{section:digital_model}
+    To create a digital model of the planned real system, Fusion 360, a  
+    Computer-Aided-Design(CAD) software was used. First, 
+    pre-existing digitalized real system components were sourced from the internet,
+    and modified. The ones that were not found, such as jumper cables, were modeled in the CAD software. 
+    Once all the required components were avaliable and reached a needed  model fidelity level,
+    detailing were stoped and parts were digitaly assembled. 
+    Lastly, the assembled digital model was saved as .fbx file.
+
+    After the conversion occured, 3D-Graphics software called Blender was used, to convert 
+    a .fbx file to .usd file for import  into the simulation environment. 
+    However, before the conversion, adjustments were made to the .fbx file to fix issues, 
+    such as corrupted visuals and hiearchy problems. Later, the fixed file were saved as a .usd file. 
+
+    Lastly, Blender was reopened, and the converted .usd file was imported. 
+    Further  adjustments were made, and the file was saved  again as a .usd file. 
+    Upon completion of this process, the file was ready to import into the simulation environment.
+    \subsection*{Real System}\label{section:real_system}
+    First, components were inserted on the prototype breadboard according to the digital model.
+    Next, circuit components were connected with the jumper cables to the appropriate general 
+    purpose input/output (GPIO), ground and power pins of Raspberry Pi 4 (RPI4). 
+
+    Next, Ubuntu 20.04 was installed on a micro-SD card,  and inserted into the RPI4.
+    Second  the cryptographic network protocol SSH, was used to connect the RPI to a local computer 
+    which already had the same version of the ubuntu. Next the Robot Operating System 2 (ROS2) 
+    version Foxy was installed on both the RPI and the local computer. 
+    Lastly, to access and control the GPIO pins of the RPI4, the Wiring Pi library was installed on RPI4.
+
+    ROS2 was used as a sensor and communication middleware to give 
+    behavior to the real system components. A package was written
+    to read a data from the ultrasonic sensor and control the state of three LEDs 
+    and then combined into a single node with a single-thread executor. 
+    Lastly, combined ros node was run, and the state space of the real system was observed and 
+    checked if the three led's were giving the expected state.
+
+    \subsection*{Digital Shadow}\label{section:digital_shadow}
+
+    The simulation platform chosen for this demonstration was Isaac Sim, 
+    which is already integrated within NVIDIA Omniverse platform. 
+    Isaac Sim was designed for training and testing complex robotic systems within realistic virtual environments. 
+    Even though this demonstration was not a complex robotic system, there were two important 
+    reasons for the platform selection. First Isaac Sim has a ROS2 bridge, which enabled seemless 
+    connection between the ROS2 and Omniverse, second, it uses RTX Graphics, which delivered 
+    high-performance graphics rendering, resulted in improvement of visual fidelity. 
+    However, to use Omniverse platform, an RTX graphics card is required. 
+    Therefore,  in this demonstration, the authors used an NVIDIA RTX 2060 graphics card, to 
+    facilitate the simulation. 
+
+    First to initialize the simulation, 
+    Isaac Sim was installed on a local computer using Omniverse launcher. 
+    After the installation was complete, the correct ROS2 bridge, was selected.
+    At this step, it was important to not source the ROS2 Workspace within the same terminal, 
+    which Isaac Sim was operating. If automatic sourcing via bashrc was enabled, 
+    it needed to be disabled to prevent potential compilation errors.
+
+    After the initialization, the modified .usd file was imported into the Isaac Sim scene. 
+    After the import, a visual inspection for the individual parts was then conducted, and 
+    needed adjustments were made. Lastly,  the required level of fidelity of the digital model, 
+    within the simulation environment was reached, and the consutrction was ready to proceed to the next step.
+
+
+    To use the ROS2 bridge within the Isaac Sim, action graphs were utilized. 
+    Isaac Sim already had several built-in ROS2 nodes, and authors instead of writing their own ROS2 nodes, 
+    used the built-in ones just for the simplification of the demonstration. 
+    With the help of these built-in nodes, a visual script has been written, and Isaac Sim subscriebed
+    and published the topics that corresponds 1:1 with  the written ROS2 package for the real system.
+
+    Finally, the ROS2 package and simulation environment were initialized 
+    and the behavior of the three LEDs was observed to ensure that their state was 
+    synchronous and unidirectional between the real and virtual systems. 
+
+    \subsection*{Digital Twin}\label{section:digital_twin}
+    The key difference between the digital shadow and digital twin lies within their mode of communication, 
+    which the latter is bidirectional instead of the unidirectional behavior like the first one.
+    To achieve this bidirectional behavior, action graph was expended and gave a new 
+    behavior to the real system: a blue LED  controlled by a counter embedded in the simulation environment. 
+
+    In order to see the effect of the bidirectional behavior, ROS2 node and simulation environment 
+    were initialized again, and the behaviour of the three LEDs were monitored to ensure that their state was 
+    synchronous and bidirectional.
+    
     \section{Results}\label{section:results}
     Problems with data collection
     Show digital twin
