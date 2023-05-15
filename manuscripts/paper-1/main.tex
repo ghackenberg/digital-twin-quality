@@ -14,26 +14,32 @@
 
     \title{Quality assurance of digital twins: An experience report in the automotive industry}
 
-    \author{Georg Hackenberg
+    \author{Alican Tüzün
     \and
-    Alican Tüzün
+    Georg Hackenberg
     }
     \institute{School of Engineering\\
     University of Applied Sciences Upper Austria\\
     4600 Wels, Upper Austria, Austria\\
+    \email{alican.tuzuen@fh-wels.at}
     \email{georg.hackenberg@fh-wels.at}
-    \email{alican.tuzuen@fh-wels.at}}
+    }
     
     \maketitle
 
     \begin{abstract}
         Digital twins are becoming more and more important for the efficient and effective development and operation of cyber-physical systems.
-        However, digital twins are only useful if they reflect the real-world system accurately enough, i.e.\ their quality is high enough.
-        This claim entails the question, of what the term quality in the context of digital twins means and how it can be measured.
-        In this article, we present our experience with the quality assurance of a digital twin for an assembly line in the automotive industry.
-        We explain our preliminary definition of digital twin quality, which we derive from classical quality models for general software systems.
-        Furthermore, we describe quality issues, which we were able to detect in a digital twin of an assembly line in the automotive industry.
-        Finally, we conclude how to leverage our experience in different contexts and how to generalize the underlying approaches.
+        However, digital twins are only useful if they reflect the real-world system accurately enough,
+        i.e.\ their quality is high enough.
+        This claim entails the question, of what the term quality in the context of digital twins means and
+        how it can be measured. In this article, authors presented their experience with the quality assurance of a digital
+        twin for an assembly line in the automotive industry.
+        Authors explained the preliminary definition of digital twin quality, 
+        which authors derived from classical quality models for general software systems.
+        Furthermore, authors described quality issues, 
+        which they were able to detect in a digital twin of an assembly line in the automotive industry.
+        Finally, authors concluded how to leverage their experience in different contexts 
+        and how to generalize the underlying approaches.
     \end{abstract}
 
     \section{Introduction}\label{section:introduction}
@@ -47,15 +53,15 @@
     locations of the corresponding formations. Furthermore, synchronization was 
     implemented to give directives from the real system to control the operation 
     flow and to update the physical twin state~\cite{AMRC}.
-    In contrast, a digital twin is a virtual counterpart of a real system, which should 
+    In contrast, a digital twin is virtual information of a possible or constructed real system, which can 
     be synchronized with a selected frequency and fidelity~\cite{Review1,Review2,digitaltwinconsortium2022}.
 
     The envision of a digital twin emerged from Grieves'es conceptual model, which was called mirrored spaces model in 2002~\cite{Originsofdigitaltwinconcept},
     and later referenced in a 2005 journal article~\cite{2005ArticleGrievesMichael}. 
-    Furthermore, he introduced the information mirroring model, which was his ideal product lifecycle management tool with only one goal. 
-    The goal was to gather enhanced information about the real system to minimize the waste of the system's sources such as energy, 
-    time and material. Initially, this model had four main parts. The real system, 
-    virtual system, connection between the real and virtual system and virtual simulations~\cite{GrievesPLMBook}. 
+    Furthermore, he introduced the information mirroring model, which was his ideal form of product lifecycle management
+    at that time with only one goal. The goal was to gather as much relevant and useful information about the real system and leverage that information to trade the required energy, time, 
+    and material sources for the system operations.
+    Initially, this model had four main parts. The real system, virtual system, connection between the real and virtual system and virtual simulations~\cite{GrievesPLMBook}. 
     Later, Grieves removed the latter, to simplify the model~\cite{Originsofdigitaltwinconcept}. Lastly, after co-authoring with Vicker in 2010, 
     Grieves decided to use the NASA-invented `Digital Twin' word, instead of the information mirroring model~\cite{Originsofdigitaltwinconcept}.
 
@@ -133,12 +139,19 @@
     the lack of well-defined quality parameters for digital twins puts forward a significant challenge in ensuring their quality, which necessitates the development of appropriate quality metrics and standards for digital twins.
     
     \section{Method}
-    The methodology consists of a set of artifacts, manual artifact reviews, mapping quality attributes to the findings, an evaluation of the artifact quality, and lastly, an evaluation of the digital twin quality.   
+    The form of FELICE's digital twin was the digital twin instance, which implies that the real system was already constructed. It is important to note that, for the sake of convenience, the authors used the term "Digital Twin" in the subsequent chapters instead of  "digital twin instance" in the subsequent chapters. 
+
+    Moreover, since the digital twin was still in the design phase, 
+    the methodology of assessing its quality consists of several key steps,
+    including a set of artifacts, manual reviews of these artifacts, 
+    mapping quality attributes to the identified findings, an evaluation of the artifact quality, and ultimately, 
+    an evaluation of the digital twin's overall quality.
     \subsection{Artifacts}\label{section:Artifacts}
-    The current stage of review encompasses five key artifacts, including process videos displaying the current assembly procedure without an adaptive workstation and cobot,
-     a scope definition outlining the objects on the shop floor requiring tracking or twinning, a requirements 
-     specification summarizing functional and non-functional requirements for the digital twin, a general and an operational 
-     conceptual model elucidating the high-level structure of the assembly procedure, 
+    The current stage of review encompassed five key artifacts,
+    including process videos displaying the current assembly procedure without an adaptive workstation and cobot,
+    a scope definition outlining the objects on the shop floor requiring tracking or twinning, a requirements 
+    specification summarizing functional and non-functional requirements for the digital twin, a general and an operational 
+    conceptual model elucidating the high-level structure of the assembly procedure, 
     and a discrete event simulation module that implements the structures prescribed by the conceptual models.
 
     \textbf{Process Videos} have been utilized to explain the manual assembly procedures performed at each of the three workstations. From the three videos initially provided by the project partner,  
@@ -503,14 +516,13 @@
     Some artifacts provided less information, such as process videos, which gave a limited perspective of the shop floor based on the camera's 
     field of view and the skills of the video maker. In contrast, the simulation and conceptual model offer a plethora of aspects to examine and assess, 
     which results in a higher probability of discovering the issues (Figure~\ref{fig:QualityInspectonResultsWithArtifacts}). 
-    A possible explanation for this is the stage that the FELICE project is in. Not only the exility but also the visibility of the information is the limiting factor. 
+    A possible explanation for this is the stage that the FELICE project is in. Also, not only the exility but also the visibility of the information is the limiting factor. 
     Therefore, evolvability, completeness, and correctness were easier to map and detect, rather than fidelity and efficiency. 
 
     It would be interesting to map the risks of the issues instead of the issues to the quality attributes. 
     The risk mapping approach includes severity and priority variables, which would include the perspective of the stakeholders~\cite{CemKanerSoftwareTesting,ISO/IEC/IEEE29119}.
     As a result, quality attributes can be weighted regarding the stakeholder needs. This aspect might be important, because of relativity, 
     more specifically due to the political and economical nature of the quality~\cite{SystemQuality}. 
-    \section*{Acknowledgements}
    
     \bibliography{main}
     \bibliographystyle{splncs04}
