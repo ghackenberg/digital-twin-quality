@@ -6,7 +6,7 @@
 
 \begin{document}
 
-    \title{Construction of Proto Digital Twin with ROS2 and Omniverse}
+    \title{Modeling and Observing ProtoDigital Twin with ROS2 and Omniverse}
     \author{\IEEEauthorblockN{Georg Hackenberg} 
     \IEEEauthorblockA{School of Electrical and\\ Computer Engineering\\ Georgia Institute of Technology\\ Atlanta,
     Georgia 30332--0250\\ Email: mshell@ece.gatech.edu} 
@@ -31,12 +31,11 @@
     difficult to understand and define their core concepts. One significant example in the 
     area of digitalization is the concept of digital twins, which has resulted in numerous definitions, that vary 
     from one derivation to another. Because, even though the terms `digital' and `twin' are easy to grasp,  their 
-    consolidation emerge a new challenging concept, which can be resulted in misunderstanding and misapplication. For example, 
-    some authors claim that the first utilization of the digital twins 
-    happened in Apollo 13 space mission in 1970. Even though there was a `twin' used to simulate the spacecraft in space, fulfilling the first part of the concept of 
-    `digital twin', the digital component was missing, making this claim inaccurate.
+    consolidation develops a new challenging concept, which can be resulted in misunderstanding and misapplication. 
+    Therefore, a proto example of digital twin, can significantly improve the understanding 
+    of the notion of digital twin, and can help to clear the fuzzy boundaries between similar concepts such as digital shadow and digital model.
     
-    
+
     The idea of the digital twin originated in 2002 by the Grieves, as an ideal form of product life cycle management. 
     The proposal was to create a co-existed information twin of a real system to gather new information to minimize 
     the system needs and waste, such as material, time, and energy. It should be noted that initially this concept was 
@@ -45,94 +44,90 @@
     the term `digital twin' was adopted and Grieves simplified the model by excluding the virtual simulation aspect.
     
     A considerable amount of literature has been published on Digital Twins, however, to date there has been little agreement on the precise definition and application. Numerous authors have considered different 
-    definitions, including digital twins as a multi-physics environment, an equivalent to a product, a digital copy, a cyber component of a Cyber-Physical System, a controlling and monitoring unit,
-    and many more. However, if inspected carefully, most of these definitions focus more on the quality factors or applications of digital twins rather than their notion.
-    Therefore, despite the subjective phenomena of the definition of digital twins, the definition by the Digital Twin Consortium was considered to be more suitable for the authors. 
-    Consortium's definition describes digital twins as virtual representations of real systems with a synchronization attribute,
-    presenting a more abstract and objective perspective.\cite{asf}
+    definitions, including digital twins as a multi-physics environment, an equivalent to a product,
+    a digital copy, a cyber component of a Cyber-Physical System, a controlling and monitoring unit,
+    and many more. However, if inspected carefully, most of these definitions focus more on the quality 
+    factors or applications of digital twins rather than their notion.
+    Therefore, despite the subjective phenomena of the definition of digital twins,
+    the definition by the Digital Twin Consortium was considered to be more suitable for the authors. 
+    Consortium's definition describes digital twins as virtual representations of real systems with 
+    a synchronization attribute, presenting a more abstract and objective perspective.\cite{asf}
 
-    Not only in the literature but digital twins also gained popularity nearly in all branches of industry, especially in the manufacturing scene.  
-    This resulted in the development of general platforms to construct digital twins. Furthermore, for the visualization of the digital twins, 
-    game engines such as Unity and  Unreal Engine have become popular tools, and some of them already offer dedicated digital 
-    twin platforms. 
-    
-    For databases, there are ontology-based cloud solutions even with newly defined languages for 
-    managing the data associated with digital twins. While there are some accessible open-source projects, 
+    Not only in the literature but digital twins also gained popularity nearly in all branches
+    of industry, especially in the manufacturing scene.  
+    This resulted in the development of general platforms to construct digital twins. 
+    Furthermore, for the visualization of the digital twins, 
+    game engines such as Unity and  Unreal Engine have become popular tools, 
+    and some of them already offer dedicated digital twin platforms. Also for databases,
+    there are ontology-based cloud solutions even with newly defined languages for 
+    managing the data associated with digital twins.However,While there are some accessible open-source projects, 
     most of the digital twin platforms today are not free to use and may not be easy to access or grasp. 
 
-    Therefore, the main purpose of this paper is not only to demonstrate a proto-digital twin but also to give an introductory 
-    understanding of digital twins, including the difference between a digital twin, digital shadow and digital model. The real system consists of three LED lamps (red, green, blue),
-    one ultrasonic sensor, one Raspberry Pi, five 330 ohm resistors, and several jumper cables.
-    The goal is to digitalize nearly all the components of the real system and properly twin one of them. To achieve twinning, 
-    authors used Omniverse as a simulation and visualization tool, and ROS2(Robot Operating System) as a sensor and communication middleware. 
-    \section{Method}\label{section:components}
-    To demonstrate the notion of a proto digital twin, several procedures were executed.
-    Initially, a digital model representing the digitalized form of the real system was developed.
-    Subsequently, relative to the  digitalized model, real system was established.
-    Then a digital shadow was generated to accomplish an automatic unidirectional data transfer 
-    from the real to the virtual system. And finally a digital twin, with  
-    bidirectional data flow between the real and the virtual system were created.  
+    To adresss the challanges associated with the accessability and comprehensibility of the notion of digital twins, main purpose of this paper is not only to provide a fully functional free-to-model proto digital twin, but also give observation results, including the challanges and solutions encountered during the creation of a digital model, digital shadow and digital twin. Goal of the process of modelling a digital twin is to digitalize nearly all the components of the real system and properly twin one of them.
+    To make the twinning happen, authors used Omniverse as a simulation and visualization tool, 
+    and ROS2(Robot Operating System)  as a sensor and communication middleware. 
+    To control the behavior of digitalized artifacts, an HC-SR04 ultrasonic sensor, Raspberry Pi,
+    and several software has been used. Also, despite the subjective phenomena of the definition 
+    of digital twins, the definition by the Digital Twin Consortium were considered
+    to be more suitable for the authors. Consortiums definition describes digital
+    twins  as virtual representations of real systems with a synchronization attribute,
+    presenting a more abstract and objective perspective which will be a guide for the 
+    creation of the proto digital twin.
 
-    \subsection*{Digital Model}\label{section:digital_model}
-    To create a digital model of the planned real system, Fusion 360, a  
-    Computer-Aided-Design(CAD) software was used. First, 
-    pre-existing digitalized real system components were sourced from the internet,
-    and modified. The ones that were not found, such as jumper cables, were modeled in the CAD software. 
-    Once all the required components were avaliable and reached a needed  model fidelity level,
-    detailing were stoped and parts were digitaly assembled. 
-    Lastly, the assembled digital model was saved as .fbx file.
+    \section{Modeling the Proto Digital Twin}\label{section:components}
+    Several procedures were executed to demonstrate the notion of a proto-digital twin. 
+    Initially, a digital model representing the digitalized form of the real system was developed. 
+    Subsequently, relative to the digitalized model, a real system was established. 
+    Then a digital shadow was generated to accomplish an automatic unidirectional data 
+    transfer from the real to the virtual system. And finally, a digital twin, with 
+    bidirectional data flow between the real and the virtual system was created. 
 
-    After the conversion occured, 3D-Graphics software called Blender was used, to convert 
-    a .fbx file to .usd file for import  into the simulation environment. 
-    However, before the conversion, adjustments were made to the .fbx file to fix issues, 
-    such as corrupted visuals and hiearchy problems. Later, the fixed file were saved as a .usd file. 
+    \subsection*{The Digital Model}\label{section:digital_model}
+    To create a digital model of the planned real system, two different software programs were used for two different 
+    purposes including Fusion 360, a Computer-Aided Design software, and Blender, a 3D-Graphics software. 
 
-    Lastly, Blender was reopened, and the converted .usd file was imported. 
-    Further  adjustments were made, and the file was saved  again as a .usd file. 
-    Upon completion of this process, the file was ready to import into the simulation environment.
+    First, pre-existing digitalized real system components were sourced from the internet, and modified.
+     The ones that were not found, such as jumper cables, were modeled in the Fusion 360. 
+     Once all the required components were available and reached a needed model fidelity level, 
+     detailing was stopped and parts were digitally assembled. Lastly, the assembled digital model 
+     was converted to a .fbx file.
+
+    After the conversion occurred, the Blender was used, to convert a .fbx file to a .usd 
+    file for import into the simulation environment. However, before the conversion, adjustments 
+    were made to the .fbx file to fix issues, such as corrupted visuals and hierarchy problems. 
+    Later, the fixed file was saved as a .usd file. 
+
+    Finally, Blender was reopened, and the previously converted .usd file was imported. 
+    Further adjustments were made to the file and were saved again as a .usd file.
+    Upon completion of this process, the file was prepared for importation into the simulation environment.
+
+    \subsection*{Integrating digital model to Omniverse}\label{section:omniverse}
+    The chosen simulation platform for this demonstration was Isaac Sim, which is fully integrated into the NVIDIA Omniverse platform. Isaac Sim was designed specifically for the training and testing of complex robotic systems in realistic virtual environments. Despite the simplicity of the demonstration, which was not a complex robotic system, there were two crucial reasons for the platform selection. First, Isaac Sim offers a ROS2 bridge, which enabled a seamless connection between ROS2 and Omniverse, facilitating relatively easy and smooth data exchange. Second, it leverages RTX Graphics, which delivered high-performance graphics rendering, resulting in an improvement in visual fidelity. However, to use the Omniverse platform, an RTX graphics card is required. Therefore, for this demonstration, the authors used an NVIDIA RTX 2060 graphics card, to run the simulation. 
+
+    First, to initialize the simulation, Isaac Sim was installed on a local computer using the Omniverse launcher. Once the installation was completed, the correct ROS2 bridge was selected.  At this step, it was important not to source the ROS2 Workspace within the same terminal that Isaac Sim was operating, for example with bashrc, to prevent potential compilation errors. 
+
+    After the initialization, the modified .usd file was imported into the Isaac Sim scene. After the import, a visual inspection of the individual parts was then conducted, and needed adjustments were made. Lastly,  the required level of fidelity of the digital model, within the simulation environment was reached, and the step of the construction of the real system was ready.
     \subsection*{Real System}\label{section:real_system}
-    First, components were inserted on the prototype breadboard according to the digital model.
-    Next, circuit components were connected with the jumper cables to the appropriate general 
-    purpose input/output (GPIO), ground and power pins of Raspberry Pi 4 (RPI4). 
+    First, the components were inserted on the prototype breadboard in accordance with the digital model.
+    Next, circuit components were connected with the jumper cables to the appropriate general-purpose input/output (GPIO),
+    ground, and power pins of Raspberry Pi 4 (RPI4). 
 
-    Next, Ubuntu 20.04 was installed on a micro-SD card,  and inserted into the RPI4.
-    Second  the cryptographic network protocol SSH, was used to connect the RPI to a local computer 
-    which already had the same version of the ubuntu. Next the Robot Operating System 2 (ROS2) 
-    version Foxy was installed on both the RPI and the local computer. 
-    Lastly, to access and control the GPIO pins of the RPI4, the Wiring Pi library was installed on RPI4.
+    Afterward, Ubuntu 20.04 was installed on a micro-SD card, 
+    and inserted into the RPI4. Second, the cryptographic network protocol SSH was used to connect the 
+    RPI4 to a local computer that already had the same version of Ubuntu. Subsequently, 
+    the Robot Operating System 2 (ROS2) version of Foxy was installed on both the RPI 4 and 
+    the local computer. Lastly, to access and control the GPIO pins of the RPI4, 
+    the Wiring Pi library was installed on RPI4.
 
-    ROS2 was used as a sensor and communication middleware to give 
-    behavior to the real system components. A package was written
-    to read a data from the ultrasonic sensor and control the state of three LEDs 
-    and then combined into a single node with a single-thread executor. 
-    Lastly, combined ros node was run, and the state space of the real system was observed and 
-    checked if the three led's were giving the expected state.
+    ROS2 was used as a sensor and communication middleware to give behavior to the real system components.
+    A custom package was developed to read data from the ultrasonic sensor and control the state of three LEDs. 
+    This behavior were integrated into a single node, which was executed with a single-thread executor.
+    Lastly, a combined ROS2 node was run, and the state space of the real system was observed to ensure
+    that the three LEDs were giving the expected state.
 
     \subsection*{Digital Shadow}\label{section:digital_shadow}
-
-    The simulation platform chosen for this demonstration was Isaac Sim, 
-    which is already integrated within NVIDIA Omniverse platform. 
-    Isaac Sim was designed for training and testing complex robotic systems within realistic virtual environments. 
-    Even though this demonstration was not a complex robotic system, there were two important 
-    reasons for the platform selection. First Isaac Sim has a ROS2 bridge, which enabled seemless 
-    connection between the ROS2 and Omniverse, second, it uses RTX Graphics, which delivered 
-    high-performance graphics rendering, resulted in improvement of visual fidelity. 
-    However, to use Omniverse platform, an RTX graphics card is required. 
-    Therefore,  in this demonstration, the authors used an NVIDIA RTX 2060 graphics card, to 
-    facilitate the simulation. 
-
-    First to initialize the simulation, 
-    Isaac Sim was installed on a local computer using Omniverse launcher. 
-    After the installation was complete, the correct ROS2 bridge, was selected.
-    At this step, it was important to not source the ROS2 Workspace within the same terminal, 
-    which Isaac Sim was operating. If automatic sourcing via bashrc was enabled, 
-    it needed to be disabled to prevent potential compilation errors.
-
-    After the initialization, the modified .usd file was imported into the Isaac Sim scene. 
-    After the import, a visual inspection for the individual parts was then conducted, and 
-    needed adjustments were made. Lastly,  the required level of fidelity of the digital model, 
-    within the simulation environment was reached, and the consutrction was ready to proceed to the next step.
-
+    
+    %WRITE LEAD HERE
 
     To use the ROS2 bridge within the Isaac Sim, action graphs were utilized. 
     Isaac Sim already had several built-in ROS2 nodes, and authors instead of writing their own ROS2 nodes, 
@@ -153,10 +148,54 @@
     In order to see the effect of the bidirectional behavior, ROS2 node and simulation environment 
     were initialized again, and the behaviour of the three LEDs were monitored to ensure that their state was 
     synchronous and bidirectional.
-    
-    \section{Results}\label{section:results}
-    Problems with data collection
-    Show digital twin
+
+    \section{Observations}\label{section:results}
+    The modeling process of the digital twin with ROS2 and Omniverse showed that modeling the digital twin was relatively easy to construct, 
+    debug, and free to model while catching a high degree of visual fidelity. 
+    \subsection*{Observations while Creating Digital Model}
+    The digital model was created, with several steps,
+    which resulted in great quality, which was later used for the digital shadow and digital twin.
+    However, during this process, several difficulties occurred and were solved. 
+
+    First, the authors did not consider the CAD environment as a digital environment, 
+    instead considered Omniverse as a digital environment. 
+    Therefore, in this application, conversion of CAD files to 
+    .obj or .fbx and later to .usd was inevitable. The results of the conversions 
+    show that a significant amount of model data gets lost, corrupted, or duplicated 
+    during the file conversions because of the complexity of the models. 
+    Therefore to minimize the data loss, reducing the number of parts
+    by grouping parts together as one solid part and removing the unnecessary 
+    details, modifying the names of the parts to simple ones, and deleting material
+    properties were helpful. However, some of these processes are irreversible, 
+    hence they might reduce the fidelity of the model drastically.
+
+    Further observations show that, during the process of the modeling, non-conventional ways,
+    such as modeling electric cables as 3D in CAD increased the overall fidelity of the digital model,
+    as well as the digital twin significantly. 
+
+    Lastly, there was a significant difference in data loss, between the quality of file converters, 
+    Blender and Embedded Omniverse Converter, when the conversion of the .fbx file to a .usd file was wanted. 
+    Hence, before putting the .fbx file directly into the omniverse, putting it into the blender and modifying
+    there,  gives a better conversion of .fbx to .usd as well as gives more flexibility to manipulate the
+    corrupted data which occurs during the conversion to .fbx file from .step file.
+
+    \subsection*{Observations while creating a Real System}
+    With the help of the digital model, real system assembly time was reduced 
+    significantly as well as overall process safety increased.
+
+    First, the assembly time of the real system according to the digital model, 
+    dramatically decreased, due to the provided spatial and visual data from the digital model,
+    especially the cabling between the RPI and the breadboard. 
+
+    Also the safety of components, during the assembly, also increased, which prevented
+    common mistakes such as giving higher voltage to 
+    GPIO pins, which could result in damaging the RPI, was prevented. 
+
+    \subsection*{Observations of manual connection between the real and virtual system}
+    \subsection*{Observations while Creating a Digital Shadow}
+    \subsection*{Observations of automatic unidirectional connection between the real and virtual system}
+    \subsection*{Observations while Creating a Digital Twin}
+    \subsection*{Observations of automatic bidirectional connection between the real and virtual system}
     \section{Discussion}\label{section:discussion}
     The last sentence of the introduction should be the first sentence of the discussion.
     How did your actual results compare with what you expected?
