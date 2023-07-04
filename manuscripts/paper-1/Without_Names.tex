@@ -14,7 +14,16 @@
 
     \title{Quality assurance of digital twins: An experience report in the automotive industry}
 
-    
+    \author{Alican Tüzün
+    \and
+    Georg Hackenberg
+    }
+    \institute{School of Engineering\\
+    University of Applied Sciences Upper Austria\\
+    4600 Wels, Upper Austria, Austria\\
+    \email{alican.tuzuen@fh-wels.at}
+    \email{georg.hackenberg@fh-wels.at}
+    }
     
     \maketitle
 
@@ -39,7 +48,7 @@
     The mispresenting of this notion began with the physical twin of the Apollo 13 spacecraft. 
     The twin of Apollo 13 was merely a tangible replication of the spacecraft that has been utilized in physical simulations. 
     Even though the digital aspect was expected to be present, there wasn't~\cite{GrievesMichaelApolloMyth}.
-    Another physical twin is the historic D-day map (also known as the Big Board) in Southwick House England, 
+    Another physical twin is the historic D-Day map (also known as the Big Board) in Southwick House England, 
     which was used simultaneously before and during the operation, and can be argued to be similar. 
     The board was a twin of the operation, and it included models of battalions and ships that reflected the actual 
     locations of the corresponding formations. Furthermore, synchronization was 
@@ -132,11 +141,13 @@
     
     \section{Method}
     The form of FELICE's digital twin was the digital twin instance\cite{GrievesVickers2017}, 
-    which implies that the real system was already constructed. It is important to note that, for the sake of convenience, the authors used the term "Digital Twin" in the subsequent chapters instead of  "digital twin instance" in the subsequent chapters. 
+    which implies that the real system was already constructed. 
+    It is important to note that, for the sake of convenience, 
+    the authors utilized the term `Digital Twin' in the subsequent chapters instead of `digital twin instance'.
 
     Moreover, since the digital twin was still in the design phase, 
     the methodology of assessing its quality consists of several key steps,
-    including a set of artifacts, manual reviews of these artifacts, 
+    including identification of the artifacts, manual reviews of these artifacts, 
     mapping quality attributes to the identified findings, an evaluation of the artifact quality, and ultimately, 
     an evaluation of the digital twin's overall quality.
     \subsection{Artifacts}\label{section:Artifacts}
@@ -192,7 +203,7 @@
     \textbf{Correctness} is a  derived word from the adjective \textit{correct}, which means that the entity is error-free regarding fact or truth. 
     In the context of the digital twins, the fact or truth is the real system hence, \textit{correctness} is a grade of quality, 
     that indicates an error between the real system and a digital twin system (Figure~\ref{fig:CorrectnessAndCompleteness}).
-    Meanwhile, the quality of being \textit{correct} is described by the term accuracy~\cite{OxfordDictionary}. 
+    Meanwhile, the quality of being \textit{correct} is measured by the metric accuracy~\cite{OxfordDictionary}. 
 
     \begin{figure}[htbp]
         \centering
@@ -271,7 +282,7 @@
     And finally, 28\% were related to evolvability, indicating that the system was unresponsive 
     to the environment and was not flexible or scalable.
     \subsection{Example Findings}  
-    Two examples(Finding 12, Finding 18) are given to the reader to illustrate 
+    Two examples (Finding 12, Finding 18) are given to the reader to illustrate 
     the results of the manual review as well as the mapping to the digital twin quality attributes. 
     \subsubsection{Conceptual Model-Finding 12:}
     The duration of the micro-operations in the conceptual model was calculated using a simple calculation 
@@ -517,7 +528,9 @@
     As a result, quality attributes can be weighted regarding the stakeholder needs. This aspect might be important, because of relativity, 
     more specifically due to the political and economical nature of the quality~\cite{SystemQuality}. 
    
-    \newpage
+    \section*{Acknowledgement}
+    The authors express their sincere gratitude to the FELICE project under GAID (101017151) and its dedicated members 
+    for their invaluable feedback and strong patience throughout the evaluation of the digital twin's quality.
     \bibliography{main}
     \bibliographystyle{splncs04}
 
