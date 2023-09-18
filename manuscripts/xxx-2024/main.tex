@@ -16,7 +16,7 @@
         \IEEEauthorblockA{Josef Ressel Center for Data-Driven Innovation in Business Modeling\\University of Applied Sciences Upper Austria\\4xxx Steyr, Austria}
     }
    
-    \maketitle 
+    \maketitle
 
     \begin{abstract}
         TODO
@@ -33,69 +33,94 @@
     Unambiguous definition of the term "digital twin"?
 
     \subsection{Research methodology}
-    Literature review + formalization
+    Literature review~\ref{section:related} + formalization~\ref{section:theory} + discussion~\ref{section:discussion}.
 
     \section{Related work}
+    \label{section:related}
     TODO
 
     \section{A digital twin theory}
     \label{section:theory}
-    TODO
+    In the following, we introduce a formal theory of digital twins.
+    We start with introducing core concepts in Section~\ref{section:theory-core}.
+    Then, on top of the core concepts we build a theory of the real world in Section~\ref{section:theory-world}.
+    Finally, on top of the theory of the real world we derive a theory of digital twins in Section~\ref{section:theory-twin}.
 
-    \subsection{Basic concepts}
+    \subsection{Core concepts}
+    \label{section:theory-core}
+    The core concepts include the notion of time, the notion of state, and the notion of stream.
 
     \subsubsection{Time}
+    In our theory we do not prescribe a specific model of time such as discrete or continuous.
+    We rather employ a generic approach, where different models of time can be plugged in easily.
+    In this generic approach, time is defined as some (not further specified) set
     \[
-        T
+        T.
     \]
 
     \subsubsection{State}
+    Similar to the above case, we do not prescribe a specific model of state.
+    Again we employ a generic approach, where various models of state can be plugged in later.
+    In this generic approach state is defined as some (not further specified) set
     \[
-        S    
+        S.
     \]
 
     \subsubsection{Stream}
+    Finally, we include a generic model of how state changes over time.
+    Analogous to the previous two cases, concrete models of time and state can be plugged in easily.
+    In our approach, a stream is a mapping from the time domain to the state domain, i.e.
     \[
-        \overrightarrow{S}: T \rightarrow S
+        \overrightarrow{S}: T \rightarrow S.
     \]
 
     \subsection{Our model of the real world}
+    \label{section:theory-world}
+    Based on the concepts of time, state, and stream we build our model of the real world.
+    Our model of the real world distinguishes between a product and its environment.
+    For both the product and the environment we define the set of possible states as well as a behavior function.
+    Finally, we explain what an actual behavior of product and environment is.
 
-    \subsubsection{State set of the environment}
+    \subsubsection{Environment state}
     \[
         S_{Env}    
     \]
 
-    \subsubsection{State set of the product}
+    \subsubsection{Product state}
     \[
         S_{Pro}    
     \]
 
-    \subsubsection{Behavior function of the environment}
+    \subsubsection{Environment behavior}
     \[
-        B_{Env}: \overrightarrow{S_{Pro}} \rightarrow \overrightarrow{S_{Env}}
+        B_{Env}: \overrightarrow{S_{Prod}} \rightarrow \overrightarrow{S_{Env}}
     \]
     
-    \subsubsection{Behavior function of the product}
+    \subsubsection{State behavior}
     \[
-        B_{Pro}: \overrightarrow{S_{Env}} \rightarrow \overrightarrow{S_{Pro}}
+        B_{Prod}: \overrightarrow{S_{Env}} \rightarrow \overrightarrow{S_{Prod}}
     \]
 
-    \subsubsection{Actual behavior}
+    \subsubsection{World behavior}
     tuple of product state stream and environment state stream
     \[
-        (\overrightarrow{S_{Pro}}, \overrightarrow{S_{Env}})
+        B_{World} = (\overrightarrow{S_{Prod}}, \overrightarrow{S_{Env}})
     \]
     such that state streams are consistent, i.e.
     \[
-        B_{Env}(\overrightarrow{S_{Pro}}) = \overrightarrow{S_{Env}}
+        B_{Env}(\overrightarrow{S_{Prod}}) = \overrightarrow{S_{Env}}
     \]
     and
     \[
-        B_{Pro}(\overrightarrow{S_{Env}}) = \overrightarrow{S_{Pro}}
+        B_{Prod}(\overrightarrow{S_{Env}}) = \overrightarrow{S_{Prod}}
     \]
 
-    \subsection{Digital twin}
+    \subsection{Our model of digital twins}
+    \label{section:theory-twin}
+    TODO
+
+    \section{Discussion}
+    \label{section:discussion}
     TODO
 
     \section{Conclusion}
