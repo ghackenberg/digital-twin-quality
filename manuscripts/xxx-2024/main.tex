@@ -1,0 +1,108 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\begin{document}
+
+    \title{A formal theory of digital twins}
+
+    \author{
+        \IEEEauthorblockN{Georg Hackenberg} 
+        \IEEEauthorblockA{School of Engineering\\University of Applied Sciences Upper Austria\\4600 Wels, Austria} 
+        \and 
+        \IEEEauthorblockN{Alican Tüzün} 
+        \IEEEauthorblockA{Josef Ressel Center for Data-Driven Innovation in Business Modeling\\University of Applied Sciences Upper Austria\\4xxx Steyr, Austria}
+    }
+   
+    \maketitle 
+
+    \begin{abstract}
+        TODO
+    \end{abstract}
+
+    \section{Introduction}
+    \label{section:introduction}
+    TODO~\cite{asf}
+
+    \subsection{Research objective}
+    More systematic development of high-quality digital twins in different application domains.
+
+    \subsection{Research question}
+    Unambiguous definition of the term "digital twin"?
+
+    \subsection{Research methodology}
+    Literature review + formalization
+
+    \section{Related work}
+    TODO
+
+    \section{A digital twin theory}
+    \label{section:theory}
+    TODO
+
+    \subsection{Basic concepts}
+
+    \subsubsection{Time}
+    \[
+        T
+    \]
+
+    \subsubsection{State}
+    \[
+        S    
+    \]
+
+    \subsubsection{Stream}
+    \[
+        \overrightarrow{S}: T \rightarrow S
+    \]
+
+    \subsection{Our model of the real world}
+
+    \subsubsection{State set of the environment}
+    \[
+        S_{Env}    
+    \]
+
+    \subsubsection{State set of the product}
+    \[
+        S_{Pro}    
+    \]
+
+    \subsubsection{Behavior function of the environment}
+    \[
+        B_{Env}: \overrightarrow{S_{Pro}} \rightarrow \overrightarrow{S_{Env}}
+    \]
+    
+    \subsubsection{Behavior function of the product}
+    \[
+        B_{Pro}: \overrightarrow{S_{Env}} \rightarrow \overrightarrow{S_{Pro}}
+    \]
+
+    \subsubsection{Actual behavior}
+    tuple of product state stream and environment state stream
+    \[
+        (\overrightarrow{S_{Pro}}, \overrightarrow{S_{Env}})
+    \]
+    such that state streams are consistent, i.e.
+    \[
+        B_{Env}(\overrightarrow{S_{Pro}}) = \overrightarrow{S_{Env}}
+    \]
+    and
+    \[
+        B_{Pro}(\overrightarrow{S_{Env}}) = \overrightarrow{S_{Pro}}
+    \]
+
+    \subsection{Digital twin}
+    TODO
+
+    \section{Conclusion}
+    \label{section:conclusion}
+    TODO
+    
+    \bibliography{main}
+    \bibliographystyle{plain}
+    
+\end{document}
