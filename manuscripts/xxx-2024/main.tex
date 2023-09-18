@@ -48,7 +48,15 @@
 
     \subsection{Core concepts}
     \label{section:theory-core}
-    The core concepts include the notion of time, the notion of state, and the notion of stream.
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics{./figures/theory-core.pdf}
+        \caption{Illustration of core concepts}
+        \label{figure:theory-core}
+    \end{figure}
+
+    The core concepts include the notion of time, the notion of state, and the notion of behavior.
 
     \subsubsection{Time}
     In our theory we do not prescribe a specific model of time such as discrete or continuous.
@@ -59,60 +67,82 @@
     \]
 
     \subsubsection{State}
-    Similar to the above case, we do not prescribe a specific model of state.
+    Similar to the above case, we do not prescribe a specific model of state such as subatomic, atomic, molecular, mechanical, electrical, digital, etc.
     Again we employ a generic approach, where various models of state can be plugged in later.
     In this generic approach state is defined as some (not further specified) set
     \[
         S.
     \]
 
-    \subsubsection{Stream}
+    \subsubsection{Behavior}
     Finally, we include a generic model of how state changes over time.
     Analogous to the previous two cases, concrete models of time and state can be plugged in easily.
-    In our approach, a stream is a mapping from the time domain to the state domain, i.e.
+    In our approach, a behavior is a mapping from the time domain to the state domain, i.e.
     \[
         \overrightarrow{S}: T \rightarrow S.
     \]
 
     \subsection{Our model of the real world}
     \label{section:theory-world}
-    Based on the concepts of time, state, and stream we build our model of the real world.
-    Our model of the real world distinguishes between a product and its environment.
-    For both the product and the environment we define the set of possible states as well as a behavior function.
-    Finally, we explain what an actual behavior of product and environment is.
 
-    \subsubsection{Environment state}
-    \[
-        S_{Env}    
-    \]
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics{./figures/theory-world.pdf}
+        \caption{Illustration of real world concepts}
+        \label{figure:theory-world}
+    \end{figure}
+
+    Based on the concepts of time, state, and behavior we build our model of the real world.
+    This model distinguishes between a product and its environment.
+    For both the product and its environment we define their states and their functions.
+    Finally, we explain the concept of world behavior.
 
     \subsubsection{Product state}
+    In our theory, the product state describes the product perfectly at a particular point in time.
+    We assume perfect knowledge in this representation and, hence, the representation is only a theoretical construct.
+    Mathematically, the product state is defined as set
     \[
-        S_{Pro}    
+        S_{Prod}.
     \]
 
-    \subsubsection{Environment behavior}
+    \subsubsection{Environment state}
+    Similarly, the environment state describes the environment perfectly at a particular point in time.
+    Again we assume perfect knowledge in this purely theoretical representation.
+    Hence, the environment state is defined mathematically as set
     \[
-        B_{Env}: \overrightarrow{S_{Prod}} \rightarrow \overrightarrow{S_{Env}}
+        S_{Env}.
     \]
     
-    \subsubsection{State behavior}
+    \subsubsection{Product function}
+    Based on product and environment state we can define the product function.
+    The product function describes the logic of how the product reacts to the environment.
+    This logic can be described as mapping from environment behavior to product behavior, i.e.
     \[
-        B_{Prod}: \overrightarrow{S_{Env}} \rightarrow \overrightarrow{S_{Prod}}
+        F_{Prod}: \overrightarrow{S_{Env}} \rightarrow \overrightarrow{S_{Prod}}
+    \]
+
+    \subsubsection{Environment function}
+    Similarly, we can define the environment function.
+    The environment function describes the logic of how the environment reacts to the product.
+    Hence, this logic can be described as mapping from product behavior to environment behavior, i.e.
+    \[
+        F_{Env}: \overrightarrow{S_{Prod}} \rightarrow \overrightarrow{S_{Env}}
     \]
 
     \subsubsection{World behavior}
-    tuple of product state stream and environment state stream
+    Finally, based on product state and function as well as environment state and function we introduce world behavior.
+    In our theory, world behavior is a combination of consistent product and environment behavior.
+    We express world behavior as tuple
     \[
         B_{World} = (\overrightarrow{S_{Prod}}, \overrightarrow{S_{Env}})
     \]
-    such that state streams are consistent, i.e.
+    such that the environment behavior $\overrightarrow{S_{Env}}$ is the result of product behavior $\overrightarrow{S_{Prod}}$, i.e.
     \[
-        B_{Env}(\overrightarrow{S_{Prod}}) = \overrightarrow{S_{Env}}
+        \overrightarrow{S_{Env}} = F_{Env}(\overrightarrow{S_{Prod}})
     \]
-    and
+    and, adversely, the product behavior $\overrightarrow{S_{Prod}}$ is the result of environment behavior $\overrightarrow{S_{Env}}$, i.e.
     \[
-        B_{Prod}(\overrightarrow{S_{Env}}) = \overrightarrow{S_{Prod}}
+        \overrightarrow{S_{Prod}} = F_{Prod}(\overrightarrow{S_{Env}}).
     \]
 
     \subsection{Our model of digital twins}

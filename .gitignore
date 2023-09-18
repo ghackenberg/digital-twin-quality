@@ -6,4 +6,5 @@ manuscripts/**/*.fls
 manuscripts/**/*.log
 manuscripts/**/*.out
 manuscripts/**/*.pdf
+!manuscripts/**/figures/*.pdf
 manuscripts/**/*.synctex.gz
