@@ -82,6 +82,18 @@
         \overrightarrow{S}: T \rightarrow S.
     \]
 
+    \subsection{TODO}
+    TODO
+
+    \subsubsection{Observer}
+    TODO
+
+    \subsubsection{Observation}
+    TODO
+
+    \subsubsection{Event}
+    TODO time point and time span (observer dependent)
+
     \subsection{Our model of the real world}
     \label{section:theory-world}
 
@@ -96,6 +108,12 @@
     This model distinguishes between a product and its environment.
     For both the product and its environment we define their states and their functions.
     Finally, we explain the concept of world behavior.
+
+    \subsubsection{World state}
+    TODO
+    \[
+        S_{World} = (S_{Prod}, S_{Env}).
+    \]
 
     \subsubsection{Product state}
     In our theory, the product state describes the product perfectly at a particular point in time.
@@ -112,38 +130,56 @@
     \[
         S_{Env}.
     \]
-    
-    \subsubsection{Product function}
-    Based on product and environment state we can define the product function.
-    The product function describes the logic of how the product reacts to the environment.
-    This logic can be described as mapping from environment behavior to product behavior, i.e.
-    \[
-        F_{Prod}: \overrightarrow{S_{Env}} \rightarrow \overrightarrow{S_{Prod}}
-    \]
-
-    \subsubsection{Environment function}
-    Similarly, we can define the environment function.
-    The environment function describes the logic of how the environment reacts to the product.
-    Hence, this logic can be described as mapping from product behavior to environment behavior, i.e.
-    \[
-        F_{Env}: \overrightarrow{S_{Prod}} \rightarrow \overrightarrow{S_{Env}}
-    \]
 
     \subsubsection{World behavior}
-    Finally, based on product state and function as well as environment state and function we introduce world behavior.
-    In our theory, world behavior is a combination of consistent product and environment behavior.
-    We express world behavior as tuple
+    TODO
     \[
-        B_{World} = (\overrightarrow{S_{Prod}}, \overrightarrow{S_{Env}})
+        \overrightarrow{S_{World}} = (\overrightarrow{S_{Prod}}, \overrightarrow{S_{Env}})
     \]
-    such that the environment behavior $\overrightarrow{S_{Env}}$ is the result of product behavior $\overrightarrow{S_{Prod}}$, i.e.
-    \[
-        \overrightarrow{S_{Env}} = F_{Env}(\overrightarrow{S_{Prod}})
-    \]
-    and, adversely, the product behavior $\overrightarrow{S_{Prod}}$ is the result of environment behavior $\overrightarrow{S_{Env}}$, i.e.
-    \[
-        \overrightarrow{S_{Prod}} = F_{Prod}(\overrightarrow{S_{Env}}).
-    \]
+
+    \subsection{TODO}
+    TODO
+
+    \subsubsection{Input}
+    TODO
+
+    \subsubsection{Output}
+    TODO
+
+    \subsubsection{Function}
+    TODO
+    
+    %\subsubsection{Product function}
+    %Based on product and environment state we can define the product function.
+    %The product function describes the logic of how the product reacts to the environment.
+    %This logic can be described as mapping from environment behavior to product behavior, i.e.
+    %\[
+    %    F_{Prod}: \overrightarrow{S_{Env}} \rightarrow \overrightarrow{S_{Prod}}
+    %\]
+
+    %\subsubsection{Environment function}
+    %Similarly, we can define the environment function.
+    %The environment function describes the logic of how the environment reacts to the product.
+    %Hence, this logic can be described as mapping from product behavior to environment behavior, i.e.
+    %\[
+    %    F_{Env}: \overrightarrow{S_{Prod}} \rightarrow \overrightarrow{S_{Env}}
+    %\]
+
+    %\subsubsection{World behavior}
+    %Finally, based on product state and function as well as environment state and function we introduce world behavior.
+    %In our theory, world behavior is a combination of consistent product and environment behavior.
+    %We express world behavior as tuple
+    %\[
+    %    B_{World} = (\overrightarrow{S_{Prod}}, \overrightarrow{S_{Env}})
+    %\]
+    %such that the environment behavior $\overrightarrow{S_{Env}}$ is the result of product behavior $\overrightarrow{S_{Prod}}$, i.e.
+    %\[
+    %    \overrightarrow{S_{Env}} = F_{Env}(\overrightarrow{S_{Prod}})
+    %\]
+    %and, adversely, the product behavior $\overrightarrow{S_{Prod}}$ is the result of environment behavior $\overrightarrow{S_{Env}}$, i.e.
+    %\[
+    %    \overrightarrow{S_{Prod}} = F_{Prod}(\overrightarrow{S_{Env}}).
+    %\]
 
     \subsection{Our model of digital twins}
     \label{section:theory-twin}
