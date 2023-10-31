@@ -43,16 +43,16 @@
     \label{section:theory}
     In the following, we introduce a formal theory of digital twins.
     We start with introducing core concepts in Section~\ref{section:theory-core}.
-    Then, on top of the core concepts we build a theory of the real world in Section~\ref{section:theory-world}.
+    Then, on top of the core concepts we build a theory of the real world in Section~\ref{section:theory-universe}.
     Finally, on top of the theory of the real world we derive a theory of digital twins in Section~\ref{section:theory-twin}.
 
-    \subsection{Core concepts}
+    \subsection{Time, state, and trace}
     \label{section:theory-core}
 
     \begin{figure}[htbp]
         \centering
         \includegraphics{./figures/theory-core.pdf}
-        \caption{Illustration of core concepts}
+        \caption{Illustration of time, state, and trace.}
         \label{figure:theory-core}
     \end{figure}
 
@@ -74,7 +74,7 @@
         S.
     \]
 
-    \subsubsection{Behavior}
+    \subsubsection{Trace}
     Finally, we include a generic model of how state changes over time.
     Analogous to the previous two cases, concrete models of time and state can be plugged in easily.
     In our approach, a behavior is a mapping from the time domain to the state domain, i.e.
@@ -82,26 +82,14 @@
         \overrightarrow{S}: T \rightarrow S.
     \]
 
-    \subsection{TODO}
-    TODO
-
-    \subsubsection{Observer}
-    TODO
-
-    \subsubsection{Observation}
-    TODO
-
-    \subsubsection{Event}
-    TODO time point and time span (observer dependent)
-
-    \subsection{Our model of the real world}
-    \label{section:theory-world}
+    \subsection{Product, environment, and universe}
+    \label{section:theory-universe}
 
     \begin{figure}[htbp]
         \centering
-        \includegraphics{./figures/theory-world.pdf}
-        \caption{Illustration of real world concepts}
-        \label{figure:theory-world}
+        \includegraphics{figures/theory-universe.pdf}
+        \caption{Illustration of product, environment, and universe.}
+        \label{figure:theory-universe}
     \end{figure}
 
     Based on the concepts of time, state, and behavior we build our model of the real world.
@@ -109,77 +97,99 @@
     For both the product and its environment we define their states and their functions.
     Finally, we explain the concept of world behavior.
 
-    \subsubsection{World state}
-    TODO
-    \[
-        S_{World} = (S_{Prod}, S_{Env}).
-    \]
-
-    \subsubsection{Product state}
+    \subsubsection{Product}
     In our theory, the product state describes the product perfectly at a particular point in time.
     We assume perfect knowledge in this representation and, hence, the representation is only a theoretical construct.
     Mathematically, the product state is defined as set
     \[
         S_{Prod}.
     \]
+    TODO
+    \[
+        \overrightarrow{S_{Pro}}: T \rightarrow S_{Pro}.
+    \]
 
-    \subsubsection{Environment state}
+    \subsubsection{Environment}
     Similarly, the environment state describes the environment perfectly at a particular point in time.
     Again we assume perfect knowledge in this purely theoretical representation.
     Hence, the environment state is defined mathematically as set
     \[
         S_{Env}.
     \]
-
-    \subsubsection{World behavior}
     TODO
     \[
-        \overrightarrow{S_{World}} = (\overrightarrow{S_{Prod}}, \overrightarrow{S_{Env}})
+        \overrightarrow{S_{Env}}: T \rightarrow S_{Env}.
     \]
 
-    \subsection{TODO}
+    \subsubsection{Universe}
+    TODO
+    \[
+        S_{Uni} = S_{Pro} \times S_{Env}.
+    \]
+    TODO
+    \[
+        \overrightarrow{S_{Uni}}: T \rightarrow S_{Uni}.
+    \]
+    TODO
+    \[
+        \overrightarrow{S_{Uni}}: T \rightarrow S_{Pro} \times S_{Env}.
+    \]
+    such that $\forall t \in T$
+    \[
+        \overrightarrow{S_{Uni}}(t) = (\overrightarrow{S_{Pro}}(t), \overrightarrow{S_{Env}}(t))
+    \]
+
+    \subsection{Function}
     TODO
 
-    \subsubsection{Input}
-    TODO
-
-    \subsubsection{Output}
-    TODO
-
-    \subsubsection{Function}
-    TODO
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics{./figures/theory-world.pdf}
+        \caption{Illustration of real world concepts}
+        \label{figure:theory-function}
+    \end{figure}
     
-    %\subsubsection{Product function}
-    %Based on product and environment state we can define the product function.
-    %The product function describes the logic of how the product reacts to the environment.
-    %This logic can be described as mapping from environment behavior to product behavior, i.e.
-    %\[
-    %    F_{Prod}: \overrightarrow{S_{Env}} \rightarrow \overrightarrow{S_{Prod}}
-    %\]
+    \subsubsection{Function}
+    Based on the concept of product and environment we can define the product function.
+    The product function describes the logic of how the product reacts to the environment state over time.
+    This logic can be described as mapping from environment trace to product trace, i.e.
+    \[
+        F_{Pro}: \overrightarrow{S_{Env}} \rightarrow \overrightarrow{S_{Pro}}
+    \]
+    Similarly, we can define the environment function.
+    The environment function describes the logic of how the environment reacts to the product state over time.
+    Hence, this logic can be described as mapping from product trace to environment trace, i.e.
+    \[
+        F_{Env}: \overrightarrow{S_{Pro}} \rightarrow \overrightarrow{S_{Env}}
+    \]
 
-    %\subsubsection{Environment function}
-    %Similarly, we can define the environment function.
-    %The environment function describes the logic of how the environment reacts to the product.
-    %Hence, this logic can be described as mapping from product behavior to environment behavior, i.e.
-    %\[
-    %    F_{Env}: \overrightarrow{S_{Prod}} \rightarrow \overrightarrow{S_{Env}}
-    %\]
-
-    %\subsubsection{World behavior}
+    %\subsubsection{Universe function}
     %Finally, based on product state and function as well as environment state and function we introduce world behavior.
     %In our theory, world behavior is a combination of consistent product and environment behavior.
     %We express world behavior as tuple
     %\[
-    %    B_{World} = (\overrightarrow{S_{Prod}}, \overrightarrow{S_{Env}})
+    %    B_{World} = (\overrightarrow{S_{Pro}}, \overrightarrow{S_{Env}})
     %\]
     %such that the environment behavior $\overrightarrow{S_{Env}}$ is the result of product behavior $\overrightarrow{S_{Prod}}$, i.e.
     %\[
-    %    \overrightarrow{S_{Env}} = F_{Env}(\overrightarrow{S_{Prod}})
+    %    \overrightarrow{S_{Env}} = F_{Env}(\overrightarrow{S_{Pro}})
     %\]
     %and, adversely, the product behavior $\overrightarrow{S_{Prod}}$ is the result of environment behavior $\overrightarrow{S_{Env}}$, i.e.
     %\[
-    %    \overrightarrow{S_{Prod}} = F_{Prod}(\overrightarrow{S_{Env}}).
+    %    \overrightarrow{S_{Prod}} = F_{Pro}(\overrightarrow{S_{Env}}).
     %\]
+
+    %\subsection{TODO}
+    %TODO
+
+    %\subsubsection{Observer}
+    %TODO
+
+    %\subsubsection{Observation}
+    %TODO
+
+    %\subsubsection{Event}
+    %TODO time point and time span (observer dependent)
 
     \subsection{Our model of digital twins}
     \label{section:theory-twin}
